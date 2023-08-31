@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Lines API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Lines API</h1>
+
+      <div class="article">
+        <h2>How to restrict search to a department.</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/lines</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">embedded_search_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to a pre-canned search configured on the server, e.g. this is used for promoted lines at checkout. Additional restrictions can be applied on top.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">deal_set</span>
+                </td>
+                <td>
+                  <span class="description">Restricts the search to a deal set. Value to be used is the &quot;query_value&quot; attribute in a deal set.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtained from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">1-indexed page number of page to return</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page_size</span>
+                </td>
+                <td>
+                  <span class="description">Number of lines to include on each page</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort_option_id</span>
+                </td>
+                <td>
+                  <span class="description">Sort option obtain from the Sort Options end-point.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[minimum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at least this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[maximum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at most this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_ids</span>
+                </td>
+                <td>
+                  <span class="description">Product Id is shared across all stores.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_codes</span>
+                </td>
+                <td>
+                  <span class="description">Search by GTIN or instore PLU.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;bc01d08e4a33df016e47&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987285ebc910e78b8169c/lines?department_id=64d987285ebc910e78b817b3</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">department_id: 64d987285ebc910e78b817b3</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;57be049aeed1298c66f775bd003f315b&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: fb726906-fef8-4f2b-a1d5-ad8fe55b44b4
+X-Runtime: 0.077851
+Content-Length: 2404</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987295ebc910e78b817cb&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Old Block Shiraz 2014&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: &quot;St Hallets&quot;,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;product_id&quot;: &quot;64d987295ebc910e78b817c8&quot;,
+        &quot;product_code&quot;: &quot;6d76664101eb32&quot;,
+        &quot;place_of_origin&quot;: {
+          &quot;country&quot;: &quot;Australia&quot;,
+          &quot;region&quot;: &quot;Barossa&quot;
+        },
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: 1390
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;tags&quot;,
+              &quot;id&quot;: &quot;64d987295ebc910e78b817c6&quot;
+            }
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987295ebc910e78b817c5&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=4e75f984700d65916922c857ef472804d95041f0a8e5f5135b0f898516d7a517&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=55c17f462011cbf4809967eaa478f8d067e37235fb56821bc58b7d3f2423924c&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ed902163ba68bc5f6d7513691cef5a23ca8f0463ee41ea77dbe2729f5c8759ca&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a9281e5a08a99a743aa23f0bb8cf6686fbaab26cf0570e59b610d0b2be9779a4&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7450a2d35b1d053d7910f49a433b1bf1b5274adcd0cdcc82b89aafdee4d926b3&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImFiYTgyZTEyZTM2YWIzOTAyODM1NTYzMGFmZjEzMjUzLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=9fdb24de95c2bbff0338f3985d27d440beb3c43d4df2627905e9b4b03d99b101&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987295ebc910e78b817c6&quot;,
+      &quot;type&quot;: &quot;tags&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;group&quot;: &quot;Varieties&quot;,
+        &quot;background_colour&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 1,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: [
+
+    ]
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

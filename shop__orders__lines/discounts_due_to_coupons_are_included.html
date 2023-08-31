@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Orders / Lines API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Orders / Lines API</h1>
+
+      <div class="article">
+        <h2>Discounts due to coupons are included</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/:order_id/lines</h3>
+          <p class="explanation">
+            A discount only becomes a normal adjustment during checkout. Prior to checkout it can be seen in discounts_and_credits. This also reduces the value of balance_at_checkout
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order[order_lines]</span>
+                </td>
+                <td>
+                  <span class="description">Products and quantities requested by customer. Each one is a hash with product_id and quantity. Use quantity 0 to remove lines.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;4e0c899c2cdf98e08c39&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjRlMGM4OTljMmNkZjk4ZTA4YzM5IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODdiMDVlYmM5MTBlNzhiODllMjMifSwiZXhwIjoxNDk3MjQ3ODAwfQ.PHsEZwaJI6RlDgWxBdbM70AUQumchuYQw-HVWLGQk4Y&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/64d987af5ebc910e78b89cca/orders/current/lines</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"order":{"order_lines":[{"product_id":"64d987af5ebc910e78b89de2","quantity":1}]}}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;fee5fa687a95258872ac7cd55063e5f6&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: e4ea333d-af23-4859-9d6e-f2a8b3533166
+X-Runtime: 0.097084
+Content-Length: 1679</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d987b05ebc910e78b89e1e&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: null,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 4999,
+        &quot;cents_ex_tax&quot;: 4999,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: null,
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: &quot;10OFF&quot;,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+        {
+          &quot;type&quot;: &quot;coupon&quot;,
+          &quot;narrative&quot;: &quot;Coupon 10OFF&quot;,
+          &quot;amount&quot;: 1000
+        }
+      ],
+      &quot;balance_at_checkout&quot;: 3999,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;64d987af5ebc910e78b89cca&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;order-lines&quot;,
+            &quot;id&quot;: &quot;64d987b05ebc910e78b89e24&quot;
+          }
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987b05ebc910e78b89e24&quot;,
+      &quot;type&quot;: &quot;order-lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;charge&quot;: false,
+        &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
+        &quot;product_id&quot;: &quot;64d987af5ebc910e78b89de2&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;quantity&quot;: 1.0,
+        &quot;subtotal&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;adjustments&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;place_of_origin&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;line&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;lines&quot;,
+            &quot;id&quot;: &quot;64d987af5ebc910e78b89de5&quot;
+          }
+        },
+        &quot;order&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;orders&quot;,
+            &quot;id&quot;: &quot;64d987b05ebc910e78b89e1e&quot;
+          }
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987af5ebc910e78b89de1&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

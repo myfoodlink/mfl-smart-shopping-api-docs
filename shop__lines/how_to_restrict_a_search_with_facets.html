@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Lines API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Lines API</h1>
+
+      <div class="article">
+        <h2>How to restrict a search with facets</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/lines</h3>
+          <p class="explanation">
+            Facets can be used to refine a search. The same parameters for the search should be given to the facet group query to discover the facets available for search refinement. The process can be repeated to add futher facets to the search.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">embedded_search_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to a pre-canned search configured on the server, e.g. this is used for promoted lines at checkout. Additional restrictions can be applied on top.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">deal_set</span>
+                </td>
+                <td>
+                  <span class="description">Restricts the search to a deal set. Value to be used is the &quot;query_value&quot; attribute in a deal set.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtained from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">1-indexed page number of page to return</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page_size</span>
+                </td>
+                <td>
+                  <span class="description">Number of lines to include on each page</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort_option_id</span>
+                </td>
+                <td>
+                  <span class="description">Sort option obtain from the Sort Options end-point.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[minimum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at least this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[maximum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at most this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_ids</span>
+                </td>
+                <td>
+                  <span class="description">Product Id is shared across all stores.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_codes</span>
+                </td>
+                <td>
+                  <span class="description">Search by GTIN or instore PLU.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;f03e4c8a4bc3a876c193&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987405ebc910e78b82c32/lines</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;98b37f88b1f4ab893396eea221d9594c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 1406e713-5da8-480b-919d-c6a7e3d1cc22
+X-Runtime: 0.078799
+Content-Length: 7513</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 3699,
+        &quot;normal_price_cents&quot;: 4199,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d6a&quot;,
+        &quot;product_code&quot;: &quot;05010677014205&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: {
+          &quot;size&quot;: 700.0,
+          &quot;unit&quot;: &quot;ml&quot;,
+          &quot;quantity&quot;: null
+        },
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;
+            },
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d69&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbece30b451e8cd6ff9dc60671e7b45762ef6efc6061e14a5644338a4cee2e70&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbbad93ee8da3b607fed0c5dbb8adb25909b69afc4c7e5f0628f113cee280d52&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=461a827548463c11a69a9b6a07b4f48beac5a75f76ace65f22c2809c74a7efe5&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=6b02dfb65f1bc915339893dc403ebb2e5be239860b11cee6c26590f9363adc66&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=bfc66eb5a2a953bfafc973241ae4829fd43bdb2482185d449ba378f0fae74c98&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7847342103b97e930b4a2c53b6d8d599cee776136b598ebab7a4d654d6f4acc4&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d56&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 770,
+        &quot;normal_price_cents&quot;: 770,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d53&quot;,
+        &quot;product_code&quot;: &quot;00000093302043&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d52&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=203c2bfb2948a3e4d43180d79657112797b1163e169c51c671f3e2e44e11d688&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7ceb3eacda17081ec25a33e9c1e99ffc6f8e4bf810b02546de03aeb15778d027&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=eaa6664f895b4cbcbf93b215a60b5447199fdbb3ed268020896874992d703c56&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5406ebebaaa2ec9738ded6b8c50088f3681a54fa42be558061c64b96a1a993b6&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=875accf66368fe2777b3c1a99750c4044a5d01e30595ec2fcafbbad37e7f6842&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjZkZmMxNDEwYzc5YzM0YmNkYzc5NGRjNWE5YWVlMTQxLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=bd50addbf3918ad61c71b9993f305b7fc8835fdd513463f704752b6428602cb4&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d63&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Old Block Shiraz 2014&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: &quot;St Hallets&quot;,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d60&quot;,
+        &quot;product_code&quot;: &quot;38dafefff1c666&quot;,
+        &quot;place_of_origin&quot;: {
+          &quot;country&quot;: &quot;Australia&quot;,
+          &quot;region&quot;: &quot;Barossa&quot;
+        },
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: 1390
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d63:0&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;tags&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d5e&quot;
+            }
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d5b&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ac43e4701fb2d43977c7089e6a22cf8fc01baf30d22ccdbd1a6c5a7a01ae3765&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8d808512e08130879229d3a01199a4c2e3fb834b1f05a4009c80ba0aa3233b06&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2ff49191ae137aa4bfceebbf924700add48a167a03d711fd396e92cbc8ec8f16&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=d7e185835f06a184cf0f428faef9db6b2eaa68f4b8f6ccfe19163439be19bcd4&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=43ae58f8e8a58899d10b9baf450362ee79286fe43ea83aab9fca9572783dd0bf&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8eea5cc72b111eb37bc1e10f0749aa551efc4cb965ca69765a7df81b0237c3a3&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;save&quot;,
+          &quot;$5.00&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: true,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: false,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;right&quot;,
+          &quot;vertical&quot;: &quot;top&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;Organic&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: false,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: true,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;left&quot;,
+          &quot;vertical&quot;: &quot;bottom&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d63:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;Organic&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: false,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: true,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;left&quot;,
+          &quot;vertical&quot;: &quot;bottom&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d5e&quot;,
+      &quot;type&quot;: &quot;tags&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;group&quot;: &quot;Varieties&quot;,
+        &quot;background_colour&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 3,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Content-Type: application/json
+Accept: application/json
+Authorization: MYFOODLINK app_id=&quot;f03e4c8a4bc3a876c193&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987405ebc910e78b82c32/facet_groups</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">only_facets: [&quot;special&quot;, &quot;department&quot;, &quot;tag&quot;, &quot;brand_name&quot;, &quot;place_of_origin&quot;, &quot;place_of_origin_region&quot;, &quot;price_range&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;dcff6a2d4164307080dfb54c775c141c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: f165b1db-e62c-4f2a-87be-076af533aeed
+X-Runtime: 0.079074
+Content-Length: 3512</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d75&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: true,
+        &quot;name&quot;: &quot;Specials&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d7d&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d76&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: true,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Departments&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d7e&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d7f&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d80&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d77&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Brands&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d81&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d78&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Countries&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d82&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d79&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Keywords&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d83&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7a&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: true,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Price&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d84&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d85&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7b&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Regions&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d86&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7c&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Varieties&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d87&quot;
+            }
+          ]
+        }
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7d&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Specials&quot;,
+        &quot;query_value&quot;: &quot;special:drill&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7e&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Red Wine&quot;,
+        &quot;query_value&quot;: &quot;category:red-wine&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d7f&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Beer&quot;,
+        &quot;query_value&quot;: &quot;category:beer&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d80&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Spirits&quot;,
+        &quot;query_value&quot;: &quot;category:spirits&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d81&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;St Hallets&quot;,
+        &quot;query_value&quot;: &quot;brand_name:St Hallets&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d82&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Australia&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin:Australia&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d83&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Organic&quot;,
+        &quot;query_value&quot;: &quot;tag:organic&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d84&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Up to $10.00&quot;,
+        &quot;query_value&quot;: &quot;price_range:0-1000&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d85&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;$30.00 to $50.00&quot;,
+        &quot;query_value&quot;: &quot;price_range:3000-5000&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d86&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Barossa&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin_region:Barossa&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d87&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;query_value&quot;: &quot;tag:shiraz&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;f03e4c8a4bc3a876c193&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987405ebc910e78b82c32/lines?facets[]=tag%3Aorganic</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">facets: [&quot;tag:organic&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;0c9f3ff9c6f31de18a85bbfd6435e249&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 07d15077-6db6-48ef-9265-6386c715a7f3
+X-Runtime: 0.129823
+Content-Length: 5484</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 3699,
+        &quot;normal_price_cents&quot;: 4199,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d6a&quot;,
+        &quot;product_code&quot;: &quot;05010677014205&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: {
+          &quot;size&quot;: 700.0,
+          &quot;unit&quot;: &quot;ml&quot;,
+          &quot;quantity&quot;: null
+        },
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;
+            },
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d69&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbece30b451e8cd6ff9dc60671e7b45762ef6efc6061e14a5644338a4cee2e70&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbbad93ee8da3b607fed0c5dbb8adb25909b69afc4c7e5f0628f113cee280d52&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=461a827548463c11a69a9b6a07b4f48beac5a75f76ace65f22c2809c74a7efe5&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=6b02dfb65f1bc915339893dc403ebb2e5be239860b11cee6c26590f9363adc66&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=bfc66eb5a2a953bfafc973241ae4829fd43bdb2482185d449ba378f0fae74c98&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7847342103b97e930b4a2c53b6d8d599cee776136b598ebab7a4d654d6f4acc4&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d63&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Old Block Shiraz 2014&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: &quot;St Hallets&quot;,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d60&quot;,
+        &quot;product_code&quot;: &quot;38dafefff1c666&quot;,
+        &quot;place_of_origin&quot;: {
+          &quot;country&quot;: &quot;Australia&quot;,
+          &quot;region&quot;: &quot;Barossa&quot;
+        },
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: 1390
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d63:0&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;tags&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d5e&quot;
+            }
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d5b&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ac43e4701fb2d43977c7089e6a22cf8fc01baf30d22ccdbd1a6c5a7a01ae3765&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8d808512e08130879229d3a01199a4c2e3fb834b1f05a4009c80ba0aa3233b06&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2ff49191ae137aa4bfceebbf924700add48a167a03d711fd396e92cbc8ec8f16&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=d7e185835f06a184cf0f428faef9db6b2eaa68f4b8f6ccfe19163439be19bcd4&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=43ae58f8e8a58899d10b9baf450362ee79286fe43ea83aab9fca9572783dd0bf&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImE4ZTkzMjIxZjQ3MmFjODEyOTgwYmI3MmEzNDNjYmFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8eea5cc72b111eb37bc1e10f0749aa551efc4cb965ca69765a7df81b0237c3a3&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;save&quot;,
+          &quot;$5.00&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: true,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: false,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;right&quot;,
+          &quot;vertical&quot;: &quot;top&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;Organic&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: false,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: true,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;left&quot;,
+          &quot;vertical&quot;: &quot;bottom&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d63:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;Organic&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: false,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: true,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;left&quot;,
+          &quot;vertical&quot;: &quot;bottom&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d5e&quot;,
+      &quot;type&quot;: &quot;tags&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;group&quot;: &quot;Varieties&quot;,
+        &quot;background_colour&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 2,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Content-Type: application/json
+Accept: application/json
+Authorization: MYFOODLINK app_id=&quot;f03e4c8a4bc3a876c193&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987405ebc910e78b82c32/facet_groups</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">facets: [&quot;tag:organic&quot;, &quot;tag:organic&quot;]
+only_facets: [&quot;special&quot;, &quot;department&quot;, &quot;tag&quot;, &quot;brand_name&quot;, &quot;place_of_origin&quot;, &quot;place_of_origin_region&quot;, &quot;price_range&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;e4346c51d2864166eac4531e49e254df&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 320b43c3-e086-4759-8934-4112e26e02b3
+X-Runtime: 0.149930
+Content-Length: 3161</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d88&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: true,
+        &quot;name&quot;: &quot;Specials&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d90&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d89&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: true,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Departments&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d91&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d92&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8a&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Brands&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d93&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8b&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Countries&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d94&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8c&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Keywords&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d95&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8d&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: true,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Price&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d96&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8e&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Regions&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d97&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d8f&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Varieties&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d987425ebc910e78b82d98&quot;
+            }
+          ]
+        }
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d90&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Specials&quot;,
+        &quot;query_value&quot;: &quot;special:drill&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d91&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Red Wine&quot;,
+        &quot;query_value&quot;: &quot;category:red-wine&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d92&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Spirits&quot;,
+        &quot;query_value&quot;: &quot;category:spirits&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d93&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;St Hallets&quot;,
+        &quot;query_value&quot;: &quot;brand_name:St Hallets&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d94&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Australia&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin:Australia&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d95&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Organic&quot;,
+        &quot;query_value&quot;: &quot;tag:organic&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d96&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;$30.00 to $50.00&quot;,
+        &quot;query_value&quot;: &quot;price_range:3000-5000&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d97&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Barossa&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin_region:Barossa&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987425ebc910e78b82d98&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;query_value&quot;: &quot;tag:shiraz&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;f03e4c8a4bc3a876c193&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987405ebc910e78b82c32/lines?facets[]=tag%3Aorganic&amp;facets[]=category%3Aspirits</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">facets: [&quot;tag:organic&quot;, &quot;category:spirits&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;5fcf0dd50de5011a8cca461cb6e2fcac&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: c310899f-b8ab-406f-9092-ac57b1999f9d
+X-Runtime: 0.241108
+Content-Length: 2903</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 3699,
+        &quot;normal_price_cents&quot;: 4199,
+        &quot;product_id&quot;: &quot;64d987415ebc910e78b82d6a&quot;,
+        &quot;product_code&quot;: &quot;05010677014205&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: {
+          &quot;size&quot;: 700.0,
+          &quot;unit&quot;: &quot;ml&quot;,
+          &quot;quantity&quot;: null
+        },
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;
+            },
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987415ebc910e78b82d69&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbece30b451e8cd6ff9dc60671e7b45762ef6efc6061e14a5644338a4cee2e70&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cbbad93ee8da3b607fed0c5dbb8adb25909b69afc4c7e5f0628f113cee280d52&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=461a827548463c11a69a9b6a07b4f48beac5a75f76ace65f22c2809c74a7efe5&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=6b02dfb65f1bc915339893dc403ebb2e5be239860b11cee6c26590f9363adc66&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=bfc66eb5a2a953bfafc973241ae4829fd43bdb2482185d449ba378f0fae74c98&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjdmZGU4ZjBhMDc0ODc2NTNlNjdkYWE5OWYyZWFhOThhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7847342103b97e930b4a2c53b6d8d599cee776136b598ebab7a4d654d6f4acc4&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;save&quot;,
+          &quot;$5.00&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: true,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: false,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;right&quot;,
+          &quot;vertical&quot;: &quot;top&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987415ebc910e78b82d6e:1&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;Organic&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: false,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: true,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;left&quot;,
+          &quot;vertical&quot;: &quot;bottom&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 1,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

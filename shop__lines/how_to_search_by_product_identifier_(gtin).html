@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Lines API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Lines API</h1>
+
+      <div class="article">
+        <h2>How to search by product identifier (GTIN)</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/lines</h3>
+          <p class="explanation">
+            search by gtin
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">embedded_search_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to a pre-canned search configured on the server, e.g. this is used for promoted lines at checkout. Additional restrictions can be applied on top.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">deal_set</span>
+                </td>
+                <td>
+                  <span class="description">Restricts the search to a deal set. Value to be used is the &quot;query_value&quot; attribute in a deal set.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtained from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">1-indexed page number of page to return</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page_size</span>
+                </td>
+                <td>
+                  <span class="description">Number of lines to include on each page</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort_option_id</span>
+                </td>
+                <td>
+                  <span class="description">Sort option obtain from the Sort Options end-point.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[minimum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at least this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[maximum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at most this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_ids</span>
+                </td>
+                <td>
+                  <span class="description">Product Id is shared across all stores.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_codes</span>
+                </td>
+                <td>
+                  <span class="description">Search by GTIN or instore PLU.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;df29e21e2019fab3f1c9&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d9874b5ebc910e78b835c3/lines?product_codes[]=93302043</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">product_codes: [&quot;93302043&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;9cf2a73adcd85aea3e8583539fbacdf4&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 6f7bc091-0392-467a-8af2-03a745570088
+X-Runtime: 0.118492
+Content-Length: 2179</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9874c5ebc910e78b836e7&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 770,
+        &quot;normal_price_cents&quot;: 770,
+        &quot;product_id&quot;: &quot;64d9874c5ebc910e78b836e4&quot;,
+        &quot;product_code&quot;: &quot;00000093302043&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874c5ebc910e78b836e3&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2366b48285e0aa8c3b788d777fe7ecc2de95e5c626fb5ff2dde7574e8ca4e429&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a01af24e0f665e10f0190358e8de63ab72502e996861e0c9e1889d2e046fa7ce&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=662992801f67f892dd3c8fb143b2648802eb0b3552e663ad30814e3b97398b74&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5e6a0f4b86cfacad78b632117dbd1c623e3f744b55d29a985b95dd973dcd3821&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=c0be36d15dba2b2dbece1cc74b0aa11e93ce8eba283fc0c872db48da02227e9c&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=f5855646ef49dd77c8d114ca9a36aa2a5d95f93b2f5d29f0ad365c86306c529f&quot;
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 1,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;df29e21e2019fab3f1c9&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d9874b5ebc910e78b835c3/lines?product_codes[]=93302043&amp;product_codes[]=5010677014205</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">product_codes: [&quot;93302043&quot;, &quot;5010677014205&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;623c5a972927eeb3ba729ffe31ab2c25&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: b4144cc0-8468-43f5-bddb-c3da33d07ae2
+X-Runtime: 0.093312
+Content-Length: 4593</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9874c5ebc910e78b836fd&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 3699,
+        &quot;normal_price_cents&quot;: 4199,
+        &quot;product_id&quot;: &quot;64d9874c5ebc910e78b836f9&quot;,
+        &quot;product_code&quot;: &quot;05010677014205&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: {
+          &quot;size&quot;: 700.0,
+          &quot;unit&quot;: &quot;ml&quot;,
+          &quot;quantity&quot;: null
+        },
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d9874c5ebc910e78b836fd:0&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874c5ebc910e78b836f8&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=e5e8ee44c3e4aef3cf42dbcbb882b063ee637627d28c55b9be549e150b5f36a1&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=06147e2e6a66a0948a89978b71419e757ecd149dca4fefcd6f6ebe9bbe979e35&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=6ec39ace956dd32e45603161dcebb694cc994337e89f2518a3610a50fe472191&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=e63670717ddf8a17f2c851a4e54c8a9c084b4538ef445766dd738bdaa2fa5ccb&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=f4375a44ff3be0dab958f138ffc7a1bea23ee9b8e137b8d750440aa70b4ebcf7&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImQxMTg1ZmNkZDQzNTFlYjgxZjg3MTMzYjg2MTE4ZDlmLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=74cbd16e3891edc0821a7103d7ac7a18b0a1f56dcd9739dbdf57be46a1b01c02&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9874c5ebc910e78b836e7&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 770,
+        &quot;normal_price_cents&quot;: 770,
+        &quot;product_id&quot;: &quot;64d9874c5ebc910e78b836e4&quot;,
+        &quot;product_code&quot;: &quot;00000093302043&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874c5ebc910e78b836e3&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2366b48285e0aa8c3b788d777fe7ecc2de95e5c626fb5ff2dde7574e8ca4e429&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a01af24e0f665e10f0190358e8de63ab72502e996861e0c9e1889d2e046fa7ce&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=662992801f67f892dd3c8fb143b2648802eb0b3552e663ad30814e3b97398b74&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5e6a0f4b86cfacad78b632117dbd1c623e3f744b55d29a985b95dd973dcd3821&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=c0be36d15dba2b2dbece1cc74b0aa11e93ce8eba283fc0c872db48da02227e9c&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImI0M2ZmYmRjMzQ4MzViNDcyZTRmY2Q5ZGJiMGVkOGRkLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=f5855646ef49dd77c8d114ca9a36aa2a5d95f93b2f5d29f0ad365c86306c529f&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9874c5ebc910e78b836fd:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;save&quot;,
+          &quot;$5.00&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: true,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: false,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;right&quot;,
+          &quot;vertical&quot;: &quot;top&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 2,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Session API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Session API</h1>
+
+      <div class="article">
+        <h2>High request count hits rate limit</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/session</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">email</span>
+                </td>
+                <td>
+                  <span class="description">Customer&#39;s email address</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">password</span>
+                </td>
+                <td>
+                  <span class="description">Customer&#39;s password</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;81ab50d640b92f55bc3d6ed1963e9f2c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 42662a2b-b41d-4f8c-a3e1-539172cae32b
+X-Runtime: 0.087677
+Content-Length: 445</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9867c5ebc910e78b77a1d&quot;,
+    &quot;type&quot;: &quot;sessions&quot;,
+    &quot;attributes&quot;: {
+      &quot;session_secret&quot;: &quot;d33d6f75c1acd9c8164c1f4a342d16ae&quot;,
+      &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjJlYzhiMTNlZGUxOWE3ZjI3NjMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY3YzVlYmM5MTBlNzhiNzdhMWQifSwiZXhwIjoxNjkxOTc4NTQwfQ.GOXUAwzxnoPALEpkIxrLCf3ug_EkfZCIA-zgwif4b8s&quot;
+    }
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;409317bbe1cacbf544387c33f28c4952&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 6f14e9d1-fb80-4ef6-9f9e-7b431004df9c
+X-Runtime: 0.049469
+Content-Length: 445</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9867c5ebc910e78b77a1e&quot;,
+    &quot;type&quot;: &quot;sessions&quot;,
+    &quot;attributes&quot;: {
+      &quot;session_secret&quot;: &quot;488379a5bdd1bf1fff9ab20264234c28&quot;,
+      &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjJlYzhiMTNlZGUxOWE3ZjI3NjMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY3YzVlYmM5MTBlNzhiNzdhMWUifSwiZXhwIjoxNjkxOTc4NTQwfQ.ZYnu2bQ_2p3Z3N15rNF-wZHpviJ2WuKfLWSmt9MC-uE&quot;
+    }
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;b6221bf8d5ded6806612a3d6d15c0a31&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: e95cc0d8-8321-4fa0-a047-f7b51a65d122
+X-Runtime: 0.045151
+Content-Length: 445</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9867c5ebc910e78b77a1f&quot;,
+    &quot;type&quot;: &quot;sessions&quot;,
+    &quot;attributes&quot;: {
+      &quot;session_secret&quot;: &quot;4a782bd21551fdb25b89f120786e5987&quot;,
+      &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjJlYzhiMTNlZGUxOWE3ZjI3NjMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY3YzVlYmM5MTBlNzhiNzdhMWYifSwiZXhwIjoxNjkxOTc4NTQwfQ.CPXsz3o7zXmAuJFYKWRu987MXDu8gD2yOsl10d_uHwU&quot;
+    }
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;88a2155e886a51a5cf09c6a52a6aacfc&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: f20d7d10-0421-4a88-9af9-7611b92c4f9e
+X-Runtime: 0.044022
+Content-Length: 445</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9867c5ebc910e78b77a20&quot;,
+    &quot;type&quot;: &quot;sessions&quot;,
+    &quot;attributes&quot;: {
+      &quot;session_secret&quot;: &quot;b672c8db0317fbb99c588950fba27abb&quot;,
+      &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjJlYzhiMTNlZGUxOWE3ZjI3NjMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY3YzVlYmM5MTBlNzhiNzdhMjAifSwiZXhwIjoxNjkxOTc4NTQwfQ.gjFL5VZSQ9hoPRAbjAT7YcYmQ0B6iGxTOtzNvWZE-E0&quot;
+    }
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;55ee45fd8204853f58da65ef7d6b6950&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 7f98fe74-5078-45b1-84ee-3a2a5d640e75
+X-Runtime: 0.042471
+Content-Length: 445</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9867c5ebc910e78b77a21&quot;,
+    &quot;type&quot;: &quot;sessions&quot;,
+    &quot;attributes&quot;: {
+      &quot;session_secret&quot;: &quot;8016cc3497e6282742377081b722a75b&quot;,
+      &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjJlYzhiMTNlZGUxOWE3ZjI3NjMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY3YzVlYmM5MTBlNzhiNzdhMjEifSwiZXhwIjoxNjkxOTc4NTQwfQ.y8oHwv8D2_r83722kQHPaaXwYv-EplUP1ce8PvQgybk&quot;
+    }
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: d38f59a3-d296-40af-a6be-4093b475cb4e
+X-Runtime: 0.003844
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: c326e14c-95bd-4e94-a4ed-a80e349e7638
+X-Runtime: 0.003535
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 23a70523-db6e-418f-a78e-a68bc108d1d8
+X-Runtime: 0.002937
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: bdeb168e-4a08-48ac-a66c-f0784027c8c1
+X-Runtime: 0.003267
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 1af69644-bc70-4ebe-b400-a17e67abf092
+X-Runtime: 0.003119
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 846bac0c-fedc-42e5-badd-3977e8747c50
+X-Runtime: 0.003557
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 57f9abd6-5713-4138-92d6-cb0183071f93
+X-Runtime: 0.003422
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 11f25789-206d-4ede-97a3-69656c085b74
+X-Runtime: 0.003424
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 190362ce-0a94-493d-bcbe-3da8f92e716c
+X-Runtime: 0.002977
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 4ad9b784-83b3-4b0f-83e0-e6ac0a99240f
+X-Runtime: 0.003221
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 0cf2de68-c78b-4794-b768-ac1568789928
+X-Runtime: 0.003132
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 716d67ab-dbd3-40a6-816c-8fcf42c4fe00
+X-Runtime: 0.003013
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 36890030-ace8-4504-9d12-29f1c15b18e7
+X-Runtime: 0.003041
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: a2791b62-41cc-4558-8fed-1117768096f6
+X-Runtime: 0.003290
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: b196d81f-e9b7-4516-af25-f8dabe35583a
+X-Runtime: 0.003793
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 695262ae-8157-4546-a2b1-14bfca234392
+X-Runtime: 0.002868
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 01275585-24ea-49a1-a96a-3430471acac0
+X-Runtime: 0.002972
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: b30a1057-5474-4b25-9d69-286b94bce3a0
+X-Runtime: 0.002793
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 02dd4182-89e8-43b6-9f8b-eb4d55dd1dfc
+X-Runtime: 0.002975
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 625a7da6-e93e-49a3-a820-2e387bc0345c
+X-Runtime: 0.002830
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 62228827-2226-4ac9-ad91-5f3abcce45fd
+X-Runtime: 0.003150
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 4e0332df-ad81-46f5-8fb5-82849c14e4dd
+X-Runtime: 0.002712
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 31f78dc4-ddf4-42bc-879f-dc0a848659ec
+X-Runtime: 0.002734
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: d63b1902-2c78-4d22-9e6d-a5f2b6c392fb
+X-Runtime: 0.002692
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 44676bfd-de32-4b90-b054-7d82b4f431b0
+X-Runtime: 0.002903
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: abd9430b-656b-4cf8-be6f-d7573a42b982
+X-Runtime: 0.002519
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: c95fac89-e69a-415e-8994-e9b068c22c3e
+X-Runtime: 0.001951
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: e038a93f-767e-487d-a06d-97d8eeaa6d77
+X-Runtime: 0.002803
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: b9e8cef6-ae00-441c-b1a3-f1af4e640a75
+X-Runtime: 0.002930
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 929c5035-24e4-4719-bf4a-4a6b8a25f601
+X-Runtime: 0.002880
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: a0674780-6437-4465-84a2-bc5ebc2972c3
+X-Runtime: 0.002807
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 0c332f4a-3eb2-4c3b-a2a9-178a9af5db95
+X-Runtime: 0.003010
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: d1753071-7cad-466c-b3c6-4ad691d96a45
+X-Runtime: 0.002785
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 9eb02178-7ff9-444d-8d5b-21e10fc29134
+X-Runtime: 0.002685
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 96da3e46-5ff8-4a68-81de-5a9a9b4a6235
+X-Runtime: 0.002828
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: dfaed73b-8d06-426e-875f-2dd7047d57cd
+X-Runtime: 0.002648
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: e3f0bff2-1e87-4116-be59-895a9f3f65dd
+X-Runtime: 0.002787
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 2f15a257-3d6e-4daa-98d0-ab2a60d0c98d
+X-Runtime: 0.002548
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: de493452-08fa-4316-a615-ccf5111a6185
+X-Runtime: 0.003129
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 4ea7118a-d934-43f6-8932-00b0a701250b
+X-Runtime: 0.003307
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: c15f5bff-8dfb-4228-8980-1b2bcb195389
+X-Runtime: 0.003648
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 58017a58-190a-48ed-9f70-c574485da5e5
+X-Runtime: 0.002847
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 2ab84fc5-206b-48f7-a162-09b726395566
+X-Runtime: 0.003194
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 08505be5-53b5-4217-9d83-c45a554e0233
+X-Runtime: 0.004909
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 1117861c-bc79-4244-8da6-8385e8c15b97
+X-Runtime: 0.003049
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;2ec8b13ede19a7f27631&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"SomePassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: fd1c726d-c2d5-4c61-b472-3c468055ca10
+X-Runtime: 0.002717
+Content-Length: 2</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

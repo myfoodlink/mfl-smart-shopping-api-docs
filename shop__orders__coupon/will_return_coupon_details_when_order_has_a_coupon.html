@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Orders / Coupon API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Orders / Coupon API</h1>
+
+      <div class="article">
+        <h2>Will return coupon details when order has a coupon</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/coupon</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;f9a59502ff3cb821f726&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImY5YTU5NTAyZmYzY2I4MjFmNzI2IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODc4MzVlYmM5MTBlNzhiODcwODYifSwiZXhwIjoxNjkxOTc4ODAzfQ.YwCtaiVE-KzIXp01EkPBDqiPxo-HWNLn61QEyqCJmi4&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987825ebc910e78b86f4e/orders/current/coupon</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;640644c8023b40609f06b47b456e4965&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: e2f742e3-6d6a-4184-8552-708da2d02dce
+X-Runtime: 0.070391
+Content-Length: 918</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d987835ebc910e78b87087&quot;,
+    &quot;type&quot;: &quot;coupon-validations&quot;,
+    &quot;attributes&quot;: {
+      &quot;coupon_code&quot;: &quot;COUPON1&quot;,
+      &quot;description&quot;: &quot;Get $10 off&quot;,
+      &quot;rejection&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;order&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;orders&quot;,
+          &quot;id&quot;: &quot;64d987835ebc910e78b87081&quot;
+        }
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987835ebc910e78b87081&quot;,
+      &quot;type&quot;: &quot;orders&quot;,
+      &quot;attributes&quot;: {
+        &quot;order_number&quot;: null,
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;balance&quot;: null,
+        &quot;note&quot;: null,
+        &quot;checkout&quot;: null,
+        &quot;cancelled&quot;: false,
+        &quot;coupon_code&quot;: &quot;COUPON1&quot;,
+        &quot;adjustments&quot;: [
+
+        ],
+        &quot;discounts_and_credits&quot;: [
+
+        ],
+        &quot;balance_at_checkout&quot;: 0,
+        &quot;customer_interaction_data&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d987825ebc910e78b86f4e&quot;
+          }
+        },
+        &quot;delivery_address&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;billing_address&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;discount_matches&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;order_lines&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tenders&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;time_slot&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;courier_quote&quot;: {
+          &quot;data&quot;: null
+        }
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

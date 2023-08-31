@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Shopping API version 2.0</title>
+  <meta charset="utf-8">
+  <style>
+    
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: &quot;required&quot;;
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Smart Shopping API version 2.0</h1>
+  
+  <div class="article">
+    <h2>About Menu Items</h2>
+
+    <ul>
+      <li>
+        <a href="about_menu_items/retrieve_the_list_of_about_menu_items_when_liquor_notice_not_present.html">Retrieve the list of about menu items when liquor notice NOT present</a>
+      </li>
+      <li>
+        <a href="about_menu_items/retrieve_the_list_of_about_menu_items_when_liquor_notice_present.html">Retrieve the list of about menu items when liquor notice present</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Authorisation</h2>
+
+    <ul>
+      <li>
+        <a href="authorisation/all_methods_return_401_unless_api_key_is_for_smart_shopping_mobile_application..html">All methods return 401 unless api key is for Smart Shopping mobile application.</a>
+      </li>
+      <li>
+        <a href="authorisation/all_methods_return_401_unless_authorisation_header_is_present..html">All methods return 401 unless authorisation header is present.</a>
+      </li>
+      <li>
+        <a href="authorisation/all_methods_return_401_unless_device_id_is_included..html">All methods return 401 unless device id is included.</a>
+      </li>
+      <li>
+        <a href="authorisation/how_to_send_authorisation_header_to_gain_access_to_api..html">How to send authorisation header to gain access to api.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Custom Fragments for host shop</h2>
+
+    <ul>
+      <li>
+        <a href="custom_fragments_for_host_shop/retrieve_a_custom_fragment_by_id.html">Retrieve a custom fragment by id</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>OpenDeliveryTimeSlots</h2>
+
+    <ul>
+      <li>
+        <a href="opendeliverytimeslots/discover_delivery_timeslots_and_associated_shops_that_will_accept_orders_now.html">Discover delivery timeslots and associated shops that will accept orders now</a>
+      </li>
+      <li>
+        <a href="opendeliverytimeslots/discover_delivery_timeslots_and_associated_shops_that_will_accept_orders_now.html">Discover delivery timeslots and associated shops that will accept orders now</a>
+      </li>
+      <li>
+        <a href="opendeliverytimeslots/discover_delivery_timeslots_and_associated_shops_that_will_accept_orders_now.html">Discover delivery timeslots and associated shops that will accept orders now</a>
+      </li>
+      <li>
+        <a href="opendeliverytimeslots/how_to_restrict_timeslots_to_those_that_delivery_to_a_specific_region.html">How to restrict timeslots to those that delivery to a specific region</a>
+      </li>
+      <li>
+        <a href="opendeliverytimeslots/when_there_are_no_matching_delivery_zones_for_the_region.html">When there are no matching delivery zones for the region</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>OpenPickupTimeSlots</h2>
+
+    <ul>
+      <li>
+        <a href="openpickuptimeslots/discover_pickup_timeslots_and_associated_shops_that_will_accept_orders_now.html">Discover pickup timeslots and associated shops that will accept orders now</a>
+      </li>
+      <li>
+        <a href="openpickuptimeslots/discover_pickup_timeslots_and_associated_shops_that_will_accept_orders_now.html">Discover pickup timeslots and associated shops that will accept orders now</a>
+      </li>
+      <li>
+        <a href="openpickuptimeslots/discover_pickup_timeslots_and_associated_shops_that_will_accept_orders_now_sorted_by_distance_to_a_coordinate,_only_shops_within_200km.html">Discover pickup timeslots and associated shops that will accept orders now sorted by distance to a coordinate, only shops within 200km</a>
+      </li>
+      <li>
+        <a href="openpickuptimeslots/discover_pickup_timeslots_and_associated_shops_that_will_accept_orders_now_sorted_by_distance_to_a_coordinate,_only_shops_within_50k.html">Discover pickup timeslots and associated shops that will accept orders now sorted by distance to a coordinate, only shops within 50k</a>
+      </li>
+      <li>
+        <a href="openpickuptimeslots/discover_pickup_timeslots_and_associated_shops_that_will_accept_orders_now_sorted_by_distance_to_a_coordinate..html">Discover pickup timeslots and associated shops that will accept orders now sorted by distance to a coordinate.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Orders Get</h2>
+
+      <p class="explanation">Returns a set of the current user identity's (or anonymous device's) orders. If user identity is signed in only their orders across all shops are returned.
+                 If no user identity is signed in then anonymous orders associated with the device_id will be returned. For anonymous requests the state parameter is ignored - only shopping orders will be returned.</p>
+
+    <ul>
+      <li>
+        <a href="orders_get/customer_interaction_data_is_returned_when_till_requires_displaying_a_challenge_window.html">Customer interaction data is returned when Till requires displaying a challenge window</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_determine_that_an_order_has_checked_out_successfully..html">How to determine that an order has checked out successfully.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_determine_that_an_order_has_failed_to_checkout_due_to_a_payment_failure.html">How to determine that an order has failed to checkout due to a payment failure</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_determine_that_an_order_is_in-doubt_due_to_an_incomplete_payment.html">How to determine that an order is in-doubt due to an incomplete payment</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_anonymous_devices_recent_shopping_for_all_shops_where_there_are_no_matching_device_orders..html">How to retrieve a anonymous devices recent shopping for all shops where there are no matching device orders.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_anonymous_devices_recent_shopping_orders_for_all_shops..html">How to retrieve a anonymous devices recent shopping orders for all shops.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_recent_order_for_a_specific_shop..html">How to retrieve a customer&#39;s recent order for a specific shop.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_recent_orders_for_all_shops_with_a_page_size_of_1..html">How to retrieve a customer&#39;s recent orders for all shops with a page size of 1.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_recent_orders_for_all_shops..html">How to retrieve a customer&#39;s recent orders for all shops.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_shopping_order_in_a_specific_shop..html">How to retrieve a customer&#39;s shopping order in a specific shop.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_shopping_order_in_a_specific_shop..html">How to retrieve a customer&#39;s shopping order in a specific shop.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_a_customer&#39;s_still_shopping_orders_for_all_shops..html">How to retrieve a customer&#39;s still shopping orders for all shops.</a>
+      </li>
+      <li>
+        <a href="orders_get/how_to_retrieve_second_page_of_a_customer&#39;s_recent_orders_for_all_shops_with_a_page_size_of_1..html">How to retrieve second page of a customer&#39;s recent orders for all shops with a page size of 1.</a>
+      </li>
+      <li>
+        <a href="orders_get/orders_may_have_coupons,_deals,_and_manual_discounts.html">Orders may have coupons, deals, and manual discounts</a>
+      </li>
+      <li>
+        <a href="orders_get/returns_404_when_order_not_found..html">Returns 404 when order not found.</a>
+      </li>
+      <li>
+        <a href="orders_get/serialized_order_that_returns_with_a_valid_courier_plan..html">Serialized order that returns with a valid courier plan.</a>
+      </li>
+      <li>
+        <a href="orders_get/serialized_order_that_returns_with_courier_plan_that_is_unable_to_deliver..html">Serialized order that returns with courier plan that is unable to deliver.</a>
+      </li>
+      <li>
+        <a href="orders_get/the_tobacco_line_has_no_image.html">The tobacco line has no image</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Payment Instruments</h2>
+
+    <ul>
+      <li>
+        <a href="payment_instruments/delete_returns_404_when_payment_instrument_not_found..html">Delete returns 404 when payment instrument not found.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/delete_with_unauthenticated_user_returns_a_401_error..html">Delete with unauthenticated user returns a 401 error.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/how_to_delete_a_payment_instrument..html">How to delete a payment instrument.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/how_to_retrieve_the_payment_methods_available_to_a_user..html">How to retrieve the payment methods available to a user.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/payment_instruments_can_only_be_retrieved_by_logged_in_users..html">Payment instruments can only be retrieved by logged in users.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/returns_404_when_payment_instrument_not_found..html">Returns 404 when payment instrument not found.</a>
+      </li>
+      <li>
+        <a href="payment_instruments/returns_the_payment_instrument_id.html">returns the payment instrument id</a>
+      </li>
+      <li>
+        <a href="payment_instruments/the_user_has_no_stored_payment_instrument.html">the user has NO stored payment instrument</a>
+      </li>
+      <li>
+        <a href="payment_instruments/the_user_has_one_stored_payment_instrument.html">the user has ONE stored payment instrument</a>
+      </li>
+      <li>
+        <a href="payment_instruments/the_user_has_two_stored_payment_instrument.html">the user has TWO stored payment instrument</a>
+      </li>
+      <li>
+        <a href="payment_instruments/unauthenticated_user_that_returns_a_401_error..html">unauthenticated user that returns a 401 error.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Payment Instruments Create</h2>
+
+      <p class="explanation">The response will be a response with type 'payment-instrument-create-responses' with either an attribute
+                 `iframe_challenge_url` which has the URL to display in an iframe to contain the banks 3ds challeng, or
+                 a relationship to the new `payment_instrument` if it is created (it will be included)</p>
+
+    <ul>
+      <li>
+        <a href="payment_instruments_create/payment_instruments_can_only_be_created_by_logged_in_users..html">Payment instruments can only be created by logged in users.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create/with_a_challenge_response..html">With a challenge response.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create/with_a_failed_tokenisation..html">With a failed tokenisation.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create/with_a_successful_tokenisation..html">With a successful tokenisation.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create/without_parameters..html">Without parameters.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Ping</h2>
+
+    <ul>
+      <li>
+        <a href="ping/check_if_the_api_is_up.html">Check if the Api is up</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Regions</h2>
+
+    <ul>
+      <li>
+        <a href="regions/find_regions_by_postcode_prefix.html">Find regions by postcode prefix</a>
+      </li>
+      <li>
+        <a href="regions/find_regions_by_suburb_prefix.html">Find regions by suburb prefix</a>
+      </li>
+      <li>
+        <a href="regions/must_supply_query_parameter.html">Must supply query parameter</a>
+      </li>
+      <li>
+        <a href="regions/query_must_have_at_least_two_non-whitespace_characters.html">Query must have at least two non-whitespace characters</a>
+      </li>
+      <li>
+        <a href="regions/returns_partial_matches_for_both_suburb_and_postcode.html">Returns partial matches for both suburb and postcode</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Retail Competitions / Brand First</h2>
+
+    <ul>
+      <li>
+        <a href="retail_competitions__brand_first/a_404_is_returned_when_a_brand_first_competition_is_set_to_run_in_the_past.html">A 404 is returned when  a brand first competition is set to run in the past</a>
+      </li>
+      <li>
+        <a href="retail_competitions__brand_first/a_404_is_returned_when_a_brand_first_competition_is_set_to_run_in_the_future.html">A 404 is returned when a brand first competition is set to run in the future</a>
+      </li>
+      <li>
+        <a href="retail_competitions__brand_first/a_404_is_returned_when_no_brand_first_competition_is_running.html">A 404 is returned when no brand first competition is running</a>
+      </li>
+      <li>
+        <a href="retail_competitions__brand_first/the_current_brand_first_competition_is_returned.html">The current brand first competition is returned</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Retail Competitions / Retail Competition Entry</h2>
+
+    <ul>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/an_error_is_returned_when_attempting_to_enter_a_competition_not_configured_for_retail_entry.html">An error is returned when attempting to enter a competition not configured for retail entry</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/an_error_is_returned_when_attempting_to_entry_an_unknown_competition.html">An error is returned when attempting to entry an unknown competition</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/errors_are_returned_when_attempting_to_enter_a_competition_without_required_attributes.html">Errors are returned when attempting to enter a competition without required attributes</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_is_successfully_entered.html">Retail entry competition is successfully entered</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_badly_formatted_birth_date_(e.g._not_a_date).html">Retail entry competition returns an error for a badly formatted birth date (e.g. &quot;not a date&quot;)</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_badly_formatted_birth_date_(e.g._1980-14-45).html">Retail entry competition returns an error for a badly formatted birth date (e.g. 1980-14-45)</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_badly_formatted_email_address.html">Retail entry competition returns an error for a badly formatted email address</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_badly_formatted_phone_number.html">Retail entry competition returns an error for a badly formatted phone number</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_badly_formatted_post_code.html">Retail entry competition returns an error for a badly formatted post code</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_birth_date_in_the_future.html">Retail entry competition returns an error for a birth date in the future</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_birth_date_too_old.html">Retail entry competition returns an error for a birth date too old</a>
+      </li>
+      <li>
+        <a href="retail_competitions__retail_competition_entry/retail_entry_competition_returns_an_error_for_a_birth_date_too_young.html">Retail entry competition returns an error for a birth date too young</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Session</h2>
+
+    <ul>
+      <li>
+        <a href="session/blocked_by_rack_attack.html">Blocked by Rack Attack</a>
+      </li>
+      <li>
+        <a href="session/blocked_by_rack_attack.html">Blocked by Rack Attack</a>
+      </li>
+      <li>
+        <a href="session/can_be_used_in_another_shop_that_shares_the_same_identity_domain..html">Can be used in another shop that shares the same identity domain.</a>
+      </li>
+      <li>
+        <a href="session/error_if_email_is_unknown..html">Error if email is unknown.</a>
+      </li>
+      <li>
+        <a href="session/error_if_password_is_incorrect..html">Error if password is incorrect.</a>
+      </li>
+      <li>
+        <a href="session/high_request_count_for_same_email_address.html">High request count for same email address</a>
+      </li>
+      <li>
+        <a href="session/high_request_count_hits_rate_limit.html">High request count hits rate limit</a>
+      </li>
+      <li>
+        <a href="session/high_request_count_hits_rate_limit.html">High request count hits rate limit</a>
+      </li>
+      <li>
+        <a href="session/how_to_create_a_new_session..html">How to create a new session.</a>
+      </li>
+      <li>
+        <a href="session/how_to_get_a_jwt_that_can_be_used_to_transfer_the_user_session_to_a_browser.html">How to get a JWT that can be used to transfer the user session to a browser</a>
+      </li>
+      <li>
+        <a href="session/how_to_log_out_session.html">How to log out session</a>
+      </li>
+      <li>
+        <a href="session/how_to_refresh_session_token.html">How to refresh session token</a>
+      </li>
+      <li>
+        <a href="session/log_out_returns_401_when_already_logged_out.html">Log out returns 401 when already logged out</a>
+      </li>
+      <li>
+        <a href="session/log_out_returns_401_when_session_token_is_invalid.html">Log out returns 401 when session token is invalid</a>
+      </li>
+      <li>
+        <a href="session/refresh_token_returns_422_if_session_id_is_wrong.html">Refresh token returns 422 if session id is wrong</a>
+      </li>
+      <li>
+        <a href="session/refresh_token_returns_422_if_session_secret_is_wrong.html">Refresh token returns 422 if session secret is wrong</a>
+      </li>
+      <li>
+        <a href="session/refresh_token_returns_422_when_logged_out_already.html">Refresh token returns 422 when logged out already</a>
+      </li>
+      <li>
+        <a href="session/requesting_a_transfer_jwt_fails_when_the_specified_shop_id_does_not_share_a_user_identity_domain.html">Requesting a transfer JWT fails when the specified shop_id does not share a user identity domain</a>
+      </li>
+      <li>
+        <a href="session/requesting_a_transfer_jwt_fails_when_the_specified_shop_id_is_already_included_in_the_mobile_application.html">Requesting a transfer JWT fails when the specified shop_id is already included in the mobile application</a>
+      </li>
+      <li>
+        <a href="session/requesting_a_transfer_jwt_fails_when_user_has_no_session.html">Requesting a transfer JWT fails when user has no session</a>
+      </li>
+      <li>
+        <a href="session/returns_401_if_used_with_a_shop_with_a_different_user_identity_domain..html">Returns 401 if used with a shop with a different user identity domain.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / About Menu Items</h2>
+
+    <ul>
+      <li>
+        <a href="shop__about_menu_items/retrieve_the_list_of_about_menu_items_with_a_liquor_licence_in_host.html">Retrieve the list of about menu items with a liquor licence in host</a>
+      </li>
+      <li>
+        <a href="shop__about_menu_items/retrieve_the_list_of_about_menu_items_with_a_liquor_notice.html">Retrieve the list of about menu items with a liquor notice</a>
+      </li>
+      <li>
+        <a href="shop__about_menu_items/retrieve_the_list_of_about_menu_items_without_a_liquor_licence.html">Retrieve the list of about menu items without a liquor licence</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Campaigns</h2>
+
+    <ul>
+      <li>
+        <a href="shop__campaigns/how_to_retrieve_the_campaigns_for_a_shop..html">How to retrieve the campaigns for a shop.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Competitions</h2>
+
+    <ul>
+      <li>
+        <a href="shop__competitions/an_error_is_returned_when_asking_for_competitions_for_an_order_that_is_still_checking_out.html">An error is returned when asking for competitions for an order that is still checking out</a>
+      </li>
+      <li>
+        <a href="shop__competitions/an_error_is_returned_when_asking_for_competitions_for_an_unknown_order_id.html">An error is returned when asking for competitions for an unknown order id</a>
+      </li>
+      <li>
+        <a href="shop__competitions/an_error_is_returned_when_attempting_to_entry_an_unknown_competition.html">An error is returned when attempting to entry an unknown competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/entering_an_unknown_competition_with_an_unknown_order_id_will_return_errors.html">Entering an unknown competition with an unknown order id will return errors</a>
+      </li>
+      <li>
+        <a href="shop__competitions/entering_an_unknown_competition_with_an_unknown_order_id_will_return_errors.html">Entering an unknown competition with an unknown order id will return errors</a>
+      </li>
+      <li>
+        <a href="shop__competitions/entering_an_unknown_competition_with_an_unknown_order_id_will_return_errors.html">Entering an unknown competition with an unknown order id will return errors</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_enter_a_competition.html">How to enter a competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_enter_a_competition.html">How to enter a competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_enter_a_competition.html">How to enter a competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_enter_a_competition.html">How to enter a competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_retrieve_a_competition.html">How to retrieve a competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_retrieve_competitions_for_an_order_(multiple_returned).html">How to retrieve competitions for an order (Multiple returned)</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_retrieve_competitions_for_an_order_(none_returned).html">How to retrieve competitions for an order (None returned)</a>
+      </li>
+      <li>
+        <a href="shop__competitions/how_to_retrieve_competitions_for_an_order_(one_returned).html">How to retrieve competitions for an order (One returned)</a>
+      </li>
+      <li>
+        <a href="shop__competitions/querying_for_an_unknown_order_will_return_an_error.html">Querying for an unknown order will return an error</a>
+      </li>
+      <li>
+        <a href="shop__competitions/request_requires_user_with_unknown_competition.html">Request requires user with unknown competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/request_requires_user_with_unknown_competition.html">Request requires user with unknown competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_is_successfully_entered.html">Retail entry competition is successfully entered</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_badly_formatted_birth_date.html">Retail entry competition returns an error for a badly formatted birth date</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_badly_formatted_birth_date.html">Retail entry competition returns an error for a badly formatted birth date</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_badly_formatted_email_address.html">Retail entry competition returns an error for a badly formatted email address</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_badly_formatted_phone_number.html">Retail entry competition returns an error for a badly formatted phone number</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_badly_formatted_post_code.html">Retail entry competition returns an error for a badly formatted post code</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_birth_date_in_the_future.html">Retail entry competition returns an error for a birth date in the future</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_birth_date_too_old.html">Retail entry competition returns an error for a birth date too old</a>
+      </li>
+      <li>
+        <a href="shop__competitions/retail_entry_competition_returns_an_error_for_a_birth_date_too_young.html">Retail entry competition returns an error for a birth date too young</a>
+      </li>
+      <li>
+        <a href="shop__competitions/returns_an_error_when_entering_a_competition_order_is_not_eligible_for_the_competition.html">Returns an error when entering a competition order is not eligible for the competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/returns_an_error_when_entering_a_competition_order_is_not_eligible_for_the_competition.html">Returns an error when entering a competition order is not eligible for the competition</a>
+      </li>
+      <li>
+        <a href="shop__competitions/returns_an_error_when_when_entering_competition_when_order_is_not_checked_out.html">Returns an error when when entering competition when order is not checked out</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Custom Fragments</h2>
+
+    <ul>
+      <li>
+        <a href="shop__custom_fragments/retrieve_a_custom_fragment_by_id.html">Retrieve a custom fragment by id</a>
+      </li>
+      <li>
+        <a href="shop__custom_fragments/retrieve_a_custom_fragment_by_id.html">Retrieve a custom fragment by id</a>
+      </li>
+      <li>
+        <a href="shop__custom_fragments/returns_404_when_custom_fragment_not_found..html">Returns 404 when custom fragment not found.</a>
+      </li>
+      <li>
+        <a href="shop__custom_fragments/returns_404_when_custom_fragment_not_found..html">Returns 404 when custom fragment not found.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Deals</h2>
+
+    <ul>
+      <li>
+        <a href="shop__deals/retrieve_a_deal_by_id..html">Retrieve a deal by id.</a>
+      </li>
+      <li>
+        <a href="shop__deals/retrieve_a_multi_set_deal_by_id..html">Retrieve a multi set deal by id.</a>
+      </li>
+      <li>
+        <a href="shop__deals/returns_404_when_deal_is_not_active..html">Returns 404 when deal is not active.</a>
+      </li>
+      <li>
+        <a href="shop__deals/returns_404_when_page_is_not_published..html">Returns 404 when page is not published.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Departments</h2>
+
+    <ul>
+      <li>
+        <a href="shop__departments/departments_are_only_included_if_they_have_available_products..html">Departments are only included if they have available products.</a>
+      </li>
+      <li>
+        <a href="shop__departments/how_to_retrieve_the_department_tree_for_a_shop..html">How to retrieve the department tree for a shop.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Facet Groups</h2>
+
+    <ul>
+      <li>
+        <a href="shop__facet_groups/how_to_restrict_facets_for_a_particular_line_search.html">How to restrict facets for a particular line search</a>
+      </li>
+      <li>
+        <a href="shop__facet_groups/how_to_restrict_facets_for_a_particular_line_search.html">How to restrict facets for a particular line search</a>
+      </li>
+      <li>
+        <a href="shop__facet_groups/how_to_retrieve_a_subset_of_facets_for_a_line_search_within_a_shop.html">How to retrieve a subset of facets for a line search within a shop</a>
+      </li>
+      <li>
+        <a href="shop__facet_groups/how_to_retrieve_all_facets_for_a_line_search_within_a_shop.html">How to retrieve all facets for a line search within a shop</a>
+      </li>
+      <li>
+        <a href="shop__facet_groups/how_to_retrieve_only_brand_name_facets_for_a_line_search_within_a_shop.html">How to retrieve only brand_name  facets for a line search within a shop</a>
+      </li>
+      <li>
+        <a href="shop__facet_groups/retrieving_facets_without_restricting_will_return_an_error.html">Retrieving facets without restricting will return an error</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Lines</h2>
+
+    <ul>
+      <li>
+        <a href="shop__lines/a_list_of_campaign_ids_are_returned_if_there_are_any_campaigns_to_display_for_this_search..html">A list of campaign ids are returned if there are any campaigns to display for this search.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_order_a_search_with_a_sort_option.html">How to order a search with a sort option</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_a_search_with_facets.html">How to restrict a search with facets</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_to_a_department..html">How to restrict search to a department.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_to_lines_between_two_prices..html">How to restrict search to lines between two prices.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_to_lines_of_at_least_a_minimum_price..html">How to restrict search to lines of at least a minimum price.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_to_lines_of_at_most_a_maximum_price..html">How to restrict search to lines of at most a maximum price.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_to_specials..html">How to restrict search to specials.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_restrict_search_with_keywords..html">How to restrict search with keywords.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_retreive_the_products_for_promotion_at_checkout..html">How to retreive the products for promotion at checkout.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_retrieve_the_products_for_a_campaign.html">How to retrieve the products for a campaign</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_retrieve_the_products_for_a_competition.html">How to retrieve the products for a competition</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_search_by_product_identifier_(gtin).html">How to search by product identifier (GTIN)</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_search_by_product_ids_(shared_id_across_all_shops).html">How to search by product ids (Shared id across all shops)</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_search_for_lines_in_a_deal_set..html">How to search for lines in a deal set.</a>
+      </li>
+      <li>
+        <a href="shop__lines/how_to_search_for_lines_within_a_shop..html">How to search for lines within a shop.</a>
+      </li>
+      <li>
+        <a href="shop__lines/incorrectly_spelled_words_trigger_a_partial_word_match.html">Incorrectly spelled words trigger a partial word match</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_has_the_shop_missing_product_image_link_when_it_has_no_product_image_or_producer_logo.html">Line has the shop missing product image link when it has no product image or producer logo</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_is_excluded_if_any_all_search_parameters_is_not_satisfied..html">Line is excluded if any all search parameters is not satisfied.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_is_included_when_all_search_parameters_are_satisfied..html">Line is included when all search parameters are satisfied.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_is_returned_with_deal_sticker_when_deal_applies_to_line..html">Line is returned with deal sticker when deal applies to line.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_is_returned_with_tag_sticker..html">Line is returned with tag sticker.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_that_is_on_special_has_a_special_sticker_when_a_savings_sticker_is_not_allowed..html">Line that is on special has a special sticker when a savings sticker is not allowed.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_that_is_on_special_usually_has_a_savings_sticker..html">Line that is on special usually has a savings sticker.</a>
+      </li>
+      <li>
+        <a href="shop__lines/line_that_is_on_special,_has_tag_and_is_in_a_deal_will_have_tag_and_deal_stickers..html">Line that is on special, has tag and is in a deal will have tag and deal stickers.</a>
+      </li>
+      <li>
+        <a href="shop__lines/retrieving_line_by_id..html">Retrieving line by id.</a>
+      </li>
+      <li>
+        <a href="shop__lines/retrieving_line_by_product_id..html">Retrieving line by product id.</a>
+      </li>
+      <li>
+        <a href="shop__lines/retrieving_line_by_slug..html">Retrieving line by slug.</a>
+      </li>
+      <li>
+        <a href="shop__lines/returned_line_has_cheaper_price_from_second_price_level.html">Returned line has cheaper price from second price level</a>
+      </li>
+      <li>
+        <a href="shop__lines/returned_line_has_standard_price_if_anonymous_user.html">Returned line has standard price if anonymous user</a>
+      </li>
+      <li>
+        <a href="shop__lines/returned_line_has_standard_price_if_user_doesnt_have_second_price_level.html">Returned line has standard price if user doesnt have second price level</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_404_when_line_is_not_available_in_shopfront..html">Returns 404 when line is not available in shopfront.</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_404_when_line_not_found..html">Returns 404 when line not found.</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_422_if_department_does_not_exist..html">Returns 422 if department does not exist.</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_422_if_embedded_search_id_is_unknown..html">Returns 422 if embedded search id is unknown.</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_422_if_page_number_exceeds_limit.html">Returns 422 if page number exceeds limit</a>
+      </li>
+      <li>
+        <a href="shop__lines/returns_422_if_page_size_exceeds_limit.html">Returns 422 if page size exceeds limit</a>
+      </li>
+      <li>
+        <a href="shop__lines/tag_sticker_contains_custom_background_colour_for_that_tag..html">Tag sticker contains custom background colour for that tag.</a>
+      </li>
+      <li>
+        <a href="shop__lines/the_first_page_can_be_retrieved_by_specifying_page_1..html">The first page can be retrieved by specifying page 1.</a>
+      </li>
+      <li>
+        <a href="shop__lines/the_second_page_can_be_retrieved_by_specifying_page_2_and_only_has_one_line..html">The second page can be retrieved by specifying page 2 and only has one line.</a>
+      </li>
+      <li>
+        <a href="shop__lines/the_third_page_is_empty.html">The third page is empty</a>
+      </li>
+      <li>
+        <a href="shop__lines/tobacco_lines_not_shown_when_user_is_under_18.html">Tobacco lines not shown when user is under 18</a>
+      </li>
+      <li>
+        <a href="shop__lines/tobacco_lines_not_shown_without_a_session.html">Tobacco lines not shown without a session</a>
+      </li>
+      <li>
+        <a href="shop__lines/unknown_deal_sets_return_no_results.html">Unknown deal sets return no results</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / OpenDeliveryTimeSlots</h2>
+
+    <ul>
+      <li>
+        <a href="shop__opendeliverytimeslots/discover_delivery_timeslots_for_this_shop_that_will_accept_orders_now.html">Discover delivery timeslots for this shop that will accept orders now</a>
+      </li>
+      <li>
+        <a href="shop__opendeliverytimeslots/discover_delivery_timeslots_for_this_shop_that_will_accept_orders_now_when_the_deliveries_are_closed.html">Discover delivery timeslots for this shop that will accept orders now when the deliveries are closed</a>
+      </li>
+      <li>
+        <a href="shop__opendeliverytimeslots/discover_delivery_timeslots_for_this_shop_that_will_accept_orders_now_when_the_deliveries_are_closed_by_closure_feature.html">Discover delivery timeslots for this shop that will accept orders now when the deliveries are closed by closure feature</a>
+      </li>
+      <li>
+        <a href="shop__opendeliverytimeslots/how_to_restrict_timeslots_to_those_that_delivery_to_a_specific_region.html">How to restrict timeslots to those that delivery to a specific region</a>
+      </li>
+      <li>
+        <a href="shop__opendeliverytimeslots/when_there_are_no_matching_delivery_zones_for_the_region.html">When there are no matching delivery zones for the region</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / OpenPickupTimeSlots</h2>
+
+    <ul>
+      <li>
+        <a href="shop__openpickuptimeslots/discover_pickup_timeslots_for_this_shop_that_will_accept_orders_now.html">Discover pickup timeslots for this shop that will accept orders now</a>
+      </li>
+      <li>
+        <a href="shop__openpickuptimeslots/discover_pickup_timeslots_for_this_shop_that_will_accept_orders_now_sorted_by_distance_to_a_coordinate..html">Discover pickup timeslots for this shop that will accept orders now sorted by distance to a coordinate.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders / Checkout</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders__checkout/checks_out_the_order.html">Checks out the order</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/checks_out_the_order_while_providing_browser_information.html">Checks out the order while providing browser information</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/checks_out_the_order_with_till_redirect_urls.html">Checks out the order with Till redirect URLs</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_401_unless_authorization_header_has_a_valid_session.html">Returns 401 unless authorization header has a valid session</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_billing_address_is_not_supplied.html">Returns 422 if billing address is not supplied</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_only_some_redirect_urls_are_provided.html">Returns 422 if only some redirect URLs are provided</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_order_contains_no_lines.html">Returns 422 if order contains no lines</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_order_contains_unavailable_line.html">Returns 422 if order contains unavailable line</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_order_delivery_information_is_incomplete.html">Returns 422 if order delivery information is incomplete</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_order_does_not_meet_the_minimum_checkout_value.html">Returns 422 if order does not meet the minimum checkout value</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_order_parameter_is_not_supplied.html">Returns 422 if order parameter is not supplied</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders / Coupon</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders__coupon/removing_a_coupon_code.html">Removing a coupon code</a>
+      </li>
+      <li>
+        <a href="shop__orders__coupon/user_updates_the_coupon_code_on_an_order_with_a_valid_coupon.html">User updates the coupon code on an order with a valid coupon</a>
+      </li>
+      <li>
+        <a href="shop__orders__coupon/user_updates_the_coupon_code_on_an_order_with_an_invalid_coupon.html">User updates the coupon code on an order with an invalid coupon</a>
+      </li>
+      <li>
+        <a href="shop__orders__coupon/user_updates_the_coupon_code_on_an_order_with_future_date.html">User updates the coupon code on an order with future date</a>
+      </li>
+      <li>
+        <a href="shop__orders__coupon/will_return_coupon_details_when_order_has_a_coupon.html">Will return coupon details when order has a coupon</a>
+      </li>
+      <li>
+        <a href="shop__orders__coupon/will_return_no_coupon_details_when_order_does_not_have_a_coupon.html">Will return no coupon details when order does not have a coupon</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders / Delivery</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders__delivery/an_error_is_returned_for_closed_timeslots.html">An error is returned for closed timeslots</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/an_error_is_returned_if_instructions_are_provided_for_a_pickup_timeslot.html">An error is returned if instructions are provided for a pickup timeslot</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/an_error_is_returned_when_supplying_a_delivery_address_for_a_pickup_timeslot.html">An error is returned when supplying a delivery address for a pickup timeslot</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/an_unknown_time_slot_id_returns_an_error.html">An unknown time_slot_id returns an error</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/delivery_address_is_available_for_delivery_order.html">Delivery address is available for delivery order</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/delivery_address_is_required_for_deliveries.html">Delivery address is required for deliveries</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/delivery_instructions_provided.html">Delivery instructions provided</a>
+      </li>
+      <li>
+        <a href="shop__orders__delivery/pickup_time_slots_only_require_the_time_slot_id.html">Pickup time slots only require the time slot id</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders / Lines</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders__lines/adding_another_line_to_a_basket.html">Adding another line to a basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/adding_another_line_to_a_basket.html">Adding another line to a basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/adding_another_line_to_a_basket.html">Adding another line to a basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/adding_multiple_lines_simultaneously.html">Adding multiple lines simultaneously</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/adding_multiple_lines_simultaneously.html">Adding multiple lines simultaneously</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_an_unavailable_product.html">Attempting to add an unavailable product</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_an_unavailable_product.html">Attempting to add an unavailable product</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_an_unknown_product.html">Attempting to add an unknown product</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_an_unknown_product.html">Attempting to add an unknown product</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_with_no_quantity.html">Attempting to add with no quantity</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_with_no_quantity.html">Attempting to add with no quantity</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_with_positive_quantity.html">Attempting to add with positive quantity</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/attempting_to_add_with_positive_quantity.html">Attempting to add with positive quantity</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/creating_a_new_shopping_order_for_a_signed_in_user_by_adding_a_product_to_the_basket.html">Creating a new shopping order for a signed in user by adding a product to the basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/creating_a_new_shopping_order_for_a_signed_in_user_by_adding_a_product_to_the_basket.html">Creating a new shopping order for a signed in user by adding a product to the basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/discounts_due_to_account_credit_will_be_included.html">Discounts due to account credit will be included</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/discounts_due_to_account_credit_will_be_included.html">Discounts due to account credit will be included</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/discounts_due_to_coupons_are_included.html">Discounts due to coupons are included</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/discounts_due_to_coupons_are_included.html">Discounts due to coupons are included</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/removing_a_line_from_a_shopping_basket.html">Removing a line from a shopping basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/removing_a_line_from_a_shopping_basket.html">Removing a line from a shopping basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/removing_a_line_from_a_shopping_basket.html">Removing a line from a shopping basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/removing_a_line_from_a_shopping_basket.html">Removing a line from a shopping basket</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/update_basket_contents.html">Update basket contents</a>
+      </li>
+      <li>
+        <a href="shop__orders__lines/update_basket_contents.html">Update basket contents</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders / Validate</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders__validate/returns_401_unless_authorization_header_has_a_valid_session.html">Returns 401 unless authorization header has a valid session</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_billing_address_is_not_supplied.html">Returns 422 if billing address is not supplied</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_order_contains_no_lines.html">Returns 422 if order contains no lines</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_order_contains_unavailable_line.html">Returns 422 if order contains unavailable line</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_order_delivery_information_is_incomplete.html">Returns 422 if order delivery information is incomplete</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_order_does_not_meet_the_minimum_checkout_value.html">Returns 422 if order does not meet the minimum checkout value</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/validate_the_order_and_return_200.html">Validate the order and return 200</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/validates_out_the_order.html">Validates out the order</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/validates_out_the_order.html">Validates out the order</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/validates_out_the_order_without_a_payment_instrument.html">Validates out the order without a payment instrument</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/validates_out_the_order_without_a_payment_instrument_when_multiple_payment_methods_configured.html">Validates out the order without a payment instrument when multiple payment methods configured</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders notes update</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders_notes_update/user_updates_the_notes_on_an_order.html">User updates the notes on an order</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Pages</h2>
+
+    <ul>
+      <li>
+        <a href="shop__pages/retrieve_a_hosted_page_by_id..html">Retrieve a hosted page by id.</a>
+      </li>
+      <li>
+        <a href="shop__pages/retrieve_a_page_by_id..html">Retrieve a page by id.</a>
+      </li>
+      <li>
+        <a href="shop__pages/returns_404_when_page_is_not_published..html">Returns 404 when page is not published.</a>
+      </li>
+      <li>
+        <a href="shop__pages/returns_404_when_page_not_found..html">Returns 404 when page not found.</a>
+      </li>
+      <li>
+        <a href="shop__pages/retrieves_a_404.html">retrieves a 404</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Session create with token</h2>
+
+    <ul>
+      <li>
+        <a href="shop__session_create_with_token/new_password_reset_token_genarate.html">New password reset token genarate</a>
+      </li>
+      <li>
+        <a href="shop__session_create_with_token/when_password_reset_token_has_expired.html">when password reset token has expired</a>
+      </li>
+      <li>
+        <a href="shop__session_create_with_token/when_there_is_no_matching_password_reset_token.html">when there is no matching password reset token</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Sort Options</h2>
+
+    <ul>
+      <li>
+        <a href="shop__sort_options/how_to_retrieve_the_sort_options_for_a_line_search_within_a_shop.html">How to retrieve the sort options for a line search within a shop</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / User / Password Reset</h2>
+
+    <ul>
+      <li>
+        <a href="shop__user__password_reset/how_to_initiate_a_password_reset_for_a_user..html">How to initiate a password reset for a user.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_if_email_address_belongs_to_a_super_user..html">Returns 422 if email address belongs to a super user.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_if_reset_url_template_doesn&#39;t_have_{{token}}..html">Returns 422 if reset url template doesn&#39;t have {{token}}.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_if_reset_url_template_doesn&#39;t_have_{{token}}..html">Returns 422 if reset url template doesn&#39;t have {{token}}.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_if_reset_url_template_is_missing..html">Returns 422 if reset url template is missing.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_if_reset_url_template_is_not_https..html">Returns 422 if reset url template is not https.</a>
+      </li>
+      <li>
+        <a href="shop__user__password_reset/returns_422_when_the_email_address_is_unknown..html">Returns 422 when the email address is unknown.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / User / Payment Services</h2>
+
+    <ul>
+      <li>
+        <a href="shop__user__payment_services/how_to_create_tokenization_data_to_include_when_tokenizing_a_credit_card..html">How to create tokenization data to include when tokenizing a credit card.</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/how_to_retrieve_the_payment_service_available_to_a_user..html">How to retrieve the payment service available to a user.</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/if_the_payment_method_is_configured_to_exclude_smart_shopping_v2_there_will_be_no_results.html">If the payment method is configured to exclude smart shopping v2 there will be no results</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/if_the_paystream_payment_method_is_badly_configured_it_may_be_returned!!!.html">If the paystream payment method is badly configured it may be returned!!!</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/returns_401_unless_authorization_header_has_a_valid_session..html">Returns 401 unless authorization header has a valid session.</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/returns_401_unless_authorization_header_has_a_valid_session..html">Returns 401 unless authorization header has a valid session.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Welcome e-mails</h2>
+
+      <p class="explanation">Using a page visit as an example - visiting a store as a user identity that hasn't previously visited would traditionally send a welcome e-mail. This test checks that no mails have been sent</p>
+
+    <ul>
+      <li>
+        <a href="shop__welcome_e-mails/visit_a_shop_page_as_a_user_identity_that_hasn&#39;t_previously_visited_the_shop.html">Visit a shop page as a user identity that hasn&#39;t previously visited the shop</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shopping Lists</h2>
+
+    <ul>
+      <li>
+        <a href="shopping_lists/a_shopping_list_will_be_returned_when_requested.html">A shopping list will be returned when requested</a>
+      </li>
+      <li>
+        <a href="shopping_lists/creating_a_shopping_list_with_a_blank_name_will_return_an_error.html">Creating a shopping list with a blank name will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists/creating_a_shopping_list_without_a_user_session_will_return_a_401.html">Creating a shopping list without a user session will return a 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists/deleting_a_shopping_list.html">Deleting a shopping list</a>
+      </li>
+      <li>
+        <a href="shopping_lists/deleting_a_shopping_list_for_a_different_user_will_return_a_404.html">Deleting a shopping list for a different user will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/deleting_a_shopping_list_without_a_user_session_will_return_a_401.html">Deleting a shopping list without a user session will return a 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists/deleting_an_unknown_shopping_list_will_return_a_404.html">Deleting an unknown shopping list will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/requesting_a_shopping_list_for_a_different_user_will_return_a_404.html">Requesting a shopping list for a different user will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/requesting_a_specific_shopping_list_with_no_user_session_returns_a_http_401.html">Requesting a specific shopping list with no user session returns a HTTP 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists/requesting_an_unknown_shopping_list_with_no_user_session_returns_a_http_404.html">Requesting an unknown shopping list with no user session returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/requesting_shopping_lists_with_no_user_session_returns_a_http_401.html">Requesting shopping lists with no user session returns a HTTP 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists/supply_the_name_to_create_a_new_shopping_list.html">Supply the name to create a new shopping list</a>
+      </li>
+      <li>
+        <a href="shopping_lists/updating_a_shopping_list_for_a_different_user_will_return_a_404.html">Updating a shopping list for a different user will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/updating_a_shopping_list_with_a_blank_name_will_return_an_error.html">Updating a shopping list with a blank name will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists/updating_a_shopping_list_with_a_valid_name_will_return_the_updated_list.html">Updating a shopping list with a valid name will return the updated list</a>
+      </li>
+      <li>
+        <a href="shopping_lists/updating_a_shopping_list_without_a_user_session_will_return_a_401.html">Updating a shopping list without a user session will return a 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists/updating_an_unknown_shopping_list_will_return_a_404.html">Updating an unknown shopping list will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists/user_with_a_multiple_lists_will_only_return_all_shopping_lists.html">User with a multiple lists will only return all shopping lists</a>
+      </li>
+      <li>
+        <a href="shopping_lists/user_with_a_single_list_will_only_return_one_shopping_list.html">User with a single list will only return one shopping list</a>
+      </li>
+      <li>
+        <a href="shopping_lists/when_user_has_no_shopping_lists_will_return_an_empty_array.html">When user has no shopping lists will return an empty array</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shopping Lists / Entries</h2>
+
+    <ul>
+      <li>
+        <a href="shopping_lists__entries/adding_a_product_that_is_already_in_the_shopping_list_will_return_an_error.html">Adding a product that is already in the shopping list will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/adding_a_product_to_a_shopping_list_that_is_full_will_return_an_error.html">Adding a product to a shopping list that is full will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/adding_an_entry_to_a_shopping_list_without_a_user_session_will_return_a_401.html">Adding an entry to a shopping list without a user session will return a 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/adding_an_entry_to_an_unknown_shopping_list_returns_a_http_404.html">Adding an entry to an unknown shopping list returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/adding_an_entry_to_an_unknown_shopping_list_returns_a_http_404.html">Adding an entry to an unknown shopping list returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/deleting_an_entry_to_a_shopping_list_without_a_user_session_will_return_a_401.html">Deleting an entry to a shopping list without a user session will return a 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/deleting_an_entry_to_an_different_users_shopping_list_returns_a_http_404.html">Deleting an entry to an different users shopping list returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/deleting_an_entry_to_an_unknown_shopping_list_returns_a_http_404.html">Deleting an entry to an unknown shopping list returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/deleting_an_entry_to_an_unknown_shopping_list_returns_a_http_404.html">Deleting an entry to an unknown shopping list returns a HTTP 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/deleting_an_entry_will_remove_it_from_the_shopping_list._this_must_use_the_id_for_the_shopping_list_entry_and_not_the_product_id..html">Deleting an entry will remove it from the shopping list. This must use the id for the shopping list entry and not the product id.</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/requesting_entries_for_a_shopping_list_will_return_all_entries_and_the_shopping_list.html">Requesting entries for a shopping list will return all entries and the shopping list</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/requesting_entries_for_a_shopping_list_will_return_all_entries_and_the_shopping_list.html">Requesting entries for a shopping list will return all entries and the shopping list</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/requesting_entries_for_an_unknown_shopping_list_will_return_a_404.html">Requesting entries for an unknown shopping list will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/requesting_entries_for_an_unknown_shopping_list_will_return_a_404.html">Requesting entries for an unknown shopping list will return a 404</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/requesting_shopping_lists_with_no_user_session_returns_a_http_401.html">Requesting shopping lists with no user session returns a HTTP 401</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/sending_an_unknown_product_id_will_return_an_error.html">Sending an unknown product id will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/sending_no_product_id_will_return_an_error.html">Sending no product id will return an error</a>
+      </li>
+      <li>
+        <a href="shopping_lists__entries/you_can_add_an_entry_to_a_shopping_list_by_supplying_the_product_id.html">You can add an entry to a shopping list by supplying the product_id</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shops</h2>
+
+    <ul>
+      <li>
+        <a href="shops/how_to_retrieve_list_of_all_shops.html">How to retrieve list of all shops</a>
+      </li>
+      <li>
+        <a href="shops/matches_a_shop.html">Matches a shop</a>
+      </li>
+      <li>
+        <a href="shops/request_includes_opening_hours_when_configured.html">Request includes opening hours when configured</a>
+      </li>
+      <li>
+        <a href="shops/returns_nothing_if_invalid_postcode_and_locality_queried.html">Returns nothing if invalid postcode and locality queried</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_locality_and_postcode_will_return_shops_that_deliver_to_that_location.html">Searching for a locality and postcode will return shops that deliver to that location</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_locality_or_postcode_that_no_shops_deliver_too_will_return_no_shops.html">Searching for a locality or postcode that no shops deliver too will return no shops</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_pickup_will_return_all_shops_within_a_max_distance._shops_will_be_sorted_by_how_close_they_are..html">Searching for a pickup will return all shops within a max distance. Shops will be sorted by how close they are.</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_unknown_locality_and_postcode_will_return_no_shops.html">Searching for a unknown locality and postcode will return no shops</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_unknown_store_number_will_return_no_shops.html">Searching for a unknown store number will return no shops</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>User Identity / Email Check</h2>
+
+      <p class="explanation">Checks the system to see if an email address should sign in or sign up</p>
+
+    <ul>
+      <li>
+        <a href="user_identity__email_check/when_email_is_matched_to_existing_user_identity_(case_insensitive)..html">When email is matched to existing user identity (case insensitive).</a>
+      </li>
+      <li>
+        <a href="user_identity__email_check/when_email_is_matched_to_existing_user_identity..html">When email is matched to existing user identity.</a>
+      </li>
+      <li>
+        <a href="user_identity__email_check/when_email_is_not_matched_to_an_existing_user_identity..html">When email is not matched to an existing user identity.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>User Identity Delete</h2>
+
+    <ul>
+      <li>
+        <a href="user_identity_delete/user_identities_cannot_be_deleted_without_a_valid_session_token.html">User identities cannot be deleted without a valid session token</a>
+      </li>
+      <li>
+        <a href="user_identity_delete/user_identity_is_deleted.html">User identity is deleted</a>
+      </li>
+      <li>
+        <a href="user_identity_delete/user_is_an_admin_user_and_have_orders_in_flight.html">User is an admin user and have orders in flight</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>User Identity Get</h2>
+
+    <ul>
+      <li>
+        <a href="user_identity_get/user_identity_details_are_returned_for_signed_in_user.html">User identity details are returned for signed in user</a>
+      </li>
+      <li>
+        <a href="user_identity_get/user_identity_details_can_only_be_returned_when_signed_in..html">User identity details can only be returned when signed in.</a>
+      </li>
+      <li>
+        <a href="user_identity_get/user&#39;s_identity_billing_address_is_returned.html">User&#39;s identity billing address is returned</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>User Identity Update</h2>
+
+    <ul>
+      <li>
+        <a href="user_identity_update/billing_address_is_not_updated_if_no_billing_address_in_update_request.html">Billing address is not updated if no billing address in update request</a>
+      </li>
+      <li>
+        <a href="user_identity_update/billing_address_is_updated..html">Billing address is updated.</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_200_-_when_the_send_a_strong_password_and_bypass_compromised_password_validation_is_false.html">Returns 200 - when the send a strong password and bypass_compromised_password_validation is false</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_200_-_when_the_send_a_strong_password_and_bypass_compromised_password_validation_is_not_defined.html">Returns 200 - when the send a strong password and bypass_compromised_password_validation is not defined</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_200_-_when_the_send_a_weak_password_and_bypass_compromised_password_validation_is_true.html">Returns 200 - when the send a weak password and bypass_compromised_password_validation is true</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_birth_date_is_blank.html">Returns 422 if birth_date is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_birth_date_is_not_a_date.html">Returns 422 if birth_date is not a date</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_birth_date_is_too_old.html">Returns 422 if birth_date is too old</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_birth_date_is_too_young.html">Returns 422 if birth_date is too young</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_first_name_is_blank.html">Returns 422 if first_name is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_last_name_is_blank.html">Returns 422 if last_name is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_password_has_less_than_8_characters.html">Returns 422 if password has less than 8 characters</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_password_is_too_weak_and_bypass_compromised_password_validation_is_not_defined.html">Returns 422 if password is too weak  and bypass_compromised_password_validation is not defined</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_password_is_too_weak_and_the_bypass_compromised_password_validation_is_false.html">Returns 422 if password is too weak and the bypass_compromised_password_validation is false</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_phone_number_is_blank.html">Returns 422 if phone_number is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_if_phone_number_is_blank.html">Returns 422 if phone_number is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_unless_billing_address_lines_are_supplied_with_billing_address.html">Returns 422 unless billing address lines are supplied with billing address</a>
+      </li>
+      <li>
+        <a href="user_identity_update/returns_422_unless_billing_address_locality_is_known.html">Returns 422 unless billing address locality is known</a>
+      </li>
+      <li>
+        <a href="user_identity_update/user_identity_details_are_updated_when_a_password_is_provided_and_password_is_updated..html">User identity details are updated when a password is provided and password is updated.</a>
+      </li>
+      <li>
+        <a href="user_identity_update/user_identity_details_are_updated_when_no_password_is_provided..html">User identity details are updated when no password is provided.</a>
+      </li>
+      <li>
+        <a href="user_identity_update/user_identity_details_can_only_be_updated_when_logged_in..html">User identity details can only be updated when logged in.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>User identity Create</h2>
+
+    <ul>
+      <li>
+        <a href="user_identity_create/returns_200_-_when_the_send_a_strong_password_and_bypass_compromised_password_validation_is_false.html">Returns 200 - when the send a strong password and bypass_compromised_password_validation is false</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_200_-_when_the_send_a_strong_password_and_bypass_compromised_password_validation_is_not_defined.html">Returns 200 - when the send a strong password and bypass_compromised_password_validation is not defined</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_200_-_when_the_send_a_weak_password_and_bypass_compromised_password_validation_is_true.html">Returns 200 - when the send a weak password and bypass_compromised_password_validation is true</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_birth_date_not_a_date.html">Returns 422 if birth date not a date</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_birth_date_younger_than_10_years.html">Returns 422 if birth date younger than 10 years</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_email_address_already_in_use.html">Returns 422 if email address already in use</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_email_address_is_not_valid.html">Returns 422 if email address is not valid</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_first_name_is_blank.html">Returns 422 if first_name is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_first_name_is_blank.html">Returns 422 if first_name is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_password_is_blank.html">Returns 422 if password is blank</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_password_is_too_weak.html">Returns 422 if password is too weak</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_password_is_too_weak_and_bypass_compromised_password_validation_is_not_defined.html">Returns 422 if password is too weak  and bypass_compromised_password_validation is not defined</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_password_is_too_weak_and_the_bypass_compromised_password_validation_is_false.html">Returns 422 if password is too weak and the bypass_compromised_password_validation is false</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_if_phone_number_is_invalid.html">Returns 422 if phone_number is invalid</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_unless_billing_address_lines_are_supplied_with_billing_address.html">Returns 422 unless billing address lines are supplied with billing address</a>
+      </li>
+      <li>
+        <a href="user_identity_create/returns_422_unless_billing_address_locality_is_known.html">Returns 422 unless billing address locality is known</a>
+      </li>
+      <li>
+        <a href="user_identity_create/user_identity_is_created_and_session_is_returned.html">User identity is created and session is returned</a>
+      </li>
+      <li>
+        <a href="user_identity_create/user_identity_is_created_and_session_is_returned.html">User identity is created and session is returned</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

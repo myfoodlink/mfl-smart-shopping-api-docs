@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Session API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Session API</h1>
+
+      <div class="article">
+        <h2>High request count for same email address</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/session</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">email</span>
+                </td>
+                <td>
+                  <span class="description">Customer&#39;s email address</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">password</span>
+                </td>
+                <td>
+                  <span class="description">Customer&#39;s password</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: 39b814d7-678e-4950-b3eb-ae4ce3cb67ee
+X-Runtime: 0.030572
+Content-Length: 135</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;session_password_incorrect&quot;,
+      &quot;detail&quot;: &quot;is incorrect&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/password&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: 90025ac3-e814-42bf-9eff-5d6d41f62643
+X-Runtime: 0.015901
+Content-Length: 135</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;session_password_incorrect&quot;,
+      &quot;detail&quot;: &quot;is incorrect&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/password&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: c7293763-f09e-4f0e-b7f3-80abef23366e
+X-Runtime: 0.015138
+Content-Length: 135</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;session_password_incorrect&quot;,
+      &quot;detail&quot;: &quot;is incorrect&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/password&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: dedb1363-743a-4396-9429-d9e4e04f7cac
+X-Runtime: 0.015162
+Content-Length: 135</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;session_password_incorrect&quot;,
+      &quot;detail&quot;: &quot;is incorrect&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/password&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: c2e2b033-a8c6-43e5-a169-218562b53733
+X-Runtime: 0.014607
+Content-Length: 135</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;session_password_incorrect&quot;,
+      &quot;detail&quot;: &quot;is incorrect&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/password&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 6716a11f-6ac4-4635-9114-b220bb396349
+X-Runtime: 0.001097
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 983a83a2-d5df-4771-8fc7-37ea10dc5e8c
+X-Runtime: 0.001040
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: 83e548f1-dd66-47a3-befd-2e3935a4cdc7
+X-Runtime: 0.001007
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: cf4ee579-7e31-4a40-8de5-db02fb500a1f
+X-Runtime: 0.001027
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;483419c398ad26036c87&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"email":"test@example.com","password":"wrongpassword"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">content-type: text/plain
+Cache-Control: no-cache
+X-Request-Id: f797a89c-ed96-46db-811a-fafea15bfc98
+X-Runtime: 0.000944
+Content-Length: 12</pre>
+            <h4>Status</h4>
+            <pre class="response status">429 Too Many Requests</pre>
+              <h4>Body</h4>
+              <pre class="response body">Retry later
+</pre>
+      </div>
+    </div>
+  </body>
+</html>

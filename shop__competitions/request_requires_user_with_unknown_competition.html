@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Competitions API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Competitions API</h1>
+
+      <div class="article">
+        <h2>Request requires user with unknown competition</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/competitions/:competition_id/competition_entries</h3>
+          <p class="explanation">
+            This controller previously always required a signed in session. It will still return a permission error when no session supplied for an unknown competition or a competition that does not allow retail entry
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order_id</span>
+                </td>
+                <td>
+                  <span class="description"> order</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">options</span>
+                </td>
+                <td>
+                  <span class="description">This is an array of all the keys for options the customer has accepted. This includes all the mandatory options such as terms and conditions and also optional options such as mail list signup. This should only include accepted keys</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">first_name</span>
+                </td>
+                <td>
+                  <span class="description"> first name</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">last_name</span>
+                </td>
+                <td>
+                  <span class="description"> last name</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">phone_number</span>
+                </td>
+                <td>
+                  <span class="description"> phone number</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">post_code</span>
+                </td>
+                <td>
+                  <span class="description"> post code</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">receipt_photo</span>
+                </td>
+                <td>
+                  <span class="description"> receipt photo</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">email</span>
+                </td>
+                <td>
+                  <span class="description"> email</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">birth_date</span>
+                </td>
+                <td>
+                  <span class="description"> birth date</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Content-Type: application/json
+Authorization: MYFOODLINK app_id=&quot;455800fa0f23d223188d&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/64d986ff5ebc910e78b7f095/competitions/%3Acompetition_id/competition_entries</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"order_id":"made-up-id"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+WWW-Authenticate: MYFOODLINK
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: 4623f170-03fd-4d26-a70d-0ec963dab0cf
+X-Runtime: 0.025580
+Content-Length: 206</pre>
+            <h4>Status</h4>
+            <pre class="response status">401 Unauthorized</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;source&quot;: {
+        &quot;parameter&quot;: &quot;Authorization&quot;
+      },
+      &quot;status&quot;: &quot;401&quot;,
+      &quot;code&quot;: &quot;authentication_session_token_invalid_or_missing&quot;,
+      &quot;title&quot;: &quot;Session required&quot;,
+      &quot;detail&quot;: &quot;Must have a valid session for this method.&quot;
+    }
+  ]
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

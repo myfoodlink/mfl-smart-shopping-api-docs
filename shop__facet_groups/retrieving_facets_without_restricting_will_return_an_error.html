@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Facet Groups API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Facet Groups API</h1>
+
+      <div class="article">
+        <h2>Retrieving facets without restricting will return an error</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/facet_groups</h3>
+          <p class="explanation">
+            You must restrict which facets are returned by supplying the requested types with the only_facets[] query parameter. The available facets types are: special, department, tag, brand_name, place_of_origin, place_of_origin_region, and price_range. Some facets require features to be enabled per shop or other configuration. If a facet is not enabled for a shop, the facet will be not be returned. If you are manually creating facets to search e.g. creating price ranges. You do not need to search for that facet type.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtains from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">only_facets</span>
+                </td>
+                <td>
+                  <span class="description"> only facets</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;8e1ea0c13a48ca880071&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987195ebc910e78b80a26/facet_groups</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: bf9bc4da-204b-4399-8dac-b2c302227bdd
+X-Runtime: 0.046764
+Content-Length: 130</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;must_be_present&quot;,
+      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
+      &quot;source&quot;: {
+        &quot;parameter&quot;: &quot;only_facets&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

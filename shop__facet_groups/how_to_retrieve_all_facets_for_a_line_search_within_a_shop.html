@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Facet Groups API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Facet Groups API</h1>
+
+      <div class="article">
+        <h2>How to retrieve all facets for a line search within a shop</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/facet_groups</h3>
+          <p class="explanation">
+            Returns a list of facet groups with included facets that can be used to further refine a line search. Only returns facet groups with at least one facet and only includes facets if they have at least one matching line.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtains from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">only_facets</span>
+                </td>
+                <td>
+                  <span class="description"> only facets</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;4928ccd0fdf4ad7fa720&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d9871b5ebc910e78b80b86/facet_groups?only_facets[]=special&amp;only_facets[]=department&amp;only_facets[]=tag&amp;only_facets[]=brand_name&amp;only_facets[]=place_of_origin&amp;only_facets[]=place_of_origin_region&amp;only_facets[]=price_range</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">only_facets: [&quot;special&quot;, &quot;department&quot;, &quot;tag&quot;, &quot;brand_name&quot;, &quot;place_of_origin&quot;, &quot;place_of_origin_region&quot;, &quot;price_range&quot;]</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;9b87d211d62b0c8a53f142de90874d9b&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 62ee7127-242d-477a-8b53-8f4784ef057e
+X-Runtime: 0.119222
+Content-Length: 4052</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd0&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: true,
+        &quot;name&quot;: &quot;Specials&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd8&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd1&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: true,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Departments&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd9&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cda&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdb&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd2&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Brands&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdc&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdd&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cde&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd3&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Countries&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdf&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce0&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd4&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Keywords&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce1&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd5&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: true,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Price&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce2&quot;
+            },
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce3&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd6&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Regions&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce4&quot;
+            }
+          ]
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd7&quot;,
+      &quot;type&quot;: &quot;facet-groups&quot;,
+      &quot;attributes&quot;: {
+        &quot;sell_price_cents&quot;: false,
+        &quot;department&quot;: false,
+        &quot;specials&quot;: false,
+        &quot;name&quot;: &quot;Variety&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;facets&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;facets&quot;,
+              &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce5&quot;
+            }
+          ]
+        }
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd8&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Specials&quot;,
+        &quot;query_value&quot;: &quot;special:drill&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cd9&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Red Wine&quot;,
+        &quot;query_value&quot;: &quot;category:red-wine&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cda&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Beer&quot;,
+        &quot;query_value&quot;: &quot;category:beer&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdb&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Spirits&quot;,
+        &quot;query_value&quot;: &quot;category:spirits&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdc&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Bacardi&quot;,
+        &quot;query_value&quot;: &quot;brand_name:Bacardi&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdd&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Coopers&quot;,
+        &quot;query_value&quot;: &quot;brand_name:Coopers&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cde&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;St Hallets&quot;,
+        &quot;query_value&quot;: &quot;brand_name:St Hallets&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80cdf&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Australia&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin:Australia&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce0&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Indonesia&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin:Indonesia&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce1&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Organic&quot;,
+        &quot;query_value&quot;: &quot;tag:organic&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce2&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;Up to $10.00&quot;,
+        &quot;query_value&quot;: &quot;price_range:0-1000&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce3&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 2,
+        &quot;name&quot;: &quot;$30.00 to $50.00&quot;,
+        &quot;query_value&quot;: &quot;price_range:3000-5000&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce4&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;BLAHBLAH&quot;,
+        &quot;query_value&quot;: &quot;place_of_origin_region:BLAHBLAH&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9871c5ebc910e78b80ce5&quot;,
+      &quot;type&quot;: &quot;facets&quot;,
+      &quot;attributes&quot;: {
+        &quot;count&quot;: 1,
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;query_value&quot;: &quot;tag:shiraz&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

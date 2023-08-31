@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Lines API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Lines API</h1>
+
+      <div class="article">
+        <h2>How to search for lines within a shop.</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/shops/:id/lines</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">department_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to the given department and its sub-departments.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">embedded_search_id</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to a pre-canned search configured on the server, e.g. this is used for promoted lines at checkout. Additional restrictions can be applied on top.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">deal_set</span>
+                </td>
+                <td>
+                  <span class="description">Restricts the search to a deal set. Value to be used is the &quot;query_value&quot; attribute in a deal set.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">facets</span>
+                </td>
+                <td>
+                  <span class="description">One or more facet query-values obtained from the Facet Groups end-point to refine a search.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">keywords</span>
+                </td>
+                <td>
+                  <span class="description">Keywords matched against line name, description, and other fields</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">1-indexed page number of page to return</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page_size</span>
+                </td>
+                <td>
+                  <span class="description">Number of lines to include on each page</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort_option_id</span>
+                </td>
+                <td>
+                  <span class="description">Sort option obtain from the Sort Options end-point.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">specials</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines on special</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[minimum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at least this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sell_price_cents[maximum]</span>
+                </td>
+                <td>
+                  <span class="description">Restricts search to lines costing at most this much.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_ids</span>
+                </td>
+                <td>
+                  <span class="description">Product Id is shared across all stores.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">product_codes</span>
+                </td>
+                <td>
+                  <span class="description">Search by GTIN or instore PLU.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;29601278a7b3ced7909e&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d987235ebc910e78b8129a/lines</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;2ada1c64e138cf68d13ee884a046f645&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: e3662ed1-5333-49da-809c-fab0b02d57bf
+X-Runtime: 0.143648
+Content-Length: 6836</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987245ebc910e78b813d4&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 3699,
+        &quot;normal_price_cents&quot;: 4199,
+        &quot;product_id&quot;: &quot;64d987245ebc910e78b813d0&quot;,
+        &quot;product_code&quot;: &quot;05010677014205&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: {
+          &quot;size&quot;: 700.0,
+          &quot;unit&quot;: &quot;ml&quot;,
+          &quot;quantity&quot;: null
+        },
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;stickers&quot;,
+              &quot;id&quot;: &quot;64d987245ebc910e78b813d4:0&quot;
+            }
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987245ebc910e78b813cf&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=09b14f341efed2da6e3e4638b15f4990399d7404ece39b79a0674e3d2355fcca&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=cfa644866023c3b3166af28c18333c9ea175c7d4643e6c88c7f59cdc006ac1a2&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7e02916c48f61f9a81b42b53c220394424ec783a58b9e9a4dd6fff69e7cbeb0a&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=71cf8a88fbbde3cf539114d3891e3a3bb267da84c3377ca1eb80ae5bc2e87ca4&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a936f08fe92d7283fd5c30e6286164798b6d47dd0f705e45b986df7985429ffb&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImIwMWI4Y2VmMzI5NTNmZjU5ZTRjYjY0MzdmOTdkYjJlLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8ac7c55aacc66f1be22dc4bb5d89ab548b2897660bca2dbc7146a6a0ecba8277&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987245ebc910e78b813be&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;sell_price_cents&quot;: 770,
+        &quot;normal_price_cents&quot;: 770,
+        &quot;product_id&quot;: &quot;64d987245ebc910e78b813bb&quot;,
+        &quot;product_code&quot;: &quot;00000093302043&quot;,
+        &quot;place_of_origin&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987245ebc910e78b813ba&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a95d25fd135471732339beb34d77e74fc4c68bf64d0bd6d6e3eec3e44a481b59&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=3138abb6d072cc7c5c9adbef6815c644311bb8391963a29bc4e51ad623bda3f9&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=b695930e6af980039015bffd7f80eca371ff88a16bc2795e3d18aceffdab2ac0&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=bd9b79e4a20207e8836358fbe5abe4aaf47902d0c549d311b4fa1a83645a8f99&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=e87464fccdb97f8cbe1b1278c85c38afba02a4531df23e5a98ce7365156f1c4f&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImVmNTk0Y2JjMjc4MzQ2M2FiZGU1MTZjYjhhN2RiOGYyLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=b2302e2a158ed2d17e81227c919d24da6e1914e688fe7bb579887cfc870c7098&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987245ebc910e78b813c9&quot;,
+      &quot;type&quot;: &quot;lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Old Block Shiraz 2014&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: &quot;St Hallets&quot;,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;product_id&quot;: &quot;64d987245ebc910e78b813c6&quot;,
+        &quot;product_code&quot;: &quot;de48ec2dd654ef&quot;,
+        &quot;place_of_origin&quot;: {
+          &quot;country&quot;: &quot;Australia&quot;,
+          &quot;region&quot;: &quot;Barossa&quot;
+        },
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: 1390
+      },
+      &quot;relationships&quot;: {
+        &quot;stickers&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;tags&quot;,
+              &quot;id&quot;: &quot;64d987245ebc910e78b813c4&quot;
+            }
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: &quot;http://localhost:8081/files/64d987245ebc910e78b813c3&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a9a2e07dd83b3cab7a8189b3fa4b373c5206bdbc9f0425af8e79b1b6a1ab4111&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=50ca53e568f4fc77ea631b41ec270733402549c42219abcc209710266ffc78c0&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=625471ac084a57fb4fc6165398d901e13b1ec069637590c1b2d1286d57a8690b&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=d571044c75776fbc74b62695380ad23748a2e46382ce73bd4c82e69ea7e00512&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=4ca946d80588edfad2c8660f2b215d242986c13ab56f7ea2e97024dcf1347917&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjcxMDg3ZTAyNzI3YWVmNjMyNjZlNjRiM2Q2MTA1MmE1LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=9de0cde956897008f30cbe73cc59f16d3f4afc6a4fcda4bb7742160e02f7db52&quot;
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d987245ebc910e78b813d4:0&quot;,
+      &quot;type&quot;: &quot;stickers&quot;,
+      &quot;attributes&quot;: {
+        &quot;labels&quot;: [
+          &quot;save&quot;,
+          &quot;$5.00&quot;
+        ],
+        &quot;deal&quot;: false,
+        &quot;saving&quot;: true,
+        &quot;special&quot;: false,
+        &quot;tag&quot;: false,
+        &quot;position&quot;: {
+          &quot;horizontal&quot;: &quot;right&quot;,
+          &quot;vertical&quot;: &quot;top&quot;
+        },
+        &quot;background_colour&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;deal&quot;: {
+          &quot;data&quot;: null
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d987245ebc910e78b813c4&quot;,
+      &quot;type&quot;: &quot;tags&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Shiraz&quot;,
+        &quot;group&quot;: &quot;Varieties&quot;,
+        &quot;background_colour&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;line_count&quot;: 3,
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 48,
+    &quot;page_count&quot;: 1,
+    &quot;sort_option_id&quot;: &quot;relevance&quot;,
+    &quot;campaign_ids&quot;: null
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

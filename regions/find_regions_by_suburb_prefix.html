@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regions API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Regions API</h1>
+
+      <div class="article">
+        <h2>Find regions by suburb prefix</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/regions</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">query</span>
+                </td>
+                <td>
+                  <span class="description">The string to auto complete. Must be at least 3 characters. Can be suburb or postcode</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;6bc98cc01eca0381d47f&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/regions?query=Bat</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">query: Bat</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;2d0c448f0fdb6f93dedda6b402ca0d9a&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 62eb80dd-dca1-4a18-b2ad-6adc39475abf
+X-Runtime: 0.035532
+Content-Length: 1297</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986515ebc910e78b7493c&quot;,
+      &quot;type&quot;: &quot;regions&quot;,
+      &quot;attributes&quot;: {
+        &quot;abbreviation&quot;: null,
+        &quot;name&quot;: &quot;BATTERY POINT&quot;,
+        &quot;type&quot;: &quot;Locality&quot;,
+        &quot;contextual_name&quot;: &quot;BATTERY POINT, 7004&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;parent&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;regions&quot;,
+            &quot;id&quot;: &quot;64d986515ebc910e78b7493b&quot;
+          }
+        }
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986515ebc910e78b7493b&quot;,
+      &quot;type&quot;: &quot;regions&quot;,
+      &quot;attributes&quot;: {
+        &quot;abbreviation&quot;: null,
+        &quot;name&quot;: &quot;7004&quot;,
+        &quot;type&quot;: &quot;PostalCode&quot;,
+        &quot;contextual_name&quot;: &quot;7004, Tasmania&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;parent&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;regions&quot;,
+            &quot;id&quot;: &quot;64d986515ebc910e78b7493a&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986515ebc910e78b7493a&quot;,
+      &quot;type&quot;: &quot;regions&quot;,
+      &quot;attributes&quot;: {
+        &quot;abbreviation&quot;: &quot;TAS&quot;,
+        &quot;name&quot;: &quot;Tasmania&quot;,
+        &quot;type&quot;: &quot;State&quot;,
+        &quot;contextual_name&quot;: &quot;Tasmania, Australia&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;parent&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;regions&quot;,
+            &quot;id&quot;: &quot;64d986515ebc910e78b748ba&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986515ebc910e78b748ba&quot;,
+      &quot;type&quot;: &quot;regions&quot;,
+      &quot;attributes&quot;: {
+        &quot;abbreviation&quot;: &quot;AU&quot;,
+        &quot;name&quot;: &quot;Australia&quot;,
+        &quot;type&quot;: &quot;Country&quot;,
+        &quot;contextual_name&quot;: &quot;Australia, Australia - Australia Post&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;parent&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;regions&quot;,
+            &quot;id&quot;: &quot;64d986515ebc910e78b748b9&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986515ebc910e78b748b9&quot;,
+      &quot;type&quot;: &quot;regions&quot;,
+      &quot;attributes&quot;: {
+        &quot;abbreviation&quot;: &quot;AU:AusPost&quot;,
+        &quot;name&quot;: &quot;Australia - Australia Post&quot;,
+        &quot;type&quot;: &quot;SCHEME&quot;,
+        &quot;contextual_name&quot;: &quot;Australia - Australia Post, &quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;parent&quot;: {
+          &quot;data&quot;: null
+        }
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

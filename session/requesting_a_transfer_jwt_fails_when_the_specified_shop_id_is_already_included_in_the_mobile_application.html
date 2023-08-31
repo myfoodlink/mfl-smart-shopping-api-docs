@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Session API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Session API</h1>
+
+        <p class="explanation">This endpoint can be used to generate a JWT to transfer to the user session from the app to a browser. e.g. to transfer to an store using the Myfoodlink frontend to run special offers. This endpoint requires specifying the shop_id of the shop that the user will be transferred to. As this is for transfer to shops outside of the mobile application, there is no API to get a list of shop_ids. This will have to be manually managed outside of the api. The target shop MUST be in the same user identity domain as the currently signed in user.The shop CANNOT be a host shop, MUST be active and cannot be a shop in the current mobile application. This returns a JWT, a parameter name and the domain for the shop. You MUST use the returned parameter name instead of hard coding it. The parameter name is subject to change with no notice.The JWT is only valid for a short period of time (currently about a minute).The JWT should not be stored for later use, sent in emails or SMS messages, etc.The JWT is only valid for the target shop and will not work for any other shop sharing the user identity domain.</p>
+
+      <div class="article">
+        <h2>Requesting a transfer JWT fails when the specified shop_id is already included in the mobile application</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/session/transfer</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">shop_id</span>
+                </td>
+                <td>
+                  <span class="description">The id of the shop the customer will be transfer to in a browser</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;67973ec2530e733b0c44&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjY3OTczZWMyNTMwZTczM2IwYzQ0IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY4YjVlYmM5MTBlNzhiNzhhYTUifSwiZXhwIjoxNjkxOTc4NTU1fQ.qJtTXo6LMPEqyxHTjbM2btn8-rm1gLSy6_kG1KPK0nQ&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/session/transfer</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"shop_id":"64d9868b5ebc910e78b78a6b"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+Cache-Control: no-cache
+X-Request-Id: 1102e849-c242-497f-a2b1-1a2fd180c578
+X-Runtime: 0.036977
+Content-Length: 173</pre>
+            <h4>Status</h4>
+            <pre class="response status">422 Unprocessable Entity</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: &quot;shop_id_invalid_or_not_available&quot;,
+      &quot;detail&quot;: &quot;Shop id belongs to current mobile application&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/shop_id&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

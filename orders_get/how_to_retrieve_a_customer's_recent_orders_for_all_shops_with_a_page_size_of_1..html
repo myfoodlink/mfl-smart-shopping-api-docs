@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orders Get API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Orders Get API</h1>
+
+        <p class="explanation">Returns a set of the current user identity's (or anonymous device's) orders. If user identity is signed in only their orders across all shops are returned.
+                 If no user identity is signed in then anonymous orders associated with the device_id will be returned. For anonymous requests the state parameter is ignored - only shopping orders will be returned.</p>
+
+      <div class="article">
+        <h2>How to retrieve a customer&#39;s recent orders for all shops with a page size of 1.</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/orders</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">state</span>
+                </td>
+                <td>
+                  <span class="description">If set to &#39;shopping&#39;, only shopping orders will be returned. Other values will return all orders. This always defaults to &#39;shopping&#39; for anonymous sessions.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">shop_id</span>
+                </td>
+                <td>
+                  <span class="description">If supplied, only orders from the shop will be supplied</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">1-indexed page number of page to return</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page_size</span>
+                </td>
+                <td>
+                  <span class="description">Number of lines to include on each page</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;87d7ac3593290cd96890&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijg3ZDdhYzM1OTMyOTBjZDk2ODkwIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODYwOTVlYmM5MTBlNzhiNzA5Y2QifSwiZXhwIjoxNDk3MjQ4MzQxfQ.2v0Dt2MxX71XXI6UYBuwYZ9ydXWa6Oha858BonDnNiE&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders?page_size=1</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page_size: 1</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;f5b2fa4bb6b01cfd70cb3e0dbd427276&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: d53cc297-1303-4ebb-8434-2e57ba09837a
+X-Runtime: 0.059566
+Content-Length: 1642</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986095ebc910e78b709c7&quot;,
+      &quot;type&quot;: &quot;orders&quot;,
+      &quot;attributes&quot;: {
+        &quot;order_number&quot;: null,
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 17997,
+          &quot;cents_ex_tax&quot;: 17997,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;balance&quot;: null,
+        &quot;note&quot;: null,
+        &quot;checkout&quot;: null,
+        &quot;cancelled&quot;: false,
+        &quot;coupon_code&quot;: null,
+        &quot;adjustments&quot;: [
+
+        ],
+        &quot;discounts_and_credits&quot;: [
+
+        ],
+        &quot;balance_at_checkout&quot;: 17997,
+        &quot;customer_interaction_data&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d986075ebc910e78b70882&quot;
+          }
+        },
+        &quot;delivery_address&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;billing_address&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;discount_matches&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;order_lines&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;order-lines&quot;,
+              &quot;id&quot;: &quot;64d986095ebc910e78b709cb&quot;
+            }
+          ]
+        },
+        &quot;tenders&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        },
+        &quot;time_slot&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;courier_quote&quot;: {
+          &quot;data&quot;: null
+        }
+      }
+    }
+  ],
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986095ebc910e78b709cb&quot;,
+      &quot;type&quot;: &quot;order-lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;charge&quot;: false,
+        &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
+        &quot;product_id&quot;: &quot;64d986075ebc910e78b70924&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null,
+        &quot;sell_price_cents&quot;: 5999,
+        &quot;normal_price_cents&quot;: 5999,
+        &quot;quantity&quot;: 3.0,
+        &quot;subtotal&quot;: {
+          &quot;cents_inc_tax&quot;: 17997,
+          &quot;cents_ex_tax&quot;: 17997,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;adjustments&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 17997,
+          &quot;cents_ex_tax&quot;: 17997,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;place_of_origin&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;line&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;lines&quot;,
+            &quot;id&quot;: &quot;64d986075ebc910e78b70926&quot;
+          }
+        },
+        &quot;order&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;orders&quot;,
+            &quot;id&quot;: &quot;64d986095ebc910e78b709c7&quot;
+          }
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;page_size&quot;: 1,
+    &quot;page_count&quot;: 4,
+    &quot;total_entries&quot;: 4
+  },
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Orders / Delivery API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Orders / Delivery API</h1>
+
+      <div class="article">
+        <h2>Delivery instructions provided</h2>
+        <h3>PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/delivery</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order[time_slot_id]</span>
+                </td>
+                <td>
+                  <span class="description">The id for the chosen timeslot</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[instructions]</span>
+                </td>
+                <td>
+                  <span class="description">Delivery instructions for the order. e.g. &quot;code for the gate is 1234&quot;. Can only be used for deliveries and not pickup</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][unit]</span>
+                </td>
+                <td>
+                  <span class="description">Unit information for the address, e.g. &#39;Flat 1&#39;, or &#39;Level 3&#39;</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][lines]</span>
+                </td>
+                <td>
+                  <span class="description">The lines of the delivery address, typically the street address and company information, eg [&quot;Myfoodlink&quot;, &quot;1/183 Maquarie St&quot;]</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][locality]</span>
+                </td>
+                <td>
+                  <span class="description">The locality, town or suburb, of the delivery address, eg Lenah Valley.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][postal_code]</span>
+                </td>
+                <td>
+                  <span class="description">The postal code of the delivery address, eg 7008.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][administrative_area]</span>
+                </td>
+                <td>
+                  <span class="description">The administrative area of the delivery address, eg TAS.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[delivery_address][country_code]</span>
+                </td>
+                <td>
+                  <span class="description">The iso country code of the delivery address, eg AU.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;aa066eaacba2f670aab8&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/64d9878a5ebc910e78b878e9/orders/current/delivery</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"order":{"time_slot_id":"64d9878c5ebc910e78b879d2#2022-01-20","instructions":"Here are some instructions","delivery_address":{"unit":"Area 51","lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;35ac39e42f9121d53ba06e3cf69faa60&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 6d67acac-f89a-443b-bbde-14655299aadd
+X-Runtime: 0.123484
+Content-Length: 1732</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d9878c5ebc910e78b87a01&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: null,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 0,
+        &quot;cents_ex_tax&quot;: 0,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: null,
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: null,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+
+      ],
+      &quot;balance_at_checkout&quot;: 0,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;64d9878a5ebc910e78b878e9&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;addresses&quot;,
+          &quot;id&quot;: &quot;64d9878c5ebc910e78b87a04&quot;
+        }
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;time-slots&quot;,
+          &quot;id&quot;: &quot;64d9878c5ebc910e78b879d2#2022-01-20&quot;
+        }
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d9878c5ebc910e78b87a04&quot;,
+      &quot;type&quot;: &quot;addresses&quot;,
+      &quot;attributes&quot;: {
+        &quot;custom1&quot;: null,
+        &quot;custom2&quot;: null,
+        &quot;unit&quot;: &quot;Area 51&quot;,
+        &quot;locality&quot;: &quot;BATTERY POINT&quot;,
+        &quot;administrative_area&quot;: &quot;TAS&quot;,
+        &quot;country_code&quot;: &quot;AU&quot;,
+        &quot;postal_code&quot;: &quot;7004&quot;,
+        &quot;lines&quot;: [
+          &quot;My Company&quot;,
+          &quot;1 Foo St&quot;
+        ],
+        &quot;instructions&quot;: &quot;Here are some instructions&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9878c5ebc910e78b879d2#2022-01-20&quot;,
+      &quot;type&quot;: &quot;time-slots&quot;,
+      &quot;attributes&quot;: {
+        &quot;date&quot;: &quot;2022-01-20&quot;,
+        &quot;drop_off_window&quot;: [
+          &quot;2022-01-20T16:00:00.000+11:00&quot;,
+          &quot;2022-01-20T16:30:00.000+11:00&quot;
+        ],
+        &quot;checkout_window&quot;: [
+          &quot;2022-01-19T16:00:00.000+11:00&quot;,
+          &quot;2022-01-20T16:00:00.000+11:00&quot;
+        ]
+      },
+      &quot;relationships&quot;: {
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d9878a5ebc910e78b878e9&quot;
+          }
+        },
+        &quot;delivery_zone&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;delivery-zones&quot;,
+            &quot;id&quot;: &quot;64d9878b5ebc910e78b8794f&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d9878b5ebc910e78b8794f&quot;,
+      &quot;type&quot;: &quot;delivery-zones&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Zone&quot;,
+        &quot;type&quot;: &quot;delivery&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;pickup_address&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d9878a5ebc910e78b878e9&quot;
+          }
+        }
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

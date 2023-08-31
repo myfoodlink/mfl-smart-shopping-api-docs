@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Retail Competitions / Brand First API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Retail Competitions / Brand First API</h1>
+
+      <div class="article">
+        <h2>The current brand first competition is returned</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/retail_competitions/brand_first</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;136fb888d2b72df18b29&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/retail_competitions/brand_first</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;1bb7f35e3bded0b72679c583aae0f904&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 61953321-3828-4ec8-931a-bf4fb8164217
+X-Runtime: 0.036606
+Content-Length: 3010</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d986675ebc910e78b762d7&quot;,
+    &quot;type&quot;: &quot;competitions&quot;,
+    &quot;attributes&quot;: {
+      &quot;name&quot;: &quot;Awesome Competition&quot;,
+      &quot;description&quot;: &quot;Here is an awesome competition&quot;,
+      &quot;eligible_description&quot;: &quot;You can enter&quot;,
+      &quot;entered_description&quot;: &quot;Thanks for entering&quot;,
+      &quot;retail_entry_allowed&quot;: true,
+      &quot;image_dimensions&quot;: null,
+      &quot;brand_first_competition_graphic_accessible_text&quot;: &quot;Enter our competition&quot;,
+      &quot;brand_first_shop_now_graphic_accessible_text&quot;: &quot;Start shopping&quot;,
+      &quot;brand_first_competition_graphic_dimensions&quot;: {
+        &quot;width&quot;: 670,
+        &quot;height&quot;: 867
+      },
+      &quot;brand_first_shop_now_graphic_dimensions&quot;: {
+        &quot;width&quot;: 670,
+        &quot;height&quot;: 867
+      },
+      &quot;brand_first_competition_entry_graphic_accessible_text&quot;: &quot;Enter the competition&quot;,
+      &quot;brand_first_competition_entry_graphic_dimensions&quot;: {
+        &quot;width&quot;: 670,
+        &quot;height&quot;: 867
+      }
+    },
+    &quot;relationships&quot;: {
+      &quot;options&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;competition-options&quot;,
+            &quot;id&quot;: &quot;64d986675ebc910e78b762d7:third_party_crm_sign_up&quot;
+          },
+          {
+            &quot;type&quot;: &quot;competition-options&quot;,
+            &quot;id&quot;: &quot;64d986675ebc910e78b762d7:crm_sign_up&quot;
+          },
+          {
+            &quot;type&quot;: &quot;competition-options&quot;,
+            &quot;id&quot;: &quot;64d986675ebc910e78b762d7:terms_and_conditions_option&quot;
+          }
+        ]
+      },
+      &quot;policies&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;competition-policies&quot;,
+            &quot;id&quot;: &quot;64d986675ebc910e78b762d7:terms_and_conditions&quot;
+          },
+          {
+            &quot;type&quot;: &quot;competition-policies&quot;,
+            &quot;id&quot;: &quot;64d986675ebc910e78b762d7:privacy_policy&quot;
+          }
+        ]
+      }
+    },
+    &quot;links&quot;: {
+      &quot;image&quot;: null,
+      &quot;brand_first_competition_graphic&quot;: &quot;http://localhost:8081/imagery/images/derivations/webp_max_4k/eyJpZCI6ImUzYWFjODc2ZWYyMjk5MjBmM2EyZDkxMGEzZjhkNjA0LmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ddacd97dca01cbf11b9bc94fcf02b0398821f4c8d45d8538eca096d437643187&quot;,
+      &quot;brand_first_shop_now_graphic&quot;: &quot;http://localhost:8081/imagery/images/derivations/webp_max_4k/eyJpZCI6ImM1MGM1ZmY2NTVlNGQyYjU3MzQ3OGQyZTY3MjczMTcwLmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=645c58b20a0e6512c109627170768780ebbc491947cbd6c869ffc03e4fab0e81&quot;,
+      &quot;brand_first_competition_entry_graphic&quot;: &quot;http://localhost:8081/imagery/images/derivations/webp_max_4k/eyJpZCI6Ijk1MzkwNDQwZjBlOTlmMmQyMjIzYWIyYTYxNmQ1NWVhLmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7cf1399274d1a5b93cca4dad8caab722b0faf9d09fbdca78086c269423a40dcf&quot;
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986675ebc910e78b762d7:third_party_crm_sign_up&quot;,
+      &quot;type&quot;: &quot;competition-options&quot;,
+      &quot;attributes&quot;: {
+        &quot;key&quot;: &quot;third_party_crm_sign_up&quot;,
+        &quot;label&quot;: &quot;Keep me in the loop&quot;,
+        &quot;required&quot;: false
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986675ebc910e78b762d7:crm_sign_up&quot;,
+      &quot;type&quot;: &quot;competition-options&quot;,
+      &quot;attributes&quot;: {
+        &quot;key&quot;: &quot;crm_sign_up&quot;,
+        &quot;label&quot;: &quot;Sign me up for store newsletter&quot;,
+        &quot;required&quot;: false
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986675ebc910e78b762d7:terms_and_conditions_option&quot;,
+      &quot;type&quot;: &quot;competition-options&quot;,
+      &quot;attributes&quot;: {
+        &quot;key&quot;: &quot;terms_and_conditions&quot;,
+        &quot;label&quot;: &quot;I&#39;ve read the terms and conditions&quot;,
+        &quot;required&quot;: true
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986675ebc910e78b762d7:terms_and_conditions&quot;,
+      &quot;type&quot;: &quot;competition-policies&quot;,
+      &quot;attributes&quot;: {
+        &quot;key&quot;: &quot;terms_and_conditions&quot;,
+        &quot;label&quot;: &quot;Terms &amp; Conditions&quot;,
+        &quot;url&quot;: &quot;https://example.com/terms&quot;,
+        &quot;text&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986675ebc910e78b762d7:privacy_policy&quot;,
+      &quot;type&quot;: &quot;competition-policies&quot;,
+      &quot;attributes&quot;: {
+        &quot;key&quot;: &quot;privacy_policy&quot;,
+        &quot;label&quot;: &quot;Privacy Policy&quot;,
+        &quot;url&quot;: null,
+        &quot;text&quot;: &quot;Privacy policy HTML&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

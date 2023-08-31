@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orders Get API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Orders Get API</h1>
+
+        <p class="explanation">Retrieve a particular order by id</p>
+
+      <div class="article">
+        <h2>How to determine that an order has failed to checkout due to a payment failure</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/orders/:order_id</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;f99269e0f6359b63a98b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImY5OTI2OWUwZjYzNTliNjNhOThiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODYyNTVlYmM5MTBlNzhiNzFkNGYifSwiZXhwIjoxNDk3MjQ4MzQwfQ.dKRWvChQHrIYPDLcj_LeIKOoJ6N-Je2frlgBXKNRbis&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders/64d986255ebc910e78b71d27</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;7bf3ffee106096960c2ab9fead713e54&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 6e9e7e81-879d-4f63-ae50-adfa80660219
+X-Runtime: 0.061677
+Content-Length: 2629</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;64d986255ebc910e78b71d27&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: &quot;00001&quot;,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 4999,
+        &quot;cents_ex_tax&quot;: 4999,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: {
+        &quot;started_at&quot;: &quot;2017-06-12T15:59:00.371+10:00&quot;,
+        &quot;succeeded&quot;: false,
+        &quot;failed&quot;: true,
+        &quot;in_doubt&quot;: false
+      },
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: null,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+
+      ],
+      &quot;balance_at_checkout&quot;: 4999,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;64d986245ebc910e78b71be9&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;order-lines&quot;,
+            &quot;id&quot;: &quot;64d986255ebc910e78b71d2b&quot;
+          }
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;tenders&quot;,
+            &quot;id&quot;: &quot;64d986255ebc910e78b71d45&quot;
+          }
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;time-slots&quot;,
+          &quot;id&quot;: &quot;64d986255ebc910e78b71cc2#2017-06-12&quot;
+        }
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;64d986255ebc910e78b71d2b&quot;,
+      &quot;type&quot;: &quot;order-lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;charge&quot;: false,
+        &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
+        &quot;product_id&quot;: &quot;64d986255ebc910e78b71d00&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;quantity&quot;: 1.0,
+        &quot;subtotal&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;adjustments&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;place_of_origin&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;line&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;lines&quot;,
+            &quot;id&quot;: &quot;64d986255ebc910e78b71d02&quot;
+          }
+        },
+        &quot;order&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;orders&quot;,
+            &quot;id&quot;: &quot;64d986255ebc910e78b71d27&quot;
+          }
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986255ebc910e78b71d45&quot;,
+      &quot;type&quot;: &quot;tenders&quot;,
+      &quot;attributes&quot;: {
+        &quot;transaction_type&quot;: &quot;PAYMENT&quot;,
+        &quot;succeeded&quot;: false,
+        &quot;failed&quot;: true,
+        &quot;in_doubt&quot;: false,
+        &quot;amount&quot;: 4999
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986255ebc910e78b71cc2#2017-06-12&quot;,
+      &quot;type&quot;: &quot;time-slots&quot;,
+      &quot;attributes&quot;: {
+        &quot;date&quot;: &quot;2017-06-12&quot;,
+        &quot;drop_off_window&quot;: [
+          &quot;2017-06-12T16:00:00.000+10:00&quot;,
+          &quot;2017-06-12T16:30:00.000+10:00&quot;
+        ],
+        &quot;checkout_window&quot;: [
+          &quot;2017-06-11T16:00:00.000+10:00&quot;,
+          &quot;2017-06-12T16:00:00.000+10:00&quot;
+        ]
+      },
+      &quot;relationships&quot;: {
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d986245ebc910e78b71be9&quot;
+          }
+        },
+        &quot;delivery_zone&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;delivery-zones&quot;,
+            &quot;id&quot;: &quot;64d986245ebc910e78b71c56&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;64d986245ebc910e78b71c56&quot;,
+      &quot;type&quot;: &quot;delivery-zones&quot;,
+      &quot;attributes&quot;: {
+        &quot;name&quot;: &quot;Zone&quot;,
+        &quot;type&quot;: &quot;pickup&quot;
+      },
+      &quot;relationships&quot;: {
+        &quot;pickup_address&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;addresses&quot;,
+            &quot;id&quot;: &quot;64d986245ebc910e78b71c49&quot;
+          }
+        },
+        &quot;shop&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;shops&quot;,
+            &quot;id&quot;: &quot;64d986245ebc910e78b71be9&quot;
+          }
+        }
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>
