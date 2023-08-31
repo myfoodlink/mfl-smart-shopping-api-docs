@@ -170,7 +170,7 @@ table th, table td {
                     <span class="name">capabilities</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation and three_d_secure_transaction</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
                 </td>
               </tr>
             </tbody>
@@ -181,7 +181,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;aafbb19db61178c53f2f&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImFhZmJiMTlkYjYxMTc4YzUzZjJmIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY0MzVlYmM5MTBlNzhiNzNhOGYifSwiZXhwIjoxNDk3MjQ4MzQwfQ.5sPp8lWHs4OIe3mlC93ldzEzSRanXRLu5nMUx-LKcwQ&quot;
+Authorization: MYFOODLINK app_id=&quot;00ae59aacd159ec1f34e&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjAwYWU1OWFhY2QxNTllYzFmMzRlIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGYwMTExMjc1ODdlYjFiOWVlNjFkZTQifSwiZXhwIjoxNDk3MjQ4MzQwfQ.XVoNDO2_2ZP-84nWt5XxqunKyb7zXmnbMB7Cypc6T5s&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -191,7 +191,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"service_id":"64d986435ebc910e78b739a8","till_transaction_token":"token-from-js","till_3ds_success_url":"https://example.com/success","till_3ds_cancel_url":"https://example.com/cancel","till_3ds_error_url":"https://example.com/error"}</pre>
+            <pre class="request body">{"service_id":"64f011107587eb1b9ee61cfc","till_transaction_token":"token-from-js","till_3ds_success_url":"https://example.com/success","till_3ds_cancel_url":"https://example.com/cancel","till_3ds_error_url":"https://example.com/error"}</pre>
 
 
             <h3>Response</h3>
@@ -204,8 +204,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: d8c41282-e842-44e6-bb3d-01001cf38111
-X-Runtime: 0.035337
+X-Request-Id: 515a44c3-b7e6-4c39-ac3e-17447eb88314
+X-Runtime: 0.072026
 Content-Length: 181</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>

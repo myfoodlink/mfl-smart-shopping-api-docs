@@ -153,6 +153,14 @@ table th, table td {
                   <span class="description">Search for pickup or delivery. This must be sent if locality and postcode are sent. It can have the values &quot;pickup&quot; or &quot;delivery&quot;</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">shop_role</span>
+                </td>
+                <td>
+                  <span class="description">Search for shop role. It can have the value &quot;gift_cards&quot;</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -161,7 +169,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;46ac08c9c1eb4f08f018&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;c1c51492796c64847630&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -185,49 +193,50 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;c7d9a119130ff803847d698e69641806&quot;
+ETag: W/&quot;1009ebf571c751adbe7492069ec98f9b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 2a732f18-abfc-4940-a488-44814701c7fb
-X-Runtime: 0.038581
-Content-Length: 1305</pre>
+X-Request-Id: b0dab7dc-29dd-4a79-8847-ccd6a7fbfb04
+X-Runtime: 0.116503
+Content-Length: 1330</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;64d987d55ebc910e78b8c708&quot;,
+      &quot;id&quot;: &quot;64f015097587eb1b9ee7b1eb&quot;,
       &quot;type&quot;: &quot;shops&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;shop1&quot;,
         &quot;email&quot;: &quot;shop1@myfoodlink.test&quot;,
         &quot;phone&quot;: &quot;+61222222222&quot;,
         &quot;store_number&quot;: &quot;store1&quot;,
+        &quot;shop_role&quot;: &quot;gift_cards&quot;,
         &quot;website&quot;: &quot;https://www.example.com&quot;
       },
       &quot;relationships&quot;: {
         &quot;address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;64d987d55ebc910e78b8c743&quot;
+            &quot;id&quot;: &quot;64f0150a7587eb1b9ee7b227&quot;
           }
         },
         &quot;terms_and_conditions&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;terms-and-conditions&quot;,
-            &quot;id&quot;: &quot;64d987d55ebc910e78b8c77d&quot;
+            &quot;id&quot;: &quot;64f0150a7587eb1b9ee7b261&quot;
           }
         },
         &quot;promote_at_checkout_search&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;embedded-searches&quot;,
-            &quot;id&quot;: &quot;64d987d55ebc910e78b8c81f&quot;
+            &quot;id&quot;: &quot;64f0150b7587eb1b9ee7b304&quot;
           }
         },
         &quot;regular_hours&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;regular-hours&quot;,
-            &quot;id&quot;: &quot;64d987d55ebc910e78b8c712&quot;
+            &quot;id&quot;: &quot;64f015097587eb1b9ee7b1f5&quot;
           }
         }
       }
@@ -235,7 +244,7 @@ Content-Length: 1305</pre>
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;64d987d55ebc910e78b8c743&quot;,
+      &quot;id&quot;: &quot;64f0150a7587eb1b9ee7b227&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -251,14 +260,14 @@ Content-Length: 1305</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d55ebc910e78b8c77d&quot;,
+      &quot;id&quot;: &quot;64f0150a7587eb1b9ee7b261&quot;,
       &quot;type&quot;: &quot;terms-and-conditions&quot;,
       &quot;attributes&quot;: {
         &quot;fragment&quot;: &quot;&lt;div&gt;https://shop1.myfood.link/&lt;/div&gt;&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d55ebc910e78b8c712&quot;,
+      &quot;id&quot;: &quot;64f015097587eb1b9ee7b1f5&quot;,
       &quot;type&quot;: &quot;regular-hours&quot;,
       &quot;attributes&quot;: {
         &quot;more_info_url&quot;: null,
