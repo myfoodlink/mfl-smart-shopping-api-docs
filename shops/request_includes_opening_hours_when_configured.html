@@ -156,6 +156,14 @@ table th, table td {
                   <span class="description">Search for pickup or delivery. This must be sent if locality and postcode are sent. It can have the values &quot;pickup&quot; or &quot;delivery&quot;</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">shop_role</span>
+                </td>
+                <td>
+                  <span class="description">Search for shop role. It can have the value &quot;gift_cards&quot;</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -164,7 +172,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;d8c40d1fbb01521fb457&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;9c95822dd0c838e24531&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -184,74 +192,76 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;7fa9a5212130d533a5c34fffa1c1d667&quot;
+ETag: W/&quot;513415e7a4f25a1f5fee3e5c281b6049&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 08d66712-f1b4-4d1e-b035-f30ec8d084de
-X-Runtime: 0.036629
-Content-Length: 3744</pre>
+X-Request-Id: a031cbe9-5f30-4850-8aa2-6fa0ef243fd4
+X-Runtime: 0.098287
+Content-Length: 3786</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8c966&quot;,
+      &quot;id&quot;: &quot;64f0150f7587eb1b9ee7b44d&quot;,
       &quot;type&quot;: &quot;shops&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;shop1&quot;,
         &quot;email&quot;: &quot;shop1@myfoodlink.test&quot;,
         &quot;phone&quot;: &quot;+61222222222&quot;,
         &quot;store_number&quot;: &quot;store1&quot;,
+        &quot;shop_role&quot;: &quot;gift_cards&quot;,
         &quot;website&quot;: &quot;https://www.example.com&quot;
       },
       &quot;relationships&quot;: {
         &quot;address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8c9a1&quot;
+            &quot;id&quot;: &quot;64f015107587eb1b9ee7b489&quot;
           }
         },
         &quot;terms_and_conditions&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;terms-and-conditions&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8c9db&quot;
+            &quot;id&quot;: &quot;64f015107587eb1b9ee7b4c3&quot;
           }
         },
         &quot;promote_at_checkout_search&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;embedded-searches&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca7d&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b566&quot;
           }
         },
         &quot;regular_hours&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;regular-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca7e&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b567&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8c9e2&quot;,
+      &quot;id&quot;: &quot;64f015107587eb1b9ee7b4ca&quot;,
       &quot;type&quot;: &quot;shops&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;shop2&quot;,
         &quot;email&quot;: null,
         &quot;phone&quot;: null,
         &quot;store_number&quot;: null,
+        &quot;shop_role&quot;: null,
         &quot;website&quot;: null
       },
       &quot;relationships&quot;: {
         &quot;address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca1b&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b504&quot;
           }
         },
         &quot;terms_and_conditions&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;terms-and-conditions&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca3a&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b523&quot;
           }
         },
         &quot;promote_at_checkout_search&quot;: {
@@ -260,7 +270,7 @@ Content-Length: 3744</pre>
         &quot;regular_hours&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;regular-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8c9ea&quot;
+            &quot;id&quot;: &quot;64f015107587eb1b9ee7b4d2&quot;
           }
         }
       }
@@ -268,7 +278,7 @@ Content-Length: 3744</pre>
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8c9a1&quot;,
+      &quot;id&quot;: &quot;64f015107587eb1b9ee7b489&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -284,14 +294,14 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8c9db&quot;,
+      &quot;id&quot;: &quot;64f015107587eb1b9ee7b4c3&quot;,
       &quot;type&quot;: &quot;terms-and-conditions&quot;,
       &quot;attributes&quot;: {
         &quot;fragment&quot;: &quot;&lt;div&gt;https://shop1.myfood.link/&lt;/div&gt;&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca7e&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b567&quot;,
       &quot;type&quot;: &quot;regular-hours&quot;,
       &quot;attributes&quot;: {
         &quot;more_info_url&quot;: &quot;https://example.com&quot;,
@@ -302,49 +312,49 @@ Content-Length: 3744</pre>
         &quot;monday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca7f&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b568&quot;
           }
         },
         &quot;tuesday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca80&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b569&quot;
           }
         },
         &quot;wednesday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca81&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b56a&quot;
           }
         },
         &quot;thursday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca82&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b56b&quot;
           }
         },
         &quot;friday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca83&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b56c&quot;
           }
         },
         &quot;saturday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca84&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b56d&quot;
           }
         },
         &quot;sunday&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;trading-hours&quot;,
-            &quot;id&quot;: &quot;64d987d75ebc910e78b8ca85&quot;
+            &quot;id&quot;: &quot;64f015117587eb1b9ee7b56e&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca1b&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b504&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -360,14 +370,14 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca3a&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b523&quot;,
       &quot;type&quot;: &quot;terms-and-conditions&quot;,
       &quot;attributes&quot;: {
         &quot;fragment&quot;: &quot;&lt;div&gt;https://shop2.myfood.link/&lt;/div&gt;&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8c9ea&quot;,
+      &quot;id&quot;: &quot;64f015107587eb1b9ee7b4d2&quot;,
       &quot;type&quot;: &quot;regular-hours&quot;,
       &quot;attributes&quot;: {
         &quot;more_info_url&quot;: null,
@@ -399,7 +409,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca7f&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b568&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -408,7 +418,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca80&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b569&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -417,7 +427,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca81&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b56a&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -426,7 +436,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca82&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b56b&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -435,7 +445,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca83&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b56c&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -444,7 +454,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca84&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b56d&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: true,
@@ -453,7 +463,7 @@ Content-Length: 3744</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;64d987d75ebc910e78b8ca85&quot;,
+      &quot;id&quot;: &quot;64f015117587eb1b9ee7b56e&quot;,
       &quot;type&quot;: &quot;trading-hours&quot;,
       &quot;attributes&quot;: {
         &quot;open&quot;: false,

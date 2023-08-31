@@ -236,16 +236,16 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;889a0db4f98565621611&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;e539f1c0b5652546d08c&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d9874d5ebc910e78b83719/lines?product_ids[]=64d9874d5ebc910e78b8383a</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64f013977587eb1b9ee71c23/lines?product_ids[]=64f013997587eb1b9ee71d46</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">product_ids: [&quot;64d9874d5ebc910e78b8383a&quot;]</pre>
+            <pre class="request query_parameters highlight">product_ids: [&quot;64f013997587eb1b9ee71d46&quot;]</pre>
 
 
 
@@ -258,10 +258,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;2d39ebc9cb90538131a56fe726deec42&quot;
+ETag: W/&quot;585f30fd13fe1638fef136fa7a7e34de&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: d971d682-0ca2-4852-953f-85ce5e97e28a
-X-Runtime: 0.118382
+X-Request-Id: 314c22fa-6363-4b34-b982-7ab838b710ba
+X-Runtime: 0.447569
 Content-Length: 2179</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
@@ -269,7 +269,7 @@ Content-Length: 2179</pre>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;64d9874d5ebc910e78b8383d&quot;,
+      &quot;id&quot;: &quot;64f013997587eb1b9ee71d49&quot;,
       &quot;type&quot;: &quot;lines&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
@@ -277,7 +277,7 @@ Content-Length: 2179</pre>
         &quot;brand_name&quot;: null,
         &quot;sell_price_cents&quot;: 770,
         &quot;normal_price_cents&quot;: 770,
-        &quot;product_id&quot;: &quot;64d9874d5ebc910e78b8383a&quot;,
+        &quot;product_id&quot;: &quot;64f013997587eb1b9ee71d46&quot;,
         &quot;product_code&quot;: &quot;00000093302043&quot;,
         &quot;place_of_origin&quot;: null,
         &quot;size&quot;: null,
@@ -297,13 +297,13 @@ Content-Length: 2179</pre>
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874d5ebc910e78b83839&quot;,
-        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=75ec2972c9083a1bccde188ed7554bac53aefcb446aee5b4f04ad17536bdee2f&quot;,
-        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=d9ccf78ae65f13cdb6380a60078e8a2ff99dc60993fbc940dc54f6e96c563315&quot;,
-        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5026d384b1ab144dde599de4cd328abde7dfd462bb45f55003734098b90e6254&quot;,
-        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=0c4665e0d001ab4ab3e9e9676bc8dd9b1ed59a57b5dc2883a5667849a445f9d0&quot;,
-        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=9f8e5f3b72154877610819656fec629ca3257f2604434eb672f22e3c4e083f50&quot;,
-        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8252c5ac6315cffcaa3478b56ee7e40d0c59abd05394ebf20e1d7a33196f17cf&quot;
+        &quot;image&quot;: &quot;http://localhost:8081/files/64f013997587eb1b9ee71d45&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=174d18782f4e8c80799c138b9b7ed40707d78ebdd9d66c1c09d80da194bb2af3&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8f205e49df59dcadb8be5fe7cabc93fc526293f54c497fb215b95c4e690af436&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a7255ccec2c1dcb88f8cc0141e5ec1e76540fb440d51f157917f94c66d80ed7f&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=aa96791719133e1252a256ec84800349014892ded3b9481b11176748959132b5&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2757a68a3bbc2c7fde2edba4f1c5d66ee4b7c716c66b1ef74da6ad65baa480e6&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=57887cb4de6baad85da7c10bbe8d187e0c3e0861d793295547c263b8a7216ce1&quot;
       }
     }
   ],
@@ -323,16 +323,16 @@ Content-Length: 2179</pre>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;889a0db4f98565621611&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;e539f1c0b5652546d08c&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64d9874d5ebc910e78b83719/lines?product_ids[]=64d9874d5ebc910e78b8383a&amp;product_ids[]=64d9874d5ebc910e78b8384f</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/64f013977587eb1b9ee71c23/lines?product_ids[]=64f013997587eb1b9ee71d46&amp;product_ids[]=64f0139a7587eb1b9ee71d5b</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">product_ids: [&quot;64d9874d5ebc910e78b8383a&quot;, &quot;64d9874d5ebc910e78b8384f&quot;]</pre>
+            <pre class="request query_parameters highlight">product_ids: [&quot;64f013997587eb1b9ee71d46&quot;, &quot;64f0139a7587eb1b9ee71d5b&quot;]</pre>
 
 
 
@@ -345,10 +345,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;980e51cc7a0ef99520880364c1c9ddaa&quot;
+ETag: W/&quot;e8da5ad0f912eff45727a720893da2f4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3601c30e-dc52-4e20-af9c-1a27e6637539
-X-Runtime: 0.067068
+X-Request-Id: ddd16fff-b742-40f5-be32-0eef9dd335a2
+X-Runtime: 0.209116
 Content-Length: 4593</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
@@ -356,7 +356,7 @@ Content-Length: 4593</pre>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;64d9874d5ebc910e78b83853&quot;,
+      &quot;id&quot;: &quot;64f0139a7587eb1b9ee71d5f&quot;,
       &quot;type&quot;: &quot;lines&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Bacardi Rum 700ml&quot;,
@@ -364,7 +364,7 @@ Content-Length: 4593</pre>
         &quot;brand_name&quot;: null,
         &quot;sell_price_cents&quot;: 3699,
         &quot;normal_price_cents&quot;: 4199,
-        &quot;product_id&quot;: &quot;64d9874d5ebc910e78b8384f&quot;,
+        &quot;product_id&quot;: &quot;64f0139a7587eb1b9ee71d5b&quot;,
         &quot;product_code&quot;: &quot;05010677014205&quot;,
         &quot;place_of_origin&quot;: null,
         &quot;size&quot;: {
@@ -380,7 +380,7 @@ Content-Length: 4593</pre>
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;stickers&quot;,
-              &quot;id&quot;: &quot;64d9874d5ebc910e78b83853:0&quot;
+              &quot;id&quot;: &quot;64f0139a7587eb1b9ee71d5f:0&quot;
             }
           ]
         },
@@ -391,17 +391,17 @@ Content-Length: 4593</pre>
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874d5ebc910e78b8384e&quot;,
-        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ac809e2a0984c3d70ac9573f19d35630ab1fc47054e287e7d40847f7e7e18cc7&quot;,
-        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=63662545f038e1e7fa6519072912dfa9d2e1ab7dd7df98f7f6b077403fda276d&quot;,
-        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2fceace60489147cb3e9e38143d8ca700353bb32aec75ed48354c28102f86aab&quot;,
-        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5b5e9f33e733de89dc9346275b454e61865644163fea0bc70e17ca9fa9414ea4&quot;,
-        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=7ca3ef0496214e06873190513ff18d36263e0ae76a579744232a57359b3b3bfd&quot;,
-        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6Ijg1MzQ5M2Y3NzIxNGM3NTMwNzc2ZDEwY2ZiN2YzMzQ4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=995e5e13e9ecdf5d14233123e4d9fb8f205700d4b8e8c0b5aa423da9b051edf1&quot;
+        &quot;image&quot;: &quot;http://localhost:8081/files/64f0139a7587eb1b9ee71d5a&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=e67cb14606cfd9e8dc8a1478a3b22b405914a6df207d24ecb6c33a03f9aadc60&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=dbf188ea30fbd53af030b069f104366344bfa6b47adeafe26ec97afdff04516d&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=34c30df45f8f2341dda52fe5c47745e55f29392b4819ccafdf49e881917189e2&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=b3d0d36dd469d74c6406a3dac8ed9e21cfa2e2bf2358f8afcfdd20126d2aa860&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2f5194f6ea3aa378147a67263f5d9376737822fb67ac8f38b4e5acfd956284c8&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6IjYxZWYwNTVlNDZmNjdjMTZmOGMzY2JlOWVjMzk5MWFhLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5a3d3bd0e994ca29787f66f417eb4e7fd03985e31fc7841e5c5e319ea946cfc5&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;64d9874d5ebc910e78b8383d&quot;,
+      &quot;id&quot;: &quot;64f013997587eb1b9ee71d49&quot;,
       &quot;type&quot;: &quot;lines&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Coopers Ex Stout 750ml sgl&quot;,
@@ -409,7 +409,7 @@ Content-Length: 4593</pre>
         &quot;brand_name&quot;: null,
         &quot;sell_price_cents&quot;: 770,
         &quot;normal_price_cents&quot;: 770,
-        &quot;product_id&quot;: &quot;64d9874d5ebc910e78b8383a&quot;,
+        &quot;product_id&quot;: &quot;64f013997587eb1b9ee71d46&quot;,
         &quot;product_code&quot;: &quot;00000093302043&quot;,
         &quot;place_of_origin&quot;: null,
         &quot;size&quot;: null,
@@ -429,19 +429,19 @@ Content-Length: 4593</pre>
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/files/64d9874d5ebc910e78b83839&quot;,
-        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=75ec2972c9083a1bccde188ed7554bac53aefcb446aee5b4f04ad17536bdee2f&quot;,
-        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=d9ccf78ae65f13cdb6380a60078e8a2ff99dc60993fbc940dc54f6e96c563315&quot;,
-        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=5026d384b1ab144dde599de4cd328abde7dfd462bb45f55003734098b90e6254&quot;,
-        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=0c4665e0d001ab4ab3e9e9676bc8dd9b1ed59a57b5dc2883a5667849a445f9d0&quot;,
-        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=9f8e5f3b72154877610819656fec629ca3257f2604434eb672f22e3c4e083f50&quot;,
-        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImFmNWM0NzY5MTAwZTMxZTc2YWY3M2MyZDJkYzE2YzY4LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8252c5ac6315cffcaa3478b56ee7e40d0c59abd05394ebf20e1d7a33196f17cf&quot;
+        &quot;image&quot;: &quot;http://localhost:8081/files/64f013997587eb1b9ee71d45&quot;,
+        &quot;large_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=174d18782f4e8c80799c138b9b7ed40707d78ebdd9d66c1c09d80da194bb2af3&quot;,
+        &quot;medium_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=8f205e49df59dcadb8be5fe7cabc93fc526293f54c497fb215b95c4e690af436&quot;,
+        &quot;small_image&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon/128/128/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=a7255ccec2c1dcb88f8cc0141e5ec1e76540fb440d51f157917f94c66d80ed7f&quot;,
+        &quot;large_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/512/512/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=aa96791719133e1252a256ec84800349014892ded3b9481b11176748959132b5&quot;,
+        &quot;medium_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/256/256/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2757a68a3bbc2c7fde2edba4f1c5d66ee4b7c716c66b1ef74da6ad65baa480e6&quot;,
+        &quot;small_image_webp&quot;: &quot;http://localhost:8081/imagery/assets/derivations/icon_webp/128/128/true/eyJpZCI6ImQwMjY3Yjc4ZmY4NTk3NDg3MGYzZjQwOWIzY2JkODc0LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=57887cb4de6baad85da7c10bbe8d187e0c3e0861d793295547c263b8a7216ce1&quot;
       }
     }
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;64d9874d5ebc910e78b83853:0&quot;,
+      &quot;id&quot;: &quot;64f0139a7587eb1b9ee71d5f:0&quot;,
       &quot;type&quot;: &quot;stickers&quot;,
       &quot;attributes&quot;: {
         &quot;labels&quot;: [
