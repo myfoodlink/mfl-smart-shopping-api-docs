@@ -112,20 +112,41 @@ table th, table td {
         <h2>the user has TWO stored payment instrument</h2>
         <h3>GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order_id</span>
+                </td>
+                <td>
+                  <span class="description">Order Id</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;589cf86ffdc36fc53c36&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjU4OWNmODZmZmRjMzZmYzUzYzM2IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY0ODVlYmM5MTBlNzhiNzNmYWEifSwiZXhwIjoxNDk3MjQ4MzQwfQ.rV83XOrIHm9b-YhVNFSzBZz1h5JpU-NIbPHe59zjHqY&quot;
+Authorization: MYFOODLINK app_id=&quot;d8e4644a702073f2e991&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImQ4ZTQ2NDRhNzAyMDczZjJlOTkxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjJjMzJmYTFhZDY2ZjIyYjE2YzYifSwiZXhwIjoxNDk3MjQ4MzQwfQ._xmgB6K3uqth0tNfxXEM36fP09txUbLeUs0wYMFN1ic&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments?order_id=650122c32fa1ad66f22b16bf</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">order_id: 650122c32fa1ad66f22b16bf</pre>
 
 
 
@@ -138,10 +159,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;5dad9f5d23e2bec14e79f8cfde1581c8&quot;
+ETag: W/&quot;5c24d6d7254b324d522dcc9eacb2b9f4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: fe72cf8c-242d-49b9-a44a-c652f763a8be
-X-Runtime: 0.023346
+X-Request-Id: c16897f3-11ec-476f-b10f-38f9fd5b5da9
+X-Runtime: 0.028829
 Content-Length: 647</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
@@ -149,41 +170,41 @@ Content-Length: 647</pre>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;64d986485ebc910e78b73fa7&quot;,
+      &quot;id&quot;: &quot;650122c32fa1ad66f22b16c3&quot;,
       &quot;type&quot;: &quot;payment-instruments&quot;,
       &quot;attributes&quot;: {
+        &quot;test&quot;: false,
+        &quot;service_type&quot;: &quot;fake&quot;,
         &quot;obfuscated_card&quot;: &quot;411111XXXXXX1111&quot;,
         &quot;expiry_month&quot;: 6,
         &quot;expiry_year&quot;: 2024,
-        &quot;card_type&quot;: &quot;visa&quot;,
-        &quot;test&quot;: false,
-        &quot;service_type&quot;: &quot;fake&quot;
+        &quot;card_type&quot;: &quot;visa&quot;
       },
       &quot;relationships&quot;: {
         &quot;service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;64d986485ebc910e78b73eca&quot;
+            &quot;id&quot;: &quot;650122c22fa1ad66f22b15e1&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;64d986485ebc910e78b73fa8&quot;,
+      &quot;id&quot;: &quot;650122c32fa1ad66f22b16c4&quot;,
       &quot;type&quot;: &quot;payment-instruments&quot;,
       &quot;attributes&quot;: {
+        &quot;test&quot;: true,
+        &quot;service_type&quot;: &quot;fake&quot;,
         &quot;obfuscated_card&quot;: &quot;512345XXXXXX2346&quot;,
         &quot;expiry_month&quot;: 5,
         &quot;expiry_year&quot;: 2024,
-        &quot;card_type&quot;: &quot;mastercard&quot;,
-        &quot;test&quot;: true,
-        &quot;service_type&quot;: &quot;fake&quot;
+        &quot;card_type&quot;: &quot;mastercard&quot;
       },
       &quot;relationships&quot;: {
         &quot;service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;64d986485ebc910e78b73eca&quot;
+            &quot;id&quot;: &quot;650122c22fa1ad66f22b15e1&quot;
           }
         }
       }

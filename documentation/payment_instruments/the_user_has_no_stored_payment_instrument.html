@@ -112,20 +112,41 @@ table th, table td {
         <h2>the user has NO stored payment instrument</h2>
         <h3>GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order_id</span>
+                </td>
+                <td>
+                  <span class="description">Order Id</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;6ec4d814a725ca6ac290&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjZlYzRkODE0YTcyNWNhNmFjMjkwIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODY0OTVlYmM5MTBlNzhiNzQwZjIifSwiZXhwIjoxNDk3MjQ4MzQwfQ.6RKTkAo8cLRb-jccoJsl02VQzDTGYZruJ4MgbKz7qNw&quot;
+Authorization: MYFOODLINK app_id=&quot;ac97aeed07aa517ed42b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImFjOTdhZWVkMDdhYTUxN2VkNDJiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjJjNjJmYTFhZDY2ZjIyYjE5NjQifSwiZXhwIjoxNDk3MjQ4MzQwfQ.xwuUmuB1xNaUBAUAYbtp7xC1vftkf05kSuICmcTf6uI&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments?order_id=650122c62fa1ad66f22b195f</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">order_id: 650122c62fa1ad66f22b195f</pre>
 
 
 
@@ -140,8 +161,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 ETag: W/&quot;df63158133de5aff21a18c80947b75c7&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: be0d3a55-c117-4b29-9f96-0607afeec394
-X-Runtime: 0.022489
+X-Request-Id: b49489a6-9020-4cca-8ef9-218027189b8a
+X-Runtime: 0.027769
 Content-Length: 39</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>

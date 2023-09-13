@@ -193,17 +193,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;849629dbac95e009dcee&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;6576ca3e65d49f769822&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/64d987875ebc910e78b87556/orders/current/delivery</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/650124422fa1ad66f22c513f/orders/current/delivery</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"time_slot_id":"64d987885ebc910e78b8762f#2022-01-20"}}</pre>
+            <pre class="request body">{"order":{"time_slot_id":"650124422fa1ad66f22c521a#2022-01-20"}}</pre>
 
 
             <h3>Response</h3>
@@ -215,17 +215,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;b29892db5e8857fd2ac9b74ec02856ed&quot;
+ETag: W/&quot;77fba6b747e177bdb46e0947852cf59f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ce447bb5-2c7e-4de5-9446-2e991f53c810
-X-Runtime: 0.050665
-Content-Length: 1441</pre>
+X-Request-Id: 49921e08-f1e4-49ff-8550-e7f5baaba6bb
+X-Runtime: 0.061710
+Content-Length: 1741</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;64d987885ebc910e78b8766e&quot;,
+    &quot;id&quot;: &quot;650124432fa1ad66f22c5259&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -253,7 +253,7 @@ Content-Length: 1441</pre>
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;64d987875ebc910e78b87556&quot;
+          &quot;id&quot;: &quot;650124422fa1ad66f22c513f&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -272,6 +272,11 @@ Content-Length: 1441</pre>
 
         ]
       },
+      &quot;tender_options&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
       &quot;tenders&quot;: {
         &quot;data&quot;: [
 
@@ -280,7 +285,13 @@ Content-Length: 1441</pre>
       &quot;time_slot&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;time-slots&quot;,
-          &quot;id&quot;: &quot;64d987885ebc910e78b8762f#2022-01-20&quot;
+          &quot;id&quot;: &quot;650124422fa1ad66f22c521a#2022-01-20&quot;
+        }
+      },
+      &quot;gift_information&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;gift-information&quot;,
+          &quot;id&quot;: &quot;650124432fa1ad66f22c525c&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -290,7 +301,7 @@ Content-Length: 1441</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;64d987885ebc910e78b8762f#2022-01-20&quot;,
+      &quot;id&quot;: &quot;650124422fa1ad66f22c521a#2022-01-20&quot;,
       &quot;type&quot;: &quot;time-slots&quot;,
       &quot;attributes&quot;: {
         &quot;date&quot;: &quot;2022-01-20&quot;,
@@ -307,19 +318,30 @@ Content-Length: 1441</pre>
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;64d987875ebc910e78b87556&quot;
+            &quot;id&quot;: &quot;650124422fa1ad66f22c513f&quot;
           }
         },
         &quot;delivery_zone&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;delivery-zones&quot;,
-            &quot;id&quot;: &quot;64d987875ebc910e78b875c3&quot;
+            &quot;id&quot;: &quot;650124422fa1ad66f22c51ad&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;64d987875ebc910e78b875c3&quot;,
+      &quot;id&quot;: &quot;650124432fa1ad66f22c525c&quot;,
+      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;attributes&quot;: {
+        &quot;gift&quot;: false,
+        &quot;note&quot;: null,
+        &quot;recipient_name&quot;: null,
+        &quot;recipient_email_address&quot;: null,
+        &quot;recipient_phone_number&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;650124422fa1ad66f22c51ad&quot;,
       &quot;type&quot;: &quot;delivery-zones&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Zone&quot;,
@@ -329,13 +351,13 @@ Content-Length: 1441</pre>
         &quot;pickup_address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;64d987875ebc910e78b875b6&quot;
+            &quot;id&quot;: &quot;650124422fa1ad66f22c51a0&quot;
           }
         },
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;64d987875ebc910e78b87556&quot;
+            &quot;id&quot;: &quot;650124422fa1ad66f22c513f&quot;
           }
         }
       }

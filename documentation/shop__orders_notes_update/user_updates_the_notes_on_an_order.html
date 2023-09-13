@@ -137,13 +137,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;e0dbd8f17648f4b8c492&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;68b465ab58a84487fc16&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/64d9878c5ebc910e78b87a1c/orders/current/note</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/650124502fa1ad66f22c5e67/orders/current/note</pre>
 
 
             <h4>Body</h4>
@@ -159,17 +159,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;a9e53724f026d04c62026830b62424a0&quot;
+ETag: W/&quot;6735229a8dad9ca9bbffc5b79a65d596&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: debef847-ccbe-4942-a414-573da9b054c5
-X-Runtime: 0.046891
-Content-Length: 673</pre>
+X-Request-Id: 9bf55d85-830a-4fb9-b71c-d1c2dc9eecb0
+X-Runtime: 0.054925
+Content-Length: 986</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;64d9878d5ebc910e78b87b34&quot;,
+    &quot;id&quot;: &quot;650124512fa1ad66f22c5f81&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -197,7 +197,7 @@ Content-Length: 673</pre>
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;64d9878c5ebc910e78b87a1c&quot;
+          &quot;id&quot;: &quot;650124502fa1ad66f22c5e67&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -216,6 +216,11 @@ Content-Length: 673</pre>
 
         ]
       },
+      &quot;tender_options&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
       &quot;tenders&quot;: {
         &quot;data&quot;: [
 
@@ -224,11 +229,30 @@ Content-Length: 673</pre>
       &quot;time_slot&quot;: {
         &quot;data&quot;: null
       },
+      &quot;gift_information&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;gift-information&quot;,
+          &quot;id&quot;: &quot;650124512fa1ad66f22c5f84&quot;
+        }
+      },
       &quot;courier_quote&quot;: {
         &quot;data&quot;: null
       }
     }
   },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;650124512fa1ad66f22c5f84&quot;,
+      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;attributes&quot;: {
+        &quot;gift&quot;: false,
+        &quot;note&quot;: null,
+        &quot;recipient_name&quot;: null,
+        &quot;recipient_email_address&quot;: null,
+        &quot;recipient_phone_number&quot;: null
+      }
+    }
+  ],
   &quot;jsonapi&quot;: {
     &quot;version&quot;: &quot;1.0&quot;
   }

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Orders gift information update API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Orders gift information update API</h1>
+
+      <div class="article">
+        <h2>User updates the gift information on an order without required fields</h2>
+        <h3>PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/gift_information</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">order[gift]</span>
+                </td>
+                <td>
+                  <span class="description">Boolean (true by default)</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[note]</span>
+                </td>
+                <td>
+                  <span class="description">String (Text)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[recipient_name]</span>
+                </td>
+                <td>
+                  <span class="description">String (Name of the recipient)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[recipient_email_address]</span>
+                </td>
+                <td>
+                  <span class="description">String (Email Address of the recipient)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[recipient_phone_number]</span>
+                </td>
+                <td>
+                  <span class="description">String (Phone Number of the recipient, e.g., 0400000000)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;ee8441ea7cac6c30ac47&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/650124482fa1ad66f22c5742/orders/current/gift_information</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"order":{"recipient_name":"Kung Lao","recipient_email_address":"kung_lao@email.com","recipient_phone_number":"0400123456"}}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;08e8819e645d16a733fe2cd00d1f825c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: bf3b8930-e1d9-40c3-a17e-8881cd166aa9
+X-Runtime: 0.068840
+Content-Length: 1011</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;650124492fa1ad66f22c585e&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: null,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 0,
+        &quot;cents_ex_tax&quot;: 0,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: null,
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: null,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+
+      ],
+      &quot;balance_at_checkout&quot;: 0,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;650124482fa1ad66f22c5742&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tender_options&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;gift_information&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;gift-information&quot;,
+          &quot;id&quot;: &quot;650124492fa1ad66f22c585d&quot;
+        }
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;650124492fa1ad66f22c585d&quot;,
+      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;attributes&quot;: {
+        &quot;gift&quot;: true,
+        &quot;note&quot;: null,
+        &quot;recipient_name&quot;: &quot;Kung Lao&quot;,
+        &quot;recipient_email_address&quot;: &quot;kung_lao@email.com&quot;,
+        &quot;recipient_phone_number&quot;: &quot;0400123456&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -243,7 +243,7 @@ table th, table td {
                     <span class="name">order[capabilities]</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation and three_d_secure_transaction</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
                 </td>
               </tr>
             </tbody>
@@ -254,17 +254,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;c6a253c9b218df2dc967&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImM2YTI1M2M5YjIxOGRmMmRjOTY3IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NGQ5ODc3YzVlYmM5MTBlNzhiODY4YjEifSwiZXhwIjoxNjkxOTc4Nzk2fQ.9c5C62vawjRxiOS-rgDvoWEvd76RC-R8NPGC5jXHdT4&quot;
+Authorization: MYFOODLINK app_id=&quot;de5a236e53f36217a93b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImRlNWEyMzZlNTNmMzYyMTdhOTNiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQzNDJmYTFhZDY2ZjIyYzQ0ODYifSwiZXhwIjoxNjk0NTc0ODIwfQ.oEvefgJnXU9u703rYaSv4cD7Ft7RQBnjC5PZqxpTMkQ&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/64d9877b5ebc910e78b8677b/orders/current/checkout</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124332fa1ad66f22c434e/orders/current/checkout</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"64d9877c5ebc910e78b868a8","browser_information":{"ip_address":"127.0.0.1"}}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"650124342fa1ad66f22c447d","browser_information":{"ip_address":"127.0.0.1"}}}</pre>
 
 
             <h3>Response</h3>
@@ -277,8 +277,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 79c9b679-9c87-4177-8f2b-9b994836ebd0
-X-Runtime: 0.065048
+X-Request-Id: 5c38818b-9170-41b7-a5e3-28d6696c0c4b
+X-Runtime: 0.083461
 Content-Length: 962</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>

@@ -109,6 +109,31 @@ table th, table td {
   <h1>Smart Shopping API version 2.0</h1>
   
   <div class="article">
+    <h2>(Deprecated) Payment Instruments Create With Till Payments attributes</h2>
+
+      <p class="explanation">The response will be a response with type 'payment-instrument-create-responses' with either an attribute
+                 `iframe_challenge_url` which has the URL to display in an iframe to contain the banks 3ds challeng, or
+                 a relationship to the new `payment_instrument` if it is created (it will be included)</p>
+
+    <ul>
+      <li>
+        <a href="(deprecated)_payment_instruments_create_with_till_payments_attributes/(deprecated)_with_a_challenge_response..html">(Deprecated) With a challenge response.</a>
+      </li>
+      <li>
+        <a href="(deprecated)_payment_instruments_create_with_till_payments_attributes/(deprecated)_with_a_failed_tokenisation..html">(Deprecated) With a failed tokenisation.</a>
+      </li>
+      <li>
+        <a href="(deprecated)_payment_instruments_create_with_till_payments_attributes/(deprecated)_with_a_successful_tokenisation..html">(Deprecated) With a successful tokenisation.</a>
+      </li>
+      <li>
+        <a href="(deprecated)_payment_instruments_create_with_till_payments_attributes/payment_instruments_can_only_be_created_by_logged_in_users..html">Payment instruments can only be created by logged in users.</a>
+      </li>
+      <li>
+        <a href="(deprecated)_payment_instruments_create_with_till_payments_attributes/without_parameters..html">Without parameters.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
     <h2>About Menu Items</h2>
 
     <ul>
@@ -278,6 +303,12 @@ table th, table td {
         <a href="payment_instruments/returns_the_payment_instrument_id.html">returns the payment instrument id</a>
       </li>
       <li>
+        <a href="payment_instruments/the_order_has_one_stored_payment_instrument.html">the order has ONE stored payment instrument</a>
+      </li>
+      <li>
+        <a href="payment_instruments/the_order_has_two_stored_payment_instrument.html">the order has TWO stored payment instrument</a>
+      </li>
+      <li>
         <a href="payment_instruments/the_user_has_no_stored_payment_instrument.html">the user has NO stored payment instrument</a>
       </li>
       <li>
@@ -292,27 +323,50 @@ table th, table td {
     </ul>
   </div>
   <div class="article">
-    <h2>Payment Instruments Create</h2>
+    <h2>Payment Instruments Create With New Till Payments attributes</h2>
 
-      <p class="explanation">The response will be a response with type 'payment-instrument-create-responses' with either an attribute
-                 `iframe_challenge_url` which has the URL to display in an iframe to contain the banks 3ds challeng, or
-                 a relationship to the new `payment_instrument` if it is created (it will be included)</p>
+      <p class="explanation">The response will be a response with type 'payment-instrument-create-responses' with either an
+                 attribute `iframe_challenge_url` which has the URL to display in an iframe to contain the banks 3ds
+                 challenge, or a relationship to the new `payment_instrument` if it is created (it will be included)</p>
 
     <ul>
       <li>
-        <a href="payment_instruments_create/payment_instruments_can_only_be_created_by_logged_in_users..html">Payment instruments can only be created by logged in users.</a>
+        <a href="payment_instruments_create_with_new_till_payments_attributes/payment_instruments_can_only_be_created_by_logged_in_users..html">Payment instruments can only be created by logged in users.</a>
       </li>
       <li>
-        <a href="payment_instruments_create/with_a_challenge_response..html">With a challenge response.</a>
+        <a href="payment_instruments_create_with_new_till_payments_attributes/with_a_challenge_response_for_new_till_payment..html">With a challenge response for new till payment.</a>
       </li>
       <li>
-        <a href="payment_instruments_create/with_a_failed_tokenisation..html">With a failed tokenisation.</a>
+        <a href="payment_instruments_create_with_new_till_payments_attributes/with_a_failed_tokenisation_for_new_till_payment..html">With a failed tokenisation for new till payment.</a>
       </li>
       <li>
-        <a href="payment_instruments_create/with_a_successful_tokenisation..html">With a successful tokenisation.</a>
+        <a href="payment_instruments_create_with_new_till_payments_attributes/with_a_successful_tokenisation_for_new_till_payment..html">With a successful tokenisation for new till payment.</a>
       </li>
       <li>
-        <a href="payment_instruments_create/without_parameters..html">Without parameters.</a>
+        <a href="payment_instruments_create_with_new_till_payments_attributes/without_parameters..html">Without parameters.</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Payment Instruments Create for Zen Gift Cards attributes</h2>
+
+      <p class="explanation">The response will be with type 'payment-instrument-create-responses' with 'zen_gift_card' attribute</p>
+
+    <ul>
+      <li>
+        <a href="payment_instruments_create_for_zen_gift_cards_attributes/payment_instruments_can_only_be_created_by_logged_in_users..html">Payment instruments can only be created by logged in users.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create_for_zen_gift_cards_attributes/returns_422_if_no_order_id_is_supplied_for_zen_gateway.html">Returns 422 if no order_id is supplied for zen gateway</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create_for_zen_gift_cards_attributes/with_a_failed_tokenisation_for_zen_gift_cards..html">With a failed tokenisation for zen gift cards.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create_for_zen_gift_cards_attributes/with_a_successful_tokenisation_for_zen_gift_cards..html">With a successful tokenisation for zen gift cards.</a>
+      </li>
+      <li>
+        <a href="payment_instruments_create_for_zen_gift_cards_attributes/without_parameters..html">Without parameters.</a>
       </li>
     </ul>
   </div>
@@ -849,6 +903,9 @@ table th, table td {
         <a href="shop__orders__checkout/checks_out_the_order_with_till_redirect_urls.html">Checks out the order with Till redirect URLs</a>
       </li>
       <li>
+        <a href="shop__orders__checkout/checks_out_the_order_with_the_zen_gift_cards_capabilities.html">Checks out the order with the zen_gift_cards capabilities</a>
+      </li>
+      <li>
         <a href="shop__orders__checkout/returns_401_unless_authorization_header_has_a_valid_session.html">Returns 401 unless authorization header has a valid session</a>
       </li>
       <li>
@@ -1061,11 +1118,56 @@ table th, table td {
     </ul>
   </div>
   <div class="article">
+    <h2>Shop / Orders gift information update</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders_gift_information_update/user_updates_the_gift_information_on_an_order_with_all_fields.html">User updates the gift information on an order with all fields</a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/user_updates_the_gift_information_on_an_order_without_required_fields.html">User updates the gift information on an order without required fields</a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/validate_the_required_fields_-_recipient_name.html">Validate the required fields - recipient_name</a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/validates_recipient_email_address_format_-_recipient_email_address_is_null.html">validates recipient email address format - recipient_email_address is null</a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/validates_recipient_email_address_format_-_recipient_email_address_not_valid.html">validates recipient email address format - recipient_email_address not valid</a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/validates_recipient_phone_number_format_-_recipient_phone_number_is_null_.html">validates recipient phone number format  - recipient_phone_number is null </a>
+      </li>
+      <li>
+        <a href="shop__orders_gift_information_update/validates_recipient_phone_number_format_-_recipient_phone_number_not_valid.html">validates recipient phone number format - recipient_phone_number not valid</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
     <h2>Shop / Orders notes update</h2>
 
     <ul>
       <li>
         <a href="shop__orders_notes_update/user_updates_the_notes_on_an_order.html">User updates the notes on an order</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>Shop / Orders tender options</h2>
+
+    <ul>
+      <li>
+        <a href="shop__orders_tender_options/delete_tender_options_on_an_order.html">Delete tender_options on an order</a>
+      </li>
+      <li>
+        <a href="shop__orders_tender_options/sending_invalid_amount_to_charge.html">Sending invalid amount_to_charge</a>
+      </li>
+      <li>
+        <a href="shop__orders_tender_options/sending_invalid_payment_instrument_id.html">Sending invalid payment_instrument_id</a>
+      </li>
+      <li>
+        <a href="shop__orders_tender_options/update_tender_options_on_an_order.html">Update tender_options on an order</a>
       </li>
     </ul>
   </div>
@@ -1156,6 +1258,9 @@ table th, table td {
       </li>
       <li>
         <a href="shop__user__payment_services/if_the_paystream_payment_method_is_badly_configured_it_may_be_returned!!!.html">If the paystream payment method is badly configured it may be returned!!!</a>
+      </li>
+      <li>
+        <a href="shop__user__payment_services/retrieving_payment_service_available_to_a_user_with_till_and_zen_gift_card_enabled_for_the_store..html">Retrieving payment service available to a user with Till and Zen Gift card enabled for the store.</a>
       </li>
       <li>
         <a href="shop__user__payment_services/returns_401_unless_authorization_header_has_a_valid_session..html">Returns 401 unless authorization header has a valid session.</a>
@@ -1310,6 +1415,12 @@ table th, table td {
         <a href="shops/how_to_retrieve_list_of_all_shops.html">How to retrieve list of all shops</a>
       </li>
       <li>
+        <a href="shops/looking_for_a_shop_role_that_is_not_present_in_the_shops,_and_returning_an_empty_data..html">Looking for a shop_role that is not present in the shops, and returning an empty data.</a>
+      </li>
+      <li>
+        <a href="shops/matches_a_shop.html">Matches a shop</a>
+      </li>
+      <li>
         <a href="shops/matches_a_shop.html">Matches a shop</a>
       </li>
       <li>
@@ -1329,6 +1440,9 @@ table th, table td {
       </li>
       <li>
         <a href="shops/searching_for_a_unknown_locality_and_postcode_will_return_no_shops.html">Searching for a unknown locality and postcode will return no shops</a>
+      </li>
+      <li>
+        <a href="shops/searching_for_a_unknown_shop_role_will_return_an_error.html">Searching for a unknown shop_role will return an error</a>
       </li>
       <li>
         <a href="shops/searching_for_a_unknown_store_number_will_return_no_shops.html">Searching for a unknown store number will return no shops</a>

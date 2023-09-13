@@ -243,7 +243,7 @@ table th, table td {
                     <span class="name">order[capabilities]</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation and three_d_secure_transaction</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
                 </td>
               </tr>
             </tbody>
@@ -254,13 +254,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;9a2fcd05e2e015eebeca&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;ae548335856449be56b2&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/64d9876d5ebc910e78b85799/orders/current/checkout</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6501241e2fa1ad66f22c31ea/orders/current/checkout</pre>
 
 
 
@@ -276,8 +276,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 WWW-Authenticate: MYFOODLINK
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: b6c61ffa-9220-4872-8ae9-22cfc5156636
-X-Runtime: 0.020504
+X-Request-Id: aa740a14-b880-44c4-8106-221588f20fff
+X-Runtime: 0.024707
 Content-Length: 206</pre>
             <h4>Status</h4>
             <pre class="response status">401 Unauthorized</pre>
