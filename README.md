@@ -4,12 +4,15 @@ This API allows you to interact with the Myfoodlink API, commonly used by "headl
 
 ### Documentation
 
-When our tests pass, they automatically generate API docs, which are then automatically uploaded to this repository.
+To learn how to interact with our API, please follow the link below:
 
-TBC
+[myfoodlink.github.io/mfl-smart-shopping-api-docs](https://myfoodlink.github.io/mfl-smart-shopping-api-docs/)
+
+Our API docs are automatically generated when our tests pass. That means they cover a large variety of edge cases such errors.
+
 
 ### Releases
 
 Each time we introduce notable changes to the API, we'll make a release and list them below:
 
-* TBC
+TBC
