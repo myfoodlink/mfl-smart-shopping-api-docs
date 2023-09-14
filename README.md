@@ -22,3 +22,7 @@ What has changed in these releases?
 We currently do not yet have a good process for communicating this with you. 😥
 
 Bare with us. ❤️
+
+### Questions
+
+Ask [jan@myfoodlink.com](mailto:jan@myfoodlink.com).
