@@ -14,7 +14,7 @@ Our API docs are automatically generated when our tests pass. That means they co
 
 Each time we introduce notable changes to the API, we'll make a release and list them below:
 
-* [2023-09-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-09-14)
+* [2023-09-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2024-09-14)
 * [2023-08-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-08-14)
 
 What has changed in these releases?
