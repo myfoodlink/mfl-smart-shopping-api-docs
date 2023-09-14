@@ -10,9 +10,15 @@ To learn how to interact with our API, please follow the link below:
 
 Our API docs are automatically generated when our tests pass. That means they cover a large variety of edge cases such errors.
 
-
 ### Releases
 
 Each time we introduce notable changes to the API, we'll make a release and list them below:
 
-TBC
+* [2023-09-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-09-14)
+* [2023-08-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-08-14)
+
+What has changed in these releases?
+
+We currently do not yet have a good process for communicating this with you. 😥
+
+Bare with us. ❤️
