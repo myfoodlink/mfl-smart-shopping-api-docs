@@ -11,8 +11,6 @@ Our API docs are automatically generated when our tests pass. That means they co
 * [API specifications](https://myfoodlink.github.io/mfl-smart-shopping-api-docs/)
 * [How to work with Zen Gift cards](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/wiki/How-to-work-with-Zen-Gift-cards)
 
-
-
 ### Releases
 
 Each time we introduce notable changes to the API, we'll make a release and list them below:
