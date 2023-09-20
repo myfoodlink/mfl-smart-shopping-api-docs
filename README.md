@@ -6,7 +6,9 @@ This API is commonly used by "headless" shops who build their own front-end, but
 
 ### Documentation
 
-Our API docs are automatically generated when our tests pass. That means they cover all edge cases we have tests for. 👍
+Our API docs are automatically generated when our tests pass. 
+
+That means they cover all edge cases we have tests for. 👍
 
 * [API specifications](https://myfoodlink.github.io/mfl-smart-shopping-api-docs/)
 * [How to work with Zen Gift cards](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/wiki/How-to-work-with-Zen-Gift-cards)
