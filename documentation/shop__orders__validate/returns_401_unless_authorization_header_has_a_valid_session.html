@@ -214,6 +214,22 @@ table th, table td {
                   <span class="description">Exact content of the HTTP user-agent header. The field is limited to maximum 2048 characters.</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">order[capabilities]</span>
+                </td>
+                <td>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. This is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_information]</span>
+                </td>
+                <td>
+                  <span class="description">If it is a Gift Card Shop - it is required. Please check the &quot;Orders gift information update&quot; for more details.</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -222,13 +238,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;8b3206dfce2ad58e3f54&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;03e0c38c7584b766862c&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124872fa1ad66f22c88d7/orders/current/validate</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c869fce6a30f1ac0b25a/orders/current/validate</pre>
 
 
 
@@ -244,8 +260,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 WWW-Authenticate: MYFOODLINK
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 027acb7b-86d7-4c8c-9ac6-274c8b5f6b57
-X-Runtime: 0.027353
+X-Request-Id: c34fc9fb-f041-4d90-8d56-c6aa1c44da4b
+X-Runtime: 0.052887
 Content-Length: 206</pre>
             <h4>Status</h4>
             <pre class="response status">401 Unauthorized</pre>

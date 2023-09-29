@@ -897,13 +897,19 @@ table th, table td {
         <a href="shop__orders__checkout/checks_out_the_order.html">Checks out the order</a>
       </li>
       <li>
+        <a href="shop__orders__checkout/checks_out_the_order_when_all_tender_options_are_up_to_amounts.html">Checks out the order when all tender options are up_to amounts</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/checks_out_the_order_when_tender_options_are_enough_to_cover_the_order_value.html">Checks out the order when tender options are enough to cover the order value</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/checks_out_the_order_when_tender_options_match_the_order_amount_exactly.html">Checks out the order when tender options match the order amount exactly</a>
+      </li>
+      <li>
         <a href="shop__orders__checkout/checks_out_the_order_while_providing_browser_information.html">Checks out the order while providing browser information</a>
       </li>
       <li>
         <a href="shop__orders__checkout/checks_out_the_order_with_till_redirect_urls.html">Checks out the order with Till redirect URLs</a>
-      </li>
-      <li>
-        <a href="shop__orders__checkout/checks_out_the_order_with_the_zen_gift_cards_capabilities.html">Checks out the order with the zen_gift_cards capabilities</a>
       </li>
       <li>
         <a href="shop__orders__checkout/returns_401_unless_authorization_header_has_a_valid_session.html">Returns 401 unless authorization header has a valid session</a>
@@ -930,10 +936,22 @@ table th, table td {
         <a href="shop__orders__checkout/returns_422_if_order_parameter_is_not_supplied.html">Returns 422 if order parameter is not supplied</a>
       </li>
       <li>
-        <a href="shop__orders__checkout/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+        <a href="shop__orders__checkout/returns_422_if_tender_option_capability_has_enabled_and_payment_instrument_provided.html">Returns 422 if tender option capability has enabled and payment instrument provided</a>
       </li>
       <li>
         <a href="shop__orders__checkout/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_when_capability_and_payment_instrument_id_has_not_provided.html">Returns 422 when capability and payment instrument id has not provided</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_when_missing_browser_information.html">Returns 422 when missing browser information</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_when_tender_options_fall_short_of_covering_the_order_amount.html">Returns 422 when tender options fall short of covering the order amount</a>
+      </li>
+      <li>
+        <a href="shop__orders__checkout/returns_422_when_tender_options_payment_instrument_has_expired.html">Returns 422 when tender options payment instrument has expired</a>
       </li>
     </ul>
   </div>
@@ -1077,6 +1095,12 @@ table th, table td {
 
     <ul>
       <li>
+        <a href="shop__orders__validate/gift_card_shop_-_returns_422_if_order_does_not_contains_gift_card_information.html">Gift Card Shop - Returns 422 if order does not contains gift_card_information</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/gift_card_shop_-_validates_without_delivery_information.html">Gift Card Shop - Validates without delivery information</a>
+      </li>
+      <li>
         <a href="shop__orders__validate/returns_401_unless_authorization_header_has_a_valid_session.html">Returns 401 unless authorization header has a valid session</a>
       </li>
       <li>
@@ -1098,22 +1122,40 @@ table th, table td {
         <a href="shop__orders__validate/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
       </li>
       <li>
-        <a href="shop__orders__validate/returns_422_if_timeslot_has_expired.html">Returns 422 if timeslot has expired</a>
+        <a href="shop__orders__validate/returns_422_when_missing_browser_information.html">Returns 422 when missing browser information</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_returns_422_with_tender_options_capability_and_a_payment_instrument_is_sent.html">Tender Options - Returns 422 with tender_options capability and a payment instrument is sent</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_returns_422_with_tender_options_capability_and_option_payment_instrument_has_expired.html">Tender Options - Returns 422 with tender_options capability and option payment instrument has expired</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_returns_422_with_tender_options_capability_and_options_fall_short_of_covering_the_order_amount_(order_is_$49.99_tenders_are_two_gift_cards_10_and_39.98).html">Tender Options - Returns 422 with tender_options capability and options fall short of covering the order amount (order is $49.99 tenders are two gift cards 10 and 39.98)</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_validates_the_order_with_tender_options_capability_and_all_options_are_greater_than_the_order_value_by_1c_(order_is_$49.99_tenders_are_two_gift_cards_10_and_40_dollars).html">Tender Options - Validates the order with tender_options capability and all options are greater than the order value by 1c (order is $49.99 tenders are two gift cards 10 and 40 dollars)</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_validates_the_order_with_tender_options_capability_and_no_tender_options_specified_(confirm).html">Tender Options - Validates the order with tender_options capability and no tender options specified (CONFIRM)</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_validates_the_order_with_tender_options_capability_and_options_match_the_order_amount_exactly_(order_is_$49.99_tenders_are_two_gift_cards_30_and_19.99_dollars).html">Tender Options - Validates the order with tender_options capability and options match the order amount exactly (order is $49.99 tenders are two gift cards 30 and 19.99 dollars)</a>
+      </li>
+      <li>
+        <a href="shop__orders__validate/tender_options_-_validates_the_order_with_tender_options_capability_and_tender_options_include_a_credit_card_(order_is_$49.99,_tender_options_are_gift_card_$10_and_cc_remainder).html">Tender Options - Validates the order with tender_options capability and tender options include a credit card (order is $49.99, tender options are gift card $10 and CC remainder)</a>
       </li>
       <li>
         <a href="shop__orders__validate/validate_the_order_and_return_200.html">Validate the order and return 200</a>
       </li>
       <li>
-        <a href="shop__orders__validate/validates_out_the_order.html">Validates out the order</a>
+        <a href="shop__orders__validate/validates_the_order.html">Validates the order</a>
       </li>
       <li>
-        <a href="shop__orders__validate/validates_out_the_order.html">Validates out the order</a>
+        <a href="shop__orders__validate/validates_the_order_without_a_payment_instrument.html">Validates the order without a payment instrument</a>
       </li>
       <li>
-        <a href="shop__orders__validate/validates_out_the_order_without_a_payment_instrument.html">Validates out the order without a payment instrument</a>
-      </li>
-      <li>
-        <a href="shop__orders__validate/validates_out_the_order_without_a_payment_instrument_when_multiple_payment_methods_configured.html">Validates out the order without a payment instrument when multiple payment methods configured</a>
+        <a href="shop__orders__validate/validates_the_order_without_a_payment_instrument_when_multiple_payment_methods_configured.html">Validates the order without a payment instrument when multiple payment methods configured</a>
       </li>
     </ul>
   </div>

@@ -130,6 +130,14 @@ table th, table td {
                 </td>
               </tr>
               <tr>
+                <td>
+                    <span class="name">order[tender_options]</span>
+                </td>
+                <td>
+                  <span class="description">An array of tender options for the necessary order.</span>
+                </td>
+              </tr>
+              <tr>
                 <td class="required">
                     <span class="name">order[browser_information][accept_header]</span>
                 </td>
@@ -240,7 +248,7 @@ table th, table td {
                     <span class="name">order[capabilities]</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
             </tbody>
@@ -251,17 +259,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;1cd27a7c6bbc7e289cb8&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjFjZDI3YTdjNmJiYzdlMjg5Y2I4IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQyNjJmYTFhZDY2ZjIyYzM5OTYifSwiZXhwIjoxNjk0NTc0ODA2fQ.DOnGzwunpGqOiFGaMy58vDJWC4gADIfFPmHq_w4_LIE&quot;
+Authorization: MYFOODLINK app_id=&quot;256e58955eb28187b169&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjI1NmU1ODk1NWViMjgxODdiMTY5IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzc5NmZjZTZhMzBmMWFjMDVhMjMifSwiZXhwIjoxNjk1ODYxODMwfQ.JEeuOQq3PQwMrrW5KdHky6FJT66TB5SWKHIVBZxtp74&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124252fa1ad66f22c385e/orders/current/checkout</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c794fce6a30f1ac058de/orders/current/checkout</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"650124262fa1ad66f22c398d"}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c796fce6a30f1ac05a0d"}}</pre>
 
 
             <h3>Response</h3>
@@ -274,8 +282,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 3c9a8fe4-3363-48f4-bf62-7ad71aa774fa
-X-Runtime: 0.089636
+X-Request-Id: 27a4a60f-226b-4697-82fb-18fd878eced8
+X-Runtime: 0.108737
 Content-Length: 141</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>

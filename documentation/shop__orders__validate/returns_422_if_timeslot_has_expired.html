@@ -112,7 +112,7 @@ table th, table td {
         <h2>Returns 422 if timeslot has expired</h2>
         <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/validate</h3>
           <p class="explanation">
-            If supplying browser information, all attributes must be supplied
+            Expired timeslots will return an error
           </p>
 
           <h3>Parameters</h3>
@@ -214,6 +214,22 @@ table th, table td {
                   <span class="description">Exact content of the HTTP user-agent header. The field is limited to maximum 2048 characters.</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">order[capabilities]</span>
+                </td>
+                <td>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. This is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_information]</span>
+                </td>
+                <td>
+                  <span class="description">If it is a Gift Card Shop - it is required. Please check the &quot;Orders gift information update&quot; for more details.</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -222,17 +238,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;3549721fd42c59e56415&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjM1NDk3MjFmZDQyYzU5ZTU2NDE1IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQ5YTJmYTFhZDY2ZjIyYzk5YmIifSwiZXhwIjoxNjk0NTc0OTIyfQ.9EgcNRIUXmjbsfiZtKukMmlR6UYVmWPEwhdpcsa-D2c&quot;
+Authorization: MYFOODLINK app_id=&quot;c29dc09706c1541fd9d4&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImMyOWRjMDk3MDZjMTU0MWZkOWQ0IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzg4ZGZjZTZhMzBmMWFjMGMyODgifSwiZXhwIjoxNjk1ODYyMDc3fQ.Omgof2QvxAE9mpUOOVWNBFwI3RK3vLH-vl8tRRp5YpE&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124992fa1ad66f22c9883/orders/current/validate</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c88bfce6a30f1ac0c143/orders/current/validate</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"6501249a2fa1ad66f22c99b2","browser_information":{"ip_address":"127.0.0.1"}}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c88dfce6a30f1ac0c272"}}</pre>
 
 
             <h3>Response</h3>
@@ -245,68 +261,19 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 1c3a0be4-8dec-476f-9999-f292de2c4a86
-X-Runtime: 0.084600
-Content-Length: 962</pre>
+X-Request-Id: b7a24c2f-59f4-48e4-a97c-94bca1cef620
+X-Runtime: 0.241593
+Content-Length: 144</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;errors&quot;: [
     {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
+      &quot;code&quot;: &quot;order_failed_checkout&quot;,
+      &quot;detail&quot;: &quot;Timeslot no longer valid&quot;,
       &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/accept_header&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/language&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/color_depth&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/screen_height&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/screen_width&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/timezone&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/user_agent&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;invalid&quot;,
-      &quot;detail&quot;: &quot;can only be true or false&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/java_enabled&quot;
+        &quot;pointer&quot;: &quot;/order/base&quot;
       }
     }
   ],

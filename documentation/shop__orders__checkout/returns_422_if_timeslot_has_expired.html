@@ -112,7 +112,7 @@ table th, table td {
         <h2>Returns 422 if timeslot has expired</h2>
         <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/checkout</h3>
           <p class="explanation">
-            If supplying browser information, all attributes must be supplied
+            Expired timeslots will return an error
           </p>
 
           <h3>Parameters</h3>
@@ -130,6 +130,14 @@ table th, table td {
                 </td>
                 <td>
                   <span class="description">The id of the payment instrument that the order will be charged too</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[tender_options]</span>
+                </td>
+                <td>
+                  <span class="description">An array of tender options for the necessary order.</span>
                 </td>
               </tr>
               <tr>
@@ -243,7 +251,7 @@ table th, table td {
                     <span class="name">order[capabilities]</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
             </tbody>
@@ -254,17 +262,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;de5a236e53f36217a93b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImRlNWEyMzZlNTNmMzYyMTdhOTNiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQzNDJmYTFhZDY2ZjIyYzQ0ODYifSwiZXhwIjoxNjk0NTc0ODIwfQ.oEvefgJnXU9u703rYaSv4cD7Ft7RQBnjC5PZqxpTMkQ&quot;
+Authorization: MYFOODLINK app_id=&quot;e3af0a07b8fddd05bc88&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImUzYWYwYTA3YjhmZGRkMDViYzg4IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzc5Y2ZjZTZhMzBmMWFjMDVjZjMifSwiZXhwIjoxNjk1ODYxODM2fQ.hm_a-j1AdhkYZclGF0Sx3kaAvbVVyvzdphLYstE105s&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124332fa1ad66f22c434e/orders/current/checkout</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c79afce6a30f1ac05bae/orders/current/checkout</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"650124342fa1ad66f22c447d","browser_information":{"ip_address":"127.0.0.1"}}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c79cfce6a30f1ac05cdd"}}</pre>
 
 
             <h3>Response</h3>
@@ -277,68 +285,19 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 5c38818b-9170-41b7-a5e3-28d6696c0c4b
-X-Runtime: 0.083461
-Content-Length: 962</pre>
+X-Request-Id: 2ff8bd2b-f8e6-4e19-a41d-7e3588463ce2
+X-Runtime: 0.238566
+Content-Length: 144</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;errors&quot;: [
     {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
+      &quot;code&quot;: &quot;order_failed_checkout&quot;,
+      &quot;detail&quot;: &quot;Timeslot no longer valid&quot;,
       &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/accept_header&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/language&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/color_depth&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/screen_height&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/screen_width&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/timezone&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;must_be_present&quot;,
-      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/user_agent&quot;
-      }
-    },
-    {
-      &quot;code&quot;: &quot;invalid&quot;,
-      &quot;detail&quot;: &quot;can only be true or false&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/order/browser_information/java_enabled&quot;
+        &quot;pointer&quot;: &quot;/order/base&quot;
       }
     }
   ],

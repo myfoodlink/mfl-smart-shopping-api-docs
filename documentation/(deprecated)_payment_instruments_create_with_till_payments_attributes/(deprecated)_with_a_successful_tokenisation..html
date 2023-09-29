@@ -170,7 +170,7 @@ table th, table td {
                     <span class="name">capabilities</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
             </tbody>
@@ -181,7 +181,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;96f10bb5b3da1ea9c61b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijk2ZjEwYmI1YjNkYTFlYTljNjFiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjJhODJmYTFhZDY2ZjIyYWZmMTgifSwiZXhwIjoxNDk3MjQ4MzQwfQ.Snl-8Uxzlk8lC61dxwrffY5fb0AKoGJkZA1rnZtuBqM&quot;
+Authorization: MYFOODLINK app_id=&quot;19638b2fddcfa21bd802&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjE5NjM4YjJmZGRjZmEyMWJkODAyIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzQ3YWZjZTZhMzBmMWFiZjFmNjAifSwiZXhwIjoxNDk3MjQ4MzQwfQ.jpnWGzUusL5yD2lt1_sdZVd2LM_i174VAlXzXu2m7Sc&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -191,7 +191,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"service_id":"650122a72fa1ad66f22afe30","till_transaction_token":"token-from-js","till_3ds_success_url":"https://example.com/success","till_3ds_cancel_url":"https://example.com/cancel","till_3ds_error_url":"https://example.com/error"}</pre>
+            <pre class="request body">{"service_id":"6514c477fce6a30f1abf1e78","till_transaction_token":"token-from-js","till_3ds_success_url":"https://example.com/success","till_3ds_cancel_url":"https://example.com/cancel","till_3ds_error_url":"https://example.com/error"}</pre>
 
 
             <h3>Response</h3>
@@ -203,10 +203,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;46ef6438ec83b8a6ed81effdc6a9155a&quot;
+ETag: W/&quot;427c05e8e068ed7854b69a9a93887c03&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f7980a3e-53cb-489c-a1e8-3ab2b72fcd79
-X-Runtime: 0.045409
+X-Request-Id: df9b1a7e-8d26-4eb7-ac91-4953d294a47d
+X-Runtime: 0.081983
 Content-Length: 581</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
@@ -222,14 +222,14 @@ Content-Length: 581</pre>
       &quot;payment_instrument&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;payment-instruments&quot;,
-          &quot;id&quot;: &quot;650122a82fa1ad66f22aff19&quot;
+          &quot;id&quot;: &quot;6514c47afce6a30f1abf1f61&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;650122a82fa1ad66f22aff19&quot;,
+      &quot;id&quot;: &quot;6514c47afce6a30f1abf1f61&quot;,
       &quot;type&quot;: &quot;payment-instruments&quot;,
       &quot;attributes&quot;: {
         &quot;test&quot;: true,
@@ -243,7 +243,7 @@ Content-Length: 581</pre>
         &quot;service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;650122a72fa1ad66f22afe30&quot;
+            &quot;id&quot;: &quot;6514c477fce6a30f1abf1e78&quot;
           }
         }
       }

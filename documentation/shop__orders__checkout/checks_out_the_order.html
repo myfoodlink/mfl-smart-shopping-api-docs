@@ -130,6 +130,14 @@ table th, table td {
                 </td>
               </tr>
               <tr>
+                <td>
+                    <span class="name">order[tender_options]</span>
+                </td>
+                <td>
+                  <span class="description">An array of tender options for the necessary order.</span>
+                </td>
+              </tr>
+              <tr>
                 <td class="required">
                     <span class="name">order[browser_information][accept_header]</span>
                 </td>
@@ -240,7 +248,7 @@ table th, table td {
                     <span class="name">order[capabilities]</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
             </tbody>
@@ -251,17 +259,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;c6c97e01b53a358898f9&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImM2Yzk3ZTAxYjUzYTM1ODg5OGY5IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQyZDJmYTFhZDY2ZjIyYzNmMDIifSwiZXhwIjoxNjk0NTc0ODEzfQ.C-YgWbOAawTlacOEiz6x2w0wDJopCJzwp3TfhstOkQw&quot;
+Authorization: MYFOODLINK app_id=&quot;7f9fb93e68b13158e59f&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjdmOWZiOTNlNjhiMTMxNThlNTlmIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzdhM2ZjZTZhMzBmMWFjMDVmYzEifSwiZXhwIjoxNjk1ODYxODQzfQ.shlYdqNdET9S4kPvosF1vE6qoHMNDxSp_doW2lb893I&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6501242c2fa1ad66f22c3dca/orders/current/checkout</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c7a0fce6a30f1ac05e7c/orders/current/checkout</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"6501242d2fa1ad66f22c3ef9","browser_information":{"accept_header":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8","ip_address":"127.0.0.1","java_enabled":false,"language":"en-US","color_depth":"32","screen_height":"1169","screen_width":"1800","timezone":-660,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"}}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c7a2fce6a30f1ac05fab","browser_information":{"accept_header":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8","ip_address":"127.0.0.1","java_enabled":false,"language":"en-US","color_depth":"32","screen_height":"1169","screen_width":"1800","timezone":-660,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"}}}</pre>
 
 
             <h3>Response</h3>
@@ -273,17 +281,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;6e1416d9160e2b8e35f81fbbd7d5205b&quot;
+ETag: W/&quot;56c402a670598c6ee898eaabb23b3529&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 785374a7-da28-4787-b384-bb4258937ef6
-X-Runtime: 0.189527
+X-Request-Id: 74b2d921-060c-4472-9b08-44e698064f11
+X-Runtime: 0.418179
 Content-Length: 3309</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6501242d2fa1ad66f22c3efc&quot;,
+    &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbb&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: &quot;00001&quot;,
@@ -296,7 +304,7 @@ Content-Length: 3309</pre>
       &quot;balance&quot;: null,
       &quot;note&quot;: null,
       &quot;checkout&quot;: {
-        &quot;started_at&quot;: &quot;2023-09-13T12:53:33.916+10:00&quot;,
+        &quot;started_at&quot;: &quot;2023-09-28T10:24:03.225+10:00&quot;,
         &quot;succeeded&quot;: false,
         &quot;failed&quot;: false,
         &quot;in_doubt&quot;: false
@@ -316,7 +324,7 @@ Content-Length: 3309</pre>
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;6501242c2fa1ad66f22c3dca&quot;
+          &quot;id&quot;: &quot;6514c7a0fce6a30f1ac05e7c&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -325,7 +333,7 @@ Content-Length: 3309</pre>
       &quot;billing_address&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;addresses&quot;,
-          &quot;id&quot;: &quot;6501242d2fa1ad66f22c3f16&quot;
+          &quot;id&quot;: &quot;6514c7a3fce6a30f1ac05fd4&quot;
         }
       },
       &quot;discount_matches&quot;: {
@@ -337,7 +345,7 @@ Content-Length: 3309</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;order-lines&quot;,
-            &quot;id&quot;: &quot;6501242d2fa1ad66f22c3f00&quot;
+            &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbf&quot;
           }
         ]
       },
@@ -345,7 +353,7 @@ Content-Length: 3309</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;tender-options&quot;,
-            &quot;id&quot;: &quot;6501242e2fa1ad66f22c3f1a&quot;
+            &quot;id&quot;: &quot;6514c7a3fce6a30f1ac05fd8&quot;
           }
         ]
       },
@@ -357,13 +365,13 @@ Content-Length: 3309</pre>
       &quot;time_slot&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;time-slots&quot;,
-          &quot;id&quot;: &quot;6501242d2fa1ad66f22c3ea5#2023-09-14&quot;
+          &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05f57#2023-09-29&quot;
         }
       },
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6501242d2fa1ad66f22c3eff&quot;
+          &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbe&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -373,7 +381,7 @@ Content-Length: 3309</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6501242d2fa1ad66f22c3f16&quot;,
+      &quot;id&quot;: &quot;6514c7a3fce6a30f1ac05fd4&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -389,12 +397,12 @@ Content-Length: 3309</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6501242d2fa1ad66f22c3f00&quot;,
+      &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbf&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;6501242d2fa1ad66f22c3ee3&quot;,
+        &quot;product_id&quot;: &quot;6514c7a2fce6a30f1ac05f95&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -427,13 +435,13 @@ Content-Length: 3309</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;6501242d2fa1ad66f22c3ee6&quot;
+            &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05f98&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;6501242d2fa1ad66f22c3efc&quot;
+            &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbb&quot;
           }
         },
         &quot;tags&quot;: {
@@ -447,7 +455,7 @@ Content-Length: 3309</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6501242e2fa1ad66f22c3f1a&quot;,
+      &quot;id&quot;: &quot;6514c7a3fce6a30f1ac05fd8&quot;,
       &quot;type&quot;: &quot;tender-options&quot;,
       &quot;attributes&quot;: {
         &quot;amount_to_charge&quot;: {
@@ -461,42 +469,42 @@ Content-Length: 3309</pre>
         &quot;payment_service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;6501242c2fa1ad66f22c3e1e&quot;
+            &quot;id&quot;: &quot;6514c7a1fce6a30f1ac05ed0&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;6501242d2fa1ad66f22c3ea5#2023-09-14&quot;,
+      &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05f57#2023-09-29&quot;,
       &quot;type&quot;: &quot;time-slots&quot;,
       &quot;attributes&quot;: {
-        &quot;date&quot;: &quot;2023-09-14&quot;,
+        &quot;date&quot;: &quot;2023-09-29&quot;,
         &quot;drop_off_window&quot;: [
-          &quot;2023-09-14T16:00:00.000+10:00&quot;,
-          &quot;2023-09-14T16:30:00.000+10:00&quot;
+          &quot;2023-09-29T16:00:00.000+10:00&quot;,
+          &quot;2023-09-29T16:30:00.000+10:00&quot;
         ],
         &quot;checkout_window&quot;: [
-          &quot;2023-09-13T16:00:00.000+10:00&quot;,
-          &quot;2023-09-14T16:00:00.000+10:00&quot;
+          &quot;2023-09-28T16:00:00.000+10:00&quot;,
+          &quot;2023-09-29T16:00:00.000+10:00&quot;
         ]
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6501242c2fa1ad66f22c3dca&quot;
+            &quot;id&quot;: &quot;6514c7a0fce6a30f1ac05e7c&quot;
           }
         },
         &quot;delivery_zone&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;delivery-zones&quot;,
-            &quot;id&quot;: &quot;6501242c2fa1ad66f22c3e38&quot;
+            &quot;id&quot;: &quot;6514c7a1fce6a30f1ac05eea&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;6501242d2fa1ad66f22c3eff&quot;,
+      &quot;id&quot;: &quot;6514c7a2fce6a30f1ac05fbe&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,
@@ -507,7 +515,7 @@ Content-Length: 3309</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6501242c2fa1ad66f22c3e38&quot;,
+      &quot;id&quot;: &quot;6514c7a1fce6a30f1ac05eea&quot;,
       &quot;type&quot;: &quot;delivery-zones&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Zone&quot;,
@@ -517,13 +525,13 @@ Content-Length: 3309</pre>
         &quot;pickup_address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;6501242c2fa1ad66f22c3e2b&quot;
+            &quot;id&quot;: &quot;6514c7a1fce6a30f1ac05edd&quot;
           }
         },
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6501242c2fa1ad66f22c3dca&quot;
+            &quot;id&quot;: &quot;6514c7a0fce6a30f1ac05e7c&quot;
           }
         }
       }
