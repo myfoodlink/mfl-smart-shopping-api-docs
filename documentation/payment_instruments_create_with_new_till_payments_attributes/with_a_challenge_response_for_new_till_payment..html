@@ -138,7 +138,7 @@ table th, table td {
                     <span class="name">capabilities</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
               <tr>
@@ -181,7 +181,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;d291c26a53dba1dd1305&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImQyOTFjMjZhNTNkYmExZGQxMzA1IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjJhZjJmYTFhZDY2ZjIyYjA1NGEifSwiZXhwIjoxNDk3MjQ4MzQwfQ.tU6Tlfk4WF8lvPcLNOi5Boepra0aMs88QerEWKZCFcA&quot;
+Authorization: MYFOODLINK app_id=&quot;5fc8ca5314c3318ecf33&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjVmYzhjYTUzMTRjMzMxOGVjZjMzIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzQ4N2ZjZTZhMzBmMWFiZjI1OTIifSwiZXhwIjoxNDk3MjQ4MzQwfQ.Kti9GA5Kin0w8U_PAVWeWPfBLu4jTGOMxxAlLXuEIm4&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -191,7 +191,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"service_id":"650122ae2fa1ad66f22b0462","capabilities":["three_d_secure_tokenisation"],"till_payments":{"transaction_token":"token-from-js","three_d_s_success_url":"https://example.com/success","three_d_s_cancel_url":"https://example.com/cancel","three_d_s_error_url":"https://example.com/error"}}</pre>
+            <pre class="request body">{"service_id":"6514c485fce6a30f1abf24aa","capabilities":["three_d_secure_tokenisation"],"till_payments":{"transaction_token":"token-from-js","three_d_s_success_url":"https://example.com/success","three_d_s_cancel_url":"https://example.com/cancel","three_d_s_error_url":"https://example.com/error"}}</pre>
 
 
             <h3>Response</h3>
@@ -205,8 +205,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 ETag: W/&quot;927a31ca5079a45fed40dc84288ab0df&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 30936350-ad05-4a2b-a434-9a151ae8fff3
-X-Runtime: 0.033526
+X-Request-Id: d09b515f-1d9b-4b00-9e72-86a1c4049995
+X-Runtime: 0.059708
 Content-Length: 221</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>

@@ -118,13 +118,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;b4051196c76192bb1237&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImI0MDUxMTk2Yzc2MTkyYmIxMjM3IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjM3NzJmYTFhZDY2ZjIyYmE2OWUifSwiZXhwIjoxNjk0NTc0NjMxfQ.ksVdPUGLx1xwdbTPuZ8HkV7AzQ8pLkvn4SSGpteXMcQ&quot;
+Authorization: MYFOODLINK app_id=&quot;02cebb5e9407edb45b08&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjAyY2ViYjVlOTQwN2VkYjQ1YjA4IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzYxM2ZjZTZhMzBmMWFiZmM2ZTUifSwiZXhwIjoxNjk1ODYxNDQzfQ.0HA6NB1yicT4pelvROCQyeVWUVkOn6RiqOWNiLnp5gw&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/650123742fa1ad66f22ba50b/orders/650123752fa1ad66f22ba64d/competitions</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/6514c60ffce6a30f1abfc553/orders/6514c611fce6a30f1abfc695/competitions</pre>
 
 
 
@@ -138,10 +138,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;0b7337be51309d7ebf6194da400cbff8&quot;
+ETag: W/&quot;82cc5c6cb7c9a8012e5bfce8cf80f74f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 38134a4a-f80b-4b40-9ae9-fd02baa9c0c1
-X-Runtime: 0.067761
+X-Request-Id: 2c2e040b-5439-44b3-b67c-12968d8f7efd
+X-Runtime: 0.134260
 Content-Length: 2463</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
@@ -149,7 +149,7 @@ Content-Length: 2463</pre>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676&quot;,
       &quot;type&quot;: &quot;competitions&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Awesome Competition&quot;,
@@ -173,15 +173,15 @@ Content-Length: 2463</pre>
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;competition-options&quot;,
-              &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:third_party_crm_sign_up&quot;
+              &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:third_party_crm_sign_up&quot;
             },
             {
               &quot;type&quot;: &quot;competition-options&quot;,
-              &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:crm_sign_up&quot;
+              &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:crm_sign_up&quot;
             },
             {
               &quot;type&quot;: &quot;competition-options&quot;,
-              &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:terms_and_conditions_option&quot;
+              &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:terms_and_conditions_option&quot;
             }
           ]
         },
@@ -189,17 +189,17 @@ Content-Length: 2463</pre>
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;competition-policies&quot;,
-              &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:terms_and_conditions&quot;
+              &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:terms_and_conditions&quot;
             },
             {
               &quot;type&quot;: &quot;competition-policies&quot;,
-              &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:privacy_policy&quot;
+              &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:privacy_policy&quot;
             }
           ]
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/imagery/images/derivations/webp_max_4k/eyJpZCI6ImNhZTVmNTU5OTk4MjA4NjU5NDU4M2ZhYmZiNmE0OGQ3LnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=2251eafe1387f55fddf2ace8d110e253599654c538a5bc9804c514f18fdf0f6b&quot;,
+        &quot;image&quot;: &quot;http://localhost:8081/imagery/images/derivations/webp_max_4k/eyJpZCI6ImE4MGU2NThjZDg3MGJjMDhmMmFkYmY2OWQxZjk2NjgwLnBuZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=ab56a6cb4598b3c2b095e560a2a9e72cadbadddc52979acdbdbe4213c9d8baf8&quot;,
         &quot;brand_first_competition_graphic&quot;: null,
         &quot;brand_first_shop_now_graphic&quot;: null,
         &quot;brand_first_competition_entry_graphic&quot;: null
@@ -208,7 +208,7 @@ Content-Length: 2463</pre>
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:third_party_crm_sign_up&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:third_party_crm_sign_up&quot;,
       &quot;type&quot;: &quot;competition-options&quot;,
       &quot;attributes&quot;: {
         &quot;key&quot;: &quot;third_party_crm_sign_up&quot;,
@@ -217,7 +217,7 @@ Content-Length: 2463</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:crm_sign_up&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:crm_sign_up&quot;,
       &quot;type&quot;: &quot;competition-options&quot;,
       &quot;attributes&quot;: {
         &quot;key&quot;: &quot;crm_sign_up&quot;,
@@ -226,7 +226,7 @@ Content-Length: 2463</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:terms_and_conditions_option&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:terms_and_conditions_option&quot;,
       &quot;type&quot;: &quot;competition-options&quot;,
       &quot;attributes&quot;: {
         &quot;key&quot;: &quot;terms_and_conditions&quot;,
@@ -235,7 +235,7 @@ Content-Length: 2463</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:terms_and_conditions&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:terms_and_conditions&quot;,
       &quot;type&quot;: &quot;competition-policies&quot;,
       &quot;attributes&quot;: {
         &quot;key&quot;: &quot;terms_and_conditions&quot;,
@@ -245,7 +245,7 @@ Content-Length: 2463</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650123752fa1ad66f22ba62e:privacy_policy&quot;,
+      &quot;id&quot;: &quot;6514c611fce6a30f1abfc676:privacy_policy&quot;,
       &quot;type&quot;: &quot;competition-policies&quot;,
       &quot;attributes&quot;: {
         &quot;key&quot;: &quot;privacy_policy&quot;,

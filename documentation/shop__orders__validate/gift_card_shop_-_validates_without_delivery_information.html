@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop / Orders / Validate API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shop / Orders / Validate API</h1>
+
+      <div class="article">
+        <h2>Gift Card Shop - Validates without delivery information</h2>
+        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/validate</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">order[payment_instrument_id]</span>
+                </td>
+                <td>
+                  <span class="description">The id of the payment instrument that the order will be charged too</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][accept_header]</span>
+                </td>
+                <td>
+                  <span class="description">Exact content of the HTTP accept headers as sent to the 3DS Requestor from the Cardholder&#39;s browser</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][ip_address]</span>
+                </td>
+                <td>
+                  <span class="description">IP address of the browser as returned by the HTTP headers to the 3DS Requestor.
+- IPv4 address is represented in the dotted decimal format of 4 sets of decimal numbers separated by dots. The decimal number in each and every set is in the range 0 - 255. Example: 1.12.123.255
+- IPv6 adress is represented as eight groups of four hexadecimal digits, each group representing 16 bits (two octets). The groups are separated by colons (:). Example: 2011:0db8:85a3:0101:0101:8a2e:0370:7334</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][java_enabled]</span>
+                </td>
+                <td>
+                  <span class="description">Boolean that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][language]</span>
+                </td>
+                <td>
+                  <span class="description">Value representing the browser language as defined in IETF BCP47. The value is limited to 1-8 characters. Value is returned from navigator.language property.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][color_depth]</span>
+                </td>
+                <td>
+                  <span class="description">Value representing the bit depth of the colour palette for displaying images, in bits per pixel. Obtained from Cardholder browser using the screen.colorDepth property.
+1 -&gt; 1 bit
+4 -&gt; 4 bits
+8 -&gt; 8 bits
+15 -&gt; 15 bits
+16 -&gt; 16 bits
+24 -&gt; 24 bits
+32 -&gt; 32 bits
+48 -&gt; 48 bits</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][screen_height]</span>
+                </td>
+                <td>
+                  <span class="description">Total height of the Cardholder&#39;s screen in pixels. Value is returned from the screen.height property.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][screen_width]</span>
+                </td>
+                <td>
+                  <span class="description">Total width of the Cardholder&#39;s screen in pixels. Value is returned from the screen.width property.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][timezone]</span>
+                </td>
+                <td>
+                  <span class="description">Time difference between UTC time and the Cardholder browser local time, in minutes. The field is limited to 1-5 characters where the value is returned from the getTimezoneOffset() method.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[browser_information][user_agent]</span>
+                </td>
+                <td>
+                  <span class="description">Exact content of the HTTP user-agent header. The field is limited to maximum 2048 characters.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[capabilities]</span>
+                </td>
+                <td>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. This is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_information]</span>
+                </td>
+                <td>
+                  <span class="description">If it is a Gift Card Shop - it is required. Please check the &quot;Orders gift information update&quot; for more details.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Authorization: MYFOODLINK app_id=&quot;03fab58e593ec5d3eef8&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjAzZmFiNThlNTkzZWM1ZDNlZWY4IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzg4MWZjZTZhMzBmMWFjMGJkMTcifSwiZXhwIjoxNjk1ODYyMDY1fQ.T4bSPNtGjW_fzzSg5jzK_0aM2QHkUUKxHnPQAth_gwU&quot;
+Content-Type: application/json
+Host: api.myfoodlink.com
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c87ffce6a30f1ac0bbd3/orders/current/validate</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c881fce6a30f1ac0bd01"}}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json
+ETag: W/&quot;af1e8828a1697b803dc05b195d6d4a85&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 2e7346a7-085a-4ec1-8b23-4a6291d267dc
+X-Runtime: 0.223006
+Content-Length: 2150</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd10&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: null,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 5000,
+        &quot;cents_ex_tax&quot;: 5000,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: null,
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: null,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+
+      ],
+      &quot;balance_at_checkout&quot;: 5000,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;6514c87ffce6a30f1ac0bbd3&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;addresses&quot;,
+          &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd02&quot;
+        }
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;order-lines&quot;,
+            &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd14&quot;
+          }
+        ]
+      },
+      &quot;tender_options&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;gift_information&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;gift-information&quot;,
+          &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd15&quot;
+        }
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
+    {
+      &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd02&quot;,
+      &quot;type&quot;: &quot;addresses&quot;,
+      &quot;attributes&quot;: {
+        &quot;custom1&quot;: null,
+        &quot;custom2&quot;: null,
+        &quot;unit&quot;: null,
+        &quot;locality&quot;: &quot;Hobart&quot;,
+        &quot;administrative_area&quot;: &quot;Tasmania&quot;,
+        &quot;country_code&quot;: &quot;AU&quot;,
+        &quot;postal_code&quot;: &quot;7000&quot;,
+        &quot;lines&quot;: [
+          &quot;65 Murray St&quot;
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd14&quot;,
+      &quot;type&quot;: &quot;order-lines&quot;,
+      &quot;attributes&quot;: {
+        &quot;charge&quot;: false,
+        &quot;name&quot;: &quot;Gift Card $50.00&quot;,
+        &quot;product_id&quot;: &quot;6514c881fce6a30f1ac0bcec&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null,
+        &quot;sell_price_cents&quot;: 5000,
+        &quot;normal_price_cents&quot;: 5000,
+        &quot;quantity&quot;: 1.0,
+        &quot;subtotal&quot;: {
+          &quot;cents_inc_tax&quot;: 5000,
+          &quot;cents_ex_tax&quot;: 5000,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;adjustments&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 5000,
+          &quot;cents_ex_tax&quot;: 5000,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;place_of_origin&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;line&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;lines&quot;,
+            &quot;id&quot;: &quot;6514c881fce6a30f1ac0bcee&quot;
+          }
+        },
+        &quot;order&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;orders&quot;,
+            &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd10&quot;
+          }
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6514c881fce6a30f1ac0bd15&quot;,
+      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;attributes&quot;: {
+        &quot;gift&quot;: true,
+        &quot;note&quot;: null,
+        &quot;recipient_name&quot;: &quot;Jade&quot;,
+        &quot;recipient_email_address&quot;: &quot;jade@email.com&quot;,
+        &quot;recipient_phone_number&quot;: &quot;0400000000&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

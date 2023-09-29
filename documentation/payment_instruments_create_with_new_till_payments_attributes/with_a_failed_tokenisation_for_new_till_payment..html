@@ -138,7 +138,7 @@ table th, table td {
                     <span class="name">capabilities</span>
                 </td>
                 <td>
-                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and zen_gift_cards</span>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. THis is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
                 </td>
               </tr>
               <tr>
@@ -181,7 +181,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;d7b73e7ebfa22bddc353&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImQ3YjczZTdlYmZhMjJiZGRjMzUzIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjJiMjJmYTFhZDY2ZjIyYjA4NjgifSwiZXhwIjoxNDk3MjQ4MzQwfQ.cYZyo_HmwfmryX6ki0GRBpk5276_du1eXAzmBI8wV30&quot;
+Authorization: MYFOODLINK app_id=&quot;e16be51230935a8856b7&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImUxNmJlNTEyMzA5MzVhODg1NmI3IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzQ4ZGZjZTZhMzBmMWFiZjI4YjAifSwiZXhwIjoxNDk3MjQ4MzQwfQ.12wf9ommp-qXF2WPAhpZ_JXQBltm3bloJlTtj8CS5nI&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -191,7 +191,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"service_id":"650122b22fa1ad66f22b0780","till_payments":{"transaction_token":"token-from-js","three_d_s_success_url":"https://example.com/success","three_d_s_cancel_url":"https://example.com/cancel","three_d_s_error_url":"https://example.com/error"}}</pre>
+            <pre class="request body">{"service_id":"6514c48cfce6a30f1abf27c8","till_payments":{"transaction_token":"token-from-js","three_d_s_success_url":"https://example.com/success","three_d_s_cancel_url":"https://example.com/cancel","three_d_s_error_url":"https://example.com/error"}}</pre>
 
 
             <h3>Response</h3>
@@ -204,8 +204,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 99a70244-2210-46a3-8f3f-0e66cd2ec9e5
-X-Runtime: 0.036638
+X-Request-Id: 11905ddd-96dd-41d0-9776-6c8bb141f000
+X-Runtime: 0.080098
 Content-Length: 41</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>

@@ -211,6 +211,22 @@ table th, table td {
                   <span class="description">Exact content of the HTTP user-agent header. The field is limited to maximum 2048 characters.</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">order[capabilities]</span>
+                </td>
+                <td>
+                  <span class="description">Capabilities of the app in regards to card tokenisation. This is sent as an array of strings. Supported values: three_d_secure_tokenisation, three_d_secure_transaction, and tender_options</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_information]</span>
+                </td>
+                <td>
+                  <span class="description">If it is a Gift Card Shop - it is required. Please check the &quot;Orders gift information update&quot; for more details.</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -219,17 +235,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;789f9521ba3bd6502f06&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijc4OWY5NTIxYmEzYmQ2NTAyZjA2IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTAxMjQ5OTJmYTFhZDY2ZjIyYzk4NmMifSwiZXhwIjoxNjk0NTc0OTIxfQ.qI3DD4IKyOYzwcVXJemT403NjCmgN6mIAEokJzWAH_Y&quot;
+Authorization: MYFOODLINK app_id=&quot;79d44250696ba31f6680&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijc5ZDQ0MjUwNjk2YmEzMWY2NjgwIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzg5MmZjZTZhMzBmMWFjMGMzZTQifSwiZXhwIjoxNjk1ODYyMDgyfQ.t_v7FHsPphapN6apal0dftAYzjHm7jqbUFuyqXw-2Yo&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/650124972fa1ad66f22c9734/orders/current/validate</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c88efce6a30f1ac0c29f/orders/current/validate</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"payment_instrument_id":"650124992fa1ad66f22c9863","browser_information":{"accept_header":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8","ip_address":"127.0.0.1","java_enabled":false,"language":"en-US","color_depth":"32","screen_height":"1169","screen_width":"1800","timezone":-660,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"}}}</pre>
+            <pre class="request body">{"order":{"payment_instrument_id":"6514c892fce6a30f1ac0c3ce","browser_information":{"accept_header":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8","ip_address":"127.0.0.1","java_enabled":false,"language":"en-US","color_depth":"32","screen_height":"1169","screen_width":"1800","timezone":-660,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"}}}</pre>
 
 
             <h3>Response</h3>
@@ -241,17 +257,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;43886a336ce298843a308b974140d91d&quot;
+ETag: W/&quot;fc411593715b65c65f570914aa675225&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 4c9aaac8-497e-48d8-906e-04290bc9e402
-X-Runtime: 0.119058
+X-Request-Id: 8431dd67-14e4-46ef-ad46-83eda4208dca
+X-Runtime: 0.292654
 Content-Length: 2904</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;650124992fa1ad66f22c9866&quot;,
+    &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3de&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -279,7 +295,7 @@ Content-Length: 2904</pre>
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;650124972fa1ad66f22c9734&quot;
+          &quot;id&quot;: &quot;6514c88efce6a30f1ac0c29f&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -288,7 +304,7 @@ Content-Length: 2904</pre>
       &quot;billing_address&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;addresses&quot;,
-          &quot;id&quot;: &quot;650124992fa1ad66f22c9864&quot;
+          &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3dc&quot;
         }
       },
       &quot;discount_matches&quot;: {
@@ -300,7 +316,7 @@ Content-Length: 2904</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;order-lines&quot;,
-            &quot;id&quot;: &quot;650124992fa1ad66f22c986a&quot;
+            &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3e2&quot;
           }
         ]
       },
@@ -317,13 +333,13 @@ Content-Length: 2904</pre>
       &quot;time_slot&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;time-slots&quot;,
-          &quot;id&quot;: &quot;650124982fa1ad66f22c980f#2023-09-14&quot;
+          &quot;id&quot;: &quot;6514c891fce6a30f1ac0c37a#2023-09-29&quot;
         }
       },
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;650124992fa1ad66f22c9869&quot;
+          &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3e1&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -333,7 +349,7 @@ Content-Length: 2904</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;650124992fa1ad66f22c9864&quot;,
+      &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3dc&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -349,12 +365,12 @@ Content-Length: 2904</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650124992fa1ad66f22c986a&quot;,
+      &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3e2&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;650124982fa1ad66f22c984d&quot;,
+        &quot;product_id&quot;: &quot;6514c891fce6a30f1ac0c3b8&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -387,13 +403,13 @@ Content-Length: 2904</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;650124982fa1ad66f22c9850&quot;
+            &quot;id&quot;: &quot;6514c891fce6a30f1ac0c3bb&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;650124992fa1ad66f22c9866&quot;
+            &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3de&quot;
           }
         },
         &quot;tags&quot;: {
@@ -407,36 +423,36 @@ Content-Length: 2904</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650124982fa1ad66f22c980f#2023-09-14&quot;,
+      &quot;id&quot;: &quot;6514c891fce6a30f1ac0c37a#2023-09-29&quot;,
       &quot;type&quot;: &quot;time-slots&quot;,
       &quot;attributes&quot;: {
-        &quot;date&quot;: &quot;2023-09-14&quot;,
+        &quot;date&quot;: &quot;2023-09-29&quot;,
         &quot;drop_off_window&quot;: [
-          &quot;2023-09-14T16:00:00.000+10:00&quot;,
-          &quot;2023-09-14T16:30:00.000+10:00&quot;
+          &quot;2023-09-29T16:00:00.000+10:00&quot;,
+          &quot;2023-09-29T16:30:00.000+10:00&quot;
         ],
         &quot;checkout_window&quot;: [
-          &quot;2023-09-13T16:00:00.000+10:00&quot;,
-          &quot;2023-09-14T16:00:00.000+10:00&quot;
+          &quot;2023-09-28T16:00:00.000+10:00&quot;,
+          &quot;2023-09-29T16:00:00.000+10:00&quot;
         ]
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;650124972fa1ad66f22c9734&quot;
+            &quot;id&quot;: &quot;6514c88efce6a30f1ac0c29f&quot;
           }
         },
         &quot;delivery_zone&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;delivery-zones&quot;,
-            &quot;id&quot;: &quot;650124982fa1ad66f22c97a2&quot;
+            &quot;id&quot;: &quot;6514c88ffce6a30f1ac0c30d&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;650124992fa1ad66f22c9869&quot;,
+      &quot;id&quot;: &quot;6514c892fce6a30f1ac0c3e1&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,
@@ -447,7 +463,7 @@ Content-Length: 2904</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;650124982fa1ad66f22c97a2&quot;,
+      &quot;id&quot;: &quot;6514c88ffce6a30f1ac0c30d&quot;,
       &quot;type&quot;: &quot;delivery-zones&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Zone&quot;,
@@ -457,13 +473,13 @@ Content-Length: 2904</pre>
         &quot;pickup_address&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;addresses&quot;,
-            &quot;id&quot;: &quot;650124982fa1ad66f22c9795&quot;
+            &quot;id&quot;: &quot;6514c88ffce6a30f1ac0c300&quot;
           }
         },
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;650124972fa1ad66f22c9734&quot;
+            &quot;id&quot;: &quot;6514c88efce6a30f1ac0c29f&quot;
           }
         }
       }
