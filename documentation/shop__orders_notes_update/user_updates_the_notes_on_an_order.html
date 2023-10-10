@@ -137,13 +137,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;555a93a335c92b39fe4d&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;29478823843928c5eb81&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/6514c7fefce6a30f1ac087ea/orders/current/note</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/651f751d7587eb0e0f37b233/orders/current/note</pre>
 
 
             <h4>Body</h4>
@@ -159,17 +159,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;fd41adc8b80a2945fdeeeef1a9202093&quot;
+ETag: W/&quot;644b2195d79b8b7506f5bc0d99bca330&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 0c335b5f-af47-444f-ab9f-556ce87dd11a
-X-Runtime: 0.094830
-Content-Length: 986</pre>
+X-Request-Id: bcf4c4f6-ea3e-4585-a51c-ea39661b941f
+X-Runtime: 0.049375
+Content-Length: 1014</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c800fce6a30f1ac08904&quot;,
+    &quot;id&quot;: &quot;651f751d7587eb0e0f37b34d&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -191,13 +191,14 @@ Content-Length: 986</pre>
 
       ],
       &quot;balance_at_checkout&quot;: 0,
+      &quot;tender_options_cover&quot;: true,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;6514c7fefce6a30f1ac087ea&quot;
+          &quot;id&quot;: &quot;651f751d7587eb0e0f37b233&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -232,7 +233,7 @@ Content-Length: 986</pre>
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6514c800fce6a30f1ac08907&quot;
+          &quot;id&quot;: &quot;651f751d7587eb0e0f37b350&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -242,7 +243,7 @@ Content-Length: 986</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c800fce6a30f1ac08907&quot;,
+      &quot;id&quot;: &quot;651f751d7587eb0e0f37b350&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

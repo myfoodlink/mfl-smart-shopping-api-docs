@@ -141,17 +141,17 @@ In this case the user had 1 ice anq 3 Unavailable to start with.
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;79f7857fbf703dda2e43&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijc5Zjc4NTdmYmY3MDNkZGEyZTQzIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzg1OWZjZTZhMzBmMWFjMGFjOWIifSwiZXhwIjoxNDk3MjQ3ODAxfQ.u6PIcaYByh7uj-zBOvd9ZGTXcBuA7Oi1-_UbKJEEM6Q&quot;
+Authorization: MYFOODLINK app_id=&quot;596b210ad188a11cc14f&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjU5NmIyMTBhZDE4OGExMWNjMTRmIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzU0Njc1ODdlYjBlMGYzN2Q2ZTQifSwiZXhwIjoxNDk3MjQ3ODAwfQ.0tYEd62b3x1Cope84wKY3UNsZBQO-q5k6OmFcrIp60g&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c856fce6a30f1ac0ab49/orders/current/lines</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/651f75457587eb0e0f37d592/orders/current/lines</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"order_lines":[{"product_id":"6514c858fce6a30f1ac0ac72","quantity":0}]}}</pre>
+            <pre class="request body">{"order":{"order_lines":[{"product_id":"651f75467587eb0e0f37d6bb","quantity":0}]}}</pre>
 
 
             <h3>Response</h3>
@@ -163,17 +163,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;b03a4f34752b1a70a67a85d69c7645c6&quot;
+ETag: W/&quot;44b5261e8e2471a24ee4189e8d017705&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dc02f805-6aba-4eee-9a3a-4a29d141404b
-X-Runtime: 0.309596
-Content-Length: 1846</pre>
+X-Request-Id: fbc2cf19-2252-4737-90ed-12bba855191a
+X-Runtime: 0.089023
+Content-Length: 1875</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac94&quot;,
+    &quot;id&quot;: &quot;651f75467587eb0e0f37d6dd&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -195,13 +195,14 @@ Content-Length: 1846</pre>
 
       ],
       &quot;balance_at_checkout&quot;: 1000,
+      &quot;tender_options_cover&quot;: false,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;6514c856fce6a30f1ac0ab49&quot;
+          &quot;id&quot;: &quot;651f75457587eb0e0f37d592&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -219,7 +220,7 @@ Content-Length: 1846</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;order-lines&quot;,
-            &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac98&quot;
+            &quot;id&quot;: &quot;651f75467587eb0e0f37d6e1&quot;
           }
         ]
       },
@@ -239,7 +240,7 @@ Content-Length: 1846</pre>
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac97&quot;
+          &quot;id&quot;: &quot;651f75467587eb0e0f37d6e0&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -249,12 +250,12 @@ Content-Length: 1846</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac98&quot;,
+      &quot;id&quot;: &quot;651f75467587eb0e0f37d6e1&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;Bag of ice&quot;,
-        &quot;product_id&quot;: &quot;6514c858fce6a30f1ac0ac6b&quot;,
+        &quot;product_id&quot;: &quot;651f75467587eb0e0f37d6b4&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -287,13 +288,13 @@ Content-Length: 1846</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;6514c858fce6a30f1ac0ac6d&quot;
+            &quot;id&quot;: &quot;651f75467587eb0e0f37d6b6&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac94&quot;
+            &quot;id&quot;: &quot;651f75467587eb0e0f37d6dd&quot;
           }
         },
         &quot;tags&quot;: {
@@ -307,7 +308,7 @@ Content-Length: 1846</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6514c859fce6a30f1ac0ac97&quot;,
+      &quot;id&quot;: &quot;651f75467587eb0e0f37d6e0&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

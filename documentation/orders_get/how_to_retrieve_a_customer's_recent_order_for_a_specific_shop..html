@@ -167,16 +167,16 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;0a954983b5db10e7e1ba&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjBhOTU0OTgzYjVkYjEwZTdlMWJhIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzQwYmZjZTZhMzBmMWFiZWY1OTYifSwiZXhwIjoxNDk3MjQ4MzQzfQ.RGJEEyB8Hl-zb9e8vy3PJzkZ7JP9ljVAqahTNxcq8rU&quot;
+Authorization: MYFOODLINK app_id=&quot;92b9cb36eaecde4788ab&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjkyYjljYjM2ZWFlY2RlNDc4OGFiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzM1MTc1ODdlYjBlMGYzNjFkMGQifSwiZXhwIjoxNDk3MjQ4MzQxfQ._ZVm5NL6WOmZBLhUa5bnJ9enzjU6PttYO8i-pwsnntQ&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders?shop_id=6514c406fce6a30f1abef44c</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders?shop_id=651f734f7587eb0e0f361bc3</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">shop_id: 6514c406fce6a30f1abef44c</pre>
+            <pre class="request query_parameters highlight">shop_id: 651f734f7587eb0e0f361bc3</pre>
 
 
 
@@ -189,18 +189,18 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;1060a95bb3ecffd22812805844b21e5e&quot;
+ETag: W/&quot;a215f897b2b3b0e9c960e1a2ec769cfe&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 941a6a9b-b4e0-4ab4-a505-620e67dd99e4
-X-Runtime: 0.119712
-Content-Length: 1735</pre>
+X-Request-Id: d046b5a3-bee8-49f4-bfc4-3824e737736b
+X-Runtime: 0.058040
+Content-Length: 1764</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;6514c40afce6a30f1abef590&quot;,
+      &quot;id&quot;: &quot;651f73517587eb0e0f361d07&quot;,
       &quot;type&quot;: &quot;orders&quot;,
       &quot;attributes&quot;: {
         &quot;order_number&quot;: null,
@@ -222,13 +222,14 @@ Content-Length: 1735</pre>
 
         ],
         &quot;balance_at_checkout&quot;: 17997,
+        &quot;tender_options_cover&quot;: false,
         &quot;customer_interaction_data&quot;: null
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c406fce6a30f1abef44c&quot;
+            &quot;id&quot;: &quot;651f734f7587eb0e0f361bc3&quot;
           }
         },
         &quot;delivery_address&quot;: {
@@ -246,7 +247,7 @@ Content-Length: 1735</pre>
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;order-lines&quot;,
-              &quot;id&quot;: &quot;6514c40bfce6a30f1abef594&quot;
+              &quot;id&quot;: &quot;651f73517587eb0e0f361d0b&quot;
             }
           ]
         },
@@ -276,12 +277,12 @@ Content-Length: 1735</pre>
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c40bfce6a30f1abef594&quot;,
+      &quot;id&quot;: &quot;651f73517587eb0e0f361d0b&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;6514c407fce6a30f1abef4ef&quot;,
+        &quot;product_id&quot;: &quot;651f734f7587eb0e0f361c66&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -314,13 +315,13 @@ Content-Length: 1735</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;6514c407fce6a30f1abef4f1&quot;
+            &quot;id&quot;: &quot;651f734f7587eb0e0f361c68&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;6514c40afce6a30f1abef590&quot;
+            &quot;id&quot;: &quot;651f73517587eb0e0f361d07&quot;
           }
         },
         &quot;tags&quot;: {

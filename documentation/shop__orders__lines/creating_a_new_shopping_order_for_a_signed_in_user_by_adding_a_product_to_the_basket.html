@@ -140,17 +140,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;76b7b46f2363eea007f3&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijc2YjdiNDZmMjM2M2VlYTAwN2YzIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0Yzg0M2ZjZTZhMzBmMWFjMGE0MmMifSwiZXhwIjoxNDk3MjQ3ODAwfQ.sSHPbDRT_O6gTZEWZnKbYMtDaUger3EabDw4Cuk1NeA&quot;
+Authorization: MYFOODLINK app_id=&quot;836c6d727691d2481c1a&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjgzNmM2ZDcyNzY5MWQyNDgxYzFhIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzUzYzc1ODdlYjBlMGYzN2NlNzUifSwiZXhwIjoxNDk3MjQ3ODAwfQ.L5o-MAbjR6fSc2ijyZtX41R3DfW9z52O48zroEjf6go&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/6514c841fce6a30f1ac0a2e0/orders/current/lines</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/651f753b7587eb0e0f37cd29/orders/current/lines</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"order_lines":[{"product_id":"6514c842fce6a30f1ac0a3fa","quantity":1}]}}</pre>
+            <pre class="request body">{"order":{"order_lines":[{"product_id":"651f753c7587eb0e0f37ce43","quantity":1}]}}</pre>
 
 
             <h3>Response</h3>
@@ -162,17 +162,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;06b97948eab4a977fde10a6f81463dd3&quot;
+ETag: W/&quot;140685245077f5a3f5ce7855f36ad2b9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f53b4ac4-8d57-4f32-b3d1-e196a605d4c0
-X-Runtime: 0.202239
-Content-Length: 1918</pre>
+X-Request-Id: efdfec88-2230-42ab-9bf5-0db13ceb1525
+X-Runtime: 0.090322
+Content-Length: 1947</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c843fce6a30f1ac0a42e&quot;,
+    &quot;id&quot;: &quot;651f753c7587eb0e0f37ce77&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -194,13 +194,14 @@ Content-Length: 1918</pre>
 
       ],
       &quot;balance_at_checkout&quot;: 4999,
+      &quot;tender_options_cover&quot;: false,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;6514c841fce6a30f1ac0a2e0&quot;
+          &quot;id&quot;: &quot;651f753b7587eb0e0f37cd29&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -218,7 +219,7 @@ Content-Length: 1918</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;order-lines&quot;,
-            &quot;id&quot;: &quot;6514c843fce6a30f1ac0a42d&quot;
+            &quot;id&quot;: &quot;651f753c7587eb0e0f37ce76&quot;
           }
         ]
       },
@@ -238,7 +239,7 @@ Content-Length: 1918</pre>
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6514c843fce6a30f1ac0a431&quot;
+          &quot;id&quot;: &quot;651f753c7587eb0e0f37ce7a&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -248,12 +249,12 @@ Content-Length: 1918</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c843fce6a30f1ac0a42d&quot;,
+      &quot;id&quot;: &quot;651f753c7587eb0e0f37ce76&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;6514c842fce6a30f1ac0a3fa&quot;,
+        &quot;product_id&quot;: &quot;651f753c7587eb0e0f37ce43&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -286,13 +287,13 @@ Content-Length: 1918</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;6514c842fce6a30f1ac0a3fd&quot;
+            &quot;id&quot;: &quot;651f753c7587eb0e0f37ce46&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;6514c843fce6a30f1ac0a42e&quot;
+            &quot;id&quot;: &quot;651f753c7587eb0e0f37ce77&quot;
           }
         },
         &quot;tags&quot;: {
@@ -302,11 +303,11 @@ Content-Length: 1918</pre>
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/files/6514c842fce6a30f1ac0a3f9&quot;
+        &quot;image&quot;: &quot;http://localhost:8081/files/651f753c7587eb0e0f37ce42&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;6514c843fce6a30f1ac0a431&quot;,
+      &quot;id&quot;: &quot;651f753c7587eb0e0f37ce7a&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

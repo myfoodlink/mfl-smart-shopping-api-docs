@@ -140,13 +140,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;258b50e823fc74d2d179&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjI1OGI1MGU4MjNmYzc0ZDJkMTc5IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzdkMGZjZTZhMzBmMWFjMDczNDYifSwiZXhwIjoxNjk1ODYxODg4fQ.h8MVLW5odhA4dMciZGZx9lBehh18WTAf9X88kIdN5Xs&quot;
+Authorization: MYFOODLINK app_id=&quot;4f29f6f5152812dd010b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjRmMjlmNmY1MTUyODEyZGQwMTBiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzUwODc1ODdlYjBlMGYzNzlkOGYifSwiZXhwIjoxNjk2NTYxNTkyfQ.ifH0qs7fwI3JfDiDqF-V8XmIaJV_BKXOwJBPVBMq8Qc&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/6514c7cefce6a30f1ac0720c/orders/current/coupon</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/651f75077587eb0e0f379c55/orders/current/coupon</pre>
 
 
             <h4>Body</h4>
@@ -162,17 +162,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;664babf0e6f3aac3b385ca762062337c&quot;
+ETag: W/&quot;ecfe0145e4d463fbde932fbf8fc516fc&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: db9be797-72b1-4dcb-8035-5e168c90d039
-X-Runtime: 0.121731
-Content-Length: 1199</pre>
+X-Request-Id: 5789e92e-8f40-49e3-9694-9b2bce698753
+X-Runtime: 0.060744
+Content-Length: 1227</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c7d0fce6a30f1ac07347&quot;,
+    &quot;id&quot;: &quot;651f75087587eb0e0f379d90&quot;,
     &quot;type&quot;: &quot;coupon-validations&quot;,
     &quot;attributes&quot;: {
       &quot;coupon_code&quot;: null,
@@ -183,14 +183,14 @@ Content-Length: 1199</pre>
       &quot;order&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;orders&quot;,
-          &quot;id&quot;: &quot;6514c7d0fce6a30f1ac07341&quot;
+          &quot;id&quot;: &quot;651f75087587eb0e0f379d8a&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c7d0fce6a30f1ac07341&quot;,
+      &quot;id&quot;: &quot;651f75087587eb0e0f379d8a&quot;,
       &quot;type&quot;: &quot;orders&quot;,
       &quot;attributes&quot;: {
         &quot;order_number&quot;: null,
@@ -212,13 +212,14 @@ Content-Length: 1199</pre>
 
         ],
         &quot;balance_at_checkout&quot;: 0,
+        &quot;tender_options_cover&quot;: true,
         &quot;customer_interaction_data&quot;: null
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c7cefce6a30f1ac0720c&quot;
+            &quot;id&quot;: &quot;651f75077587eb0e0f379c55&quot;
           }
         },
         &quot;delivery_address&quot;: {
@@ -253,7 +254,7 @@ Content-Length: 1199</pre>
         &quot;gift_information&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;gift-information&quot;,
-            &quot;id&quot;: &quot;6514c7d0fce6a30f1ac07344&quot;
+            &quot;id&quot;: &quot;651f75087587eb0e0f379d8d&quot;
           }
         },
         &quot;courier_quote&quot;: {
@@ -262,7 +263,7 @@ Content-Length: 1199</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6514c7d0fce6a30f1ac07344&quot;,
+      &quot;id&quot;: &quot;651f75087587eb0e0f379d8d&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

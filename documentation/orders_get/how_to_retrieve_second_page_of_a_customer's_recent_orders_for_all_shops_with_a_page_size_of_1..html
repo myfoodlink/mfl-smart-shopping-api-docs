@@ -164,7 +164,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;f5ca703f94f49132870d&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImY1Y2E3MDNmOTRmNDkxMzI4NzBkIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzNmZWZjZTZhMzBmMWFiZWYxZGEifSwiZXhwIjoxNDk3MjQ4MzQzfQ.Cuj5ivJQ77HXcmbi99HwBm0g1GYFUv2gsndKfDqr4ho&quot;
+Authorization: MYFOODLINK app_id=&quot;f8d8effbc179413d05ce&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImY4ZDhlZmZiYzE3OTQxM2QwNWNlIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzM0Yjc1ODdlYjBlMGYzNjE5NTEifSwiZXhwIjoxNDk3MjQ4MzQxfQ.AbVZ7xewuFZMiWAoCKsn7TfSn_LoB4i0sNgosQ4B0qc&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -187,18 +187,18 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;4b53bf5113aa2bab1031f50161a0d623&quot;
+ETag: W/&quot;879f2ad4ada0378ec816619698d43e19&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 808ca8c1-0776-489a-aa19-81ae9b4303ee
-X-Runtime: 0.112060
-Content-Length: 1734</pre>
+X-Request-Id: fae8cd00-d596-420d-96a4-bb7dd71c1cf2
+X-Runtime: 0.058765
+Content-Length: 1763</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;6514c3fefce6a30f1abef1cb&quot;,
+      &quot;id&quot;: &quot;651f734b7587eb0e0f361942&quot;,
       &quot;type&quot;: &quot;orders&quot;,
       &quot;attributes&quot;: {
         &quot;order_number&quot;: null,
@@ -220,13 +220,14 @@ Content-Length: 1734</pre>
 
         ],
         &quot;balance_at_checkout&quot;: 14997,
+        &quot;tender_options_cover&quot;: false,
         &quot;customer_interaction_data&quot;: null
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c3f8fce6a30f1abef013&quot;
+            &quot;id&quot;: &quot;651f73487587eb0e0f36178a&quot;
           }
         },
         &quot;delivery_address&quot;: {
@@ -244,7 +245,7 @@ Content-Length: 1734</pre>
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;order-lines&quot;,
-              &quot;id&quot;: &quot;6514c3fefce6a30f1abef1cf&quot;
+              &quot;id&quot;: &quot;651f734b7587eb0e0f361946&quot;
             }
           ]
         },
@@ -274,12 +275,12 @@ Content-Length: 1734</pre>
   ],
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c3fefce6a30f1abef1cf&quot;,
+      &quot;id&quot;: &quot;651f734b7587eb0e0f361946&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;6514c3fafce6a30f1abef12c&quot;,
+        &quot;product_id&quot;: &quot;651f73497587eb0e0f3618a3&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -312,13 +313,13 @@ Content-Length: 1734</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;6514c3fafce6a30f1abef12e&quot;
+            &quot;id&quot;: &quot;651f73497587eb0e0f3618a5&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;6514c3fefce6a30f1abef1cb&quot;
+            &quot;id&quot;: &quot;651f734b7587eb0e0f361942&quot;
           }
         },
         &quot;tags&quot;: {

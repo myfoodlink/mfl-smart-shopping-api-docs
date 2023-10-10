@@ -118,13 +118,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;af50362615c3fb10a653&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImFmNTAzNjI2MTVjM2ZiMTBhNjUzIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzdkM2ZjZTZhMzBmMWFjMDc0OTgifSwiZXhwIjoxNjk1ODYxODkxfQ.L2ew_tqgDLOsgwJpUXGzVWfF4wpGjpL1B1VF6zJSqkM&quot;
+Authorization: MYFOODLINK app_id=&quot;7a86d692e5840a691f1c&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjdhODZkNjkyZTU4NDBhNjkxZjFjIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzUwOTc1ODdlYjBlMGYzNzllZTEifSwiZXhwIjoxNjk2NTYxNTkzfQ.SVLQGKVS_DiKdqtPjO0U7FxGBIA0_Ti6D_cNEhs1h_E&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/6514c7d1fce6a30f1ac0735e/orders/current/coupon</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/shops/651f75087587eb0e0f379da7/orders/current/coupon</pre>
 
 
 
@@ -138,17 +138,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;1d1b79ac3d17b0600cec5ff7a41fdd3e&quot;
+ETag: W/&quot;da4b2c32325e48aca190c411879e0649&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8111bd82-e6d8-41fb-bc92-f76aad0a3ac0
-X-Runtime: 0.119727
-Content-Length: 1199</pre>
+X-Request-Id: 5300cabb-ef24-4423-81cd-fc5aa85bf620
+X-Runtime: 0.057560
+Content-Length: 1227</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c7d3fce6a30f1ac07499&quot;,
+    &quot;id&quot;: &quot;651f75097587eb0e0f379ee2&quot;,
     &quot;type&quot;: &quot;coupon-validations&quot;,
     &quot;attributes&quot;: {
       &quot;coupon_code&quot;: null,
@@ -159,14 +159,14 @@ Content-Length: 1199</pre>
       &quot;order&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;orders&quot;,
-          &quot;id&quot;: &quot;6514c7d3fce6a30f1ac07493&quot;
+          &quot;id&quot;: &quot;651f75097587eb0e0f379edc&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c7d3fce6a30f1ac07493&quot;,
+      &quot;id&quot;: &quot;651f75097587eb0e0f379edc&quot;,
       &quot;type&quot;: &quot;orders&quot;,
       &quot;attributes&quot;: {
         &quot;order_number&quot;: null,
@@ -188,13 +188,14 @@ Content-Length: 1199</pre>
 
         ],
         &quot;balance_at_checkout&quot;: 0,
+        &quot;tender_options_cover&quot;: true,
         &quot;customer_interaction_data&quot;: null
       },
       &quot;relationships&quot;: {
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c7d1fce6a30f1ac0735e&quot;
+            &quot;id&quot;: &quot;651f75087587eb0e0f379da7&quot;
           }
         },
         &quot;delivery_address&quot;: {
@@ -229,7 +230,7 @@ Content-Length: 1199</pre>
         &quot;gift_information&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;gift-information&quot;,
-            &quot;id&quot;: &quot;6514c7d3fce6a30f1ac07496&quot;
+            &quot;id&quot;: &quot;651f75097587eb0e0f379edf&quot;
           }
         },
         &quot;courier_quote&quot;: {
@@ -238,7 +239,7 @@ Content-Length: 1199</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6514c7d3fce6a30f1ac07496&quot;,
+      &quot;id&quot;: &quot;651f75097587eb0e0f379edf&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

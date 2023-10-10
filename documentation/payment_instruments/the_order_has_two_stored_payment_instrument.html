@@ -137,16 +137,16 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;2796c618b3f22612f4c2&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjI3OTZjNjE4YjNmMjI2MTJmNGMyIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTE0YzRiMWZjZTZhMzBmMWFiZjM4NWUifSwiZXhwIjoxNDk3MjQ4MzQwfQ.lHHUHayyh17Sxch60W6bys2Y91PoTxOSBgdWv6cYu1c&quot;
+Authorization: MYFOODLINK app_id=&quot;9bcce7f2e22301e03758&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjliY2NlN2YyZTIyMzAxZTAzNzU4IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzNhMjc1ODdlYjBlMGYzNjYyOTcifSwiZXhwIjoxNDk3MjQ4MzQwfQ.rXfpdMDbFa4U6bhEXPHz1DH7XgmbT0bumNfqSKBqXJg&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments?order_id=6514c4b1fce6a30f1abf3857</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/payment_instruments?order_id=651f73a27587eb0e0f366290</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">order_id: 6514c4b1fce6a30f1abf3857</pre>
+            <pre class="request query_parameters highlight">order_id: 651f73a27587eb0e0f366290</pre>
 
 
 
@@ -159,22 +159,23 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;c302c46c6bb623a9a261ea831864915b&quot;
+ETag: W/&quot;9e08f885042db7afd7f5377e86e768c3&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b73cf0e4-d4f4-4f12-9cfd-9e21aefbb515
-X-Runtime: 0.069723
-Content-Length: 647</pre>
+X-Request-Id: 47e9ec78-e2d1-4397-a3bc-2854dc44baf0
+X-Runtime: 0.028284
+Content-Length: 679</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: [
     {
-      &quot;id&quot;: &quot;6514c4b1fce6a30f1abf385b&quot;,
+      &quot;id&quot;: &quot;651f73a27587eb0e0f366294&quot;,
       &quot;type&quot;: &quot;payment-instruments&quot;,
       &quot;attributes&quot;: {
         &quot;test&quot;: false,
         &quot;service_type&quot;: &quot;fake&quot;,
+        &quot;expired&quot;: false,
         &quot;obfuscated_card&quot;: &quot;411111XXXXXX1111&quot;,
         &quot;expiry_month&quot;: 6,
         &quot;expiry_year&quot;: 2024,
@@ -184,17 +185,18 @@ Content-Length: 647</pre>
         &quot;service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;6514c4affce6a30f1abf3779&quot;
+            &quot;id&quot;: &quot;651f73a27587eb0e0f3661b2&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;6514c4b1fce6a30f1abf385c&quot;,
+      &quot;id&quot;: &quot;651f73a27587eb0e0f366295&quot;,
       &quot;type&quot;: &quot;payment-instruments&quot;,
       &quot;attributes&quot;: {
         &quot;test&quot;: true,
         &quot;service_type&quot;: &quot;fake&quot;,
+        &quot;expired&quot;: false,
         &quot;obfuscated_card&quot;: &quot;512345XXXXXX2346&quot;,
         &quot;expiry_month&quot;: 5,
         &quot;expiry_year&quot;: 2024,
@@ -204,7 +206,7 @@ Content-Length: 647</pre>
         &quot;service&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;payment-services&quot;,
-            &quot;id&quot;: &quot;6514c4affce6a30f1abf3779&quot;
+            &quot;id&quot;: &quot;651f73a27587eb0e0f3661b2&quot;
           }
         }
       }

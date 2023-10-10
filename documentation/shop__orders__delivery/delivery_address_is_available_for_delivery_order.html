@@ -193,17 +193,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;026e155c07ffd5fb63d6&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;d5d71012aaf8255e4889&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/6514c7e6fce6a30f1ac07d26/orders/current/delivery</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/651f75127587eb0e0f37a76f/orders/current/delivery</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"time_slot_id":"6514c7e7fce6a30f1ac07e11#2022-01-20","delivery_address":{"unit":"Area 51","lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
+            <pre class="request body">{"order":{"time_slot_id":"651f75137587eb0e0f37a85a#2022-01-20","delivery_address":{"unit":"Area 51","lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
 
 
             <h3>Response</h3>
@@ -215,17 +215,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;e46166030d6f520eef69afa39fcbf19d&quot;
+ETag: W/&quot;095c5b53569c9b351619be3cbcbc7c8e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 86daff87-e6a7-4dec-af23-d4bd5d82d3f9
-X-Runtime: 0.143556
-Content-Length: 2008</pre>
+X-Request-Id: ada239aa-39ed-4b42-94fa-b9d906a4f2e2
+X-Runtime: 0.060299
+Content-Length: 2036</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6514c7e8fce6a30f1ac07e40&quot;,
+    &quot;id&quot;: &quot;651f75137587eb0e0f37a889&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -247,19 +247,20 @@ Content-Length: 2008</pre>
 
       ],
       &quot;balance_at_checkout&quot;: 0,
+      &quot;tender_options_cover&quot;: true,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;6514c7e6fce6a30f1ac07d26&quot;
+          &quot;id&quot;: &quot;651f75127587eb0e0f37a76f&quot;
         }
       },
       &quot;delivery_address&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;addresses&quot;,
-          &quot;id&quot;: &quot;6514c7e8fce6a30f1ac07e43&quot;
+          &quot;id&quot;: &quot;651f75137587eb0e0f37a88c&quot;
         }
       },
       &quot;billing_address&quot;: {
@@ -288,13 +289,13 @@ Content-Length: 2008</pre>
       &quot;time_slot&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;time-slots&quot;,
-          &quot;id&quot;: &quot;6514c7e7fce6a30f1ac07e11#2022-01-20&quot;
+          &quot;id&quot;: &quot;651f75137587eb0e0f37a85a#2022-01-20&quot;
         }
       },
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6514c7e8fce6a30f1ac07e44&quot;
+          &quot;id&quot;: &quot;651f75137587eb0e0f37a88d&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -304,7 +305,7 @@ Content-Length: 2008</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6514c7e8fce6a30f1ac07e43&quot;,
+      &quot;id&quot;: &quot;651f75137587eb0e0f37a88c&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,
@@ -322,7 +323,7 @@ Content-Length: 2008</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6514c7e7fce6a30f1ac07e11#2022-01-20&quot;,
+      &quot;id&quot;: &quot;651f75137587eb0e0f37a85a#2022-01-20&quot;,
       &quot;type&quot;: &quot;time-slots&quot;,
       &quot;attributes&quot;: {
         &quot;date&quot;: &quot;2022-01-20&quot;,
@@ -339,19 +340,19 @@ Content-Length: 2008</pre>
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c7e6fce6a30f1ac07d26&quot;
+            &quot;id&quot;: &quot;651f75127587eb0e0f37a76f&quot;
           }
         },
         &quot;delivery_zone&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;delivery-zones&quot;,
-            &quot;id&quot;: &quot;6514c7e6fce6a30f1ac07d8d&quot;
+            &quot;id&quot;: &quot;651f75127587eb0e0f37a7d6&quot;
           }
         }
       }
     },
     {
-      &quot;id&quot;: &quot;6514c7e8fce6a30f1ac07e44&quot;,
+      &quot;id&quot;: &quot;651f75137587eb0e0f37a88d&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,
@@ -362,7 +363,7 @@ Content-Length: 2008</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6514c7e6fce6a30f1ac07d8d&quot;,
+      &quot;id&quot;: &quot;651f75127587eb0e0f37a7d6&quot;,
       &quot;type&quot;: &quot;delivery-zones&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;Zone&quot;,
@@ -375,7 +376,7 @@ Content-Length: 2008</pre>
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;6514c7e6fce6a30f1ac07d26&quot;
+            &quot;id&quot;: &quot;651f75127587eb0e0f37a76f&quot;
           }
         }
       }

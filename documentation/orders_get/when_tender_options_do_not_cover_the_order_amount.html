@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shop / Orders tender options API</title>
+    <title>Orders Get API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,48 +106,29 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Shop / Orders tender options API</h1>
+      <h1>Orders Get API</h1>
+
+        <p class="explanation">Retrieve a particular order by id</p>
 
       <div class="article">
-        <h2>Delete tender_options on an order</h2>
-        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/tender_options</h3>
+        <h2>When tender options do not cover the order amount</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/orders/:order_id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">order[tender_options]</span>
-                </td>
-                <td>
-                  <span class="description">An array of tender options for the necessary order.</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;84521b467c46c3d1c7ae&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6Ijg0NTIxYjQ2N2M0NmMzZDFjN2FlIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzUyMTc1ODdlYjBlMGYzN2I2NjAifSwiZXhwIjoxNjk2NTYxNjE3fQ.P-c7fRNM0yNGdJFQyCmkLhOlyeOq5ZsovA__5SPxLCI&quot;
+Authorization: MYFOODLINK app_id=&quot;703f92a100468e700ece&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjcwM2Y5MmExMDA0NjhlNzAwZWNlIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzM2Yzc1ODdlYjBlMGYzNjJmNDUifSwiZXhwIjoxNDk3MjQ4MzQwfQ.qZsN9MA2PgrZY0EmTX7SoLkxZPYailNl5CeVVAHbIkc&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/651f751f7587eb0e0f37b530/orders/current/tender_options</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders/651f736c7587eb0e0f362f46</pre>
 
 
-            <h4>Body</h4>
-            <pre class="request body">{"order":{"tender_options":[]}}</pre>
 
 
             <h3>Response</h3>
@@ -159,23 +140,23 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;f2db1de08c8c65e9e1a0ec12a4f136d9&quot;
+ETag: W/&quot;025a578825671be74013b8b9c2069a34&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 79fc866a-bd9f-400d-b067-145aedde90c5
-X-Runtime: 0.062614
-Content-Length: 1010</pre>
+X-Request-Id: 901f0de0-0e1c-431a-8cc7-17a732391d6e
+X-Runtime: 0.111933
+Content-Length: 1689</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;651f75217587eb0e0f37b65b&quot;,
+    &quot;id&quot;: &quot;651f736c7587eb0e0f362f46&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
       &quot;total&quot;: {
-        &quot;cents_inc_tax&quot;: 0,
-        &quot;cents_ex_tax&quot;: 0,
+        &quot;cents_inc_tax&quot;: 4999,
+        &quot;cents_ex_tax&quot;: 4999,
         &quot;cents_tax&quot;: 0,
         &quot;iso_currency_code&quot;: null
       },
@@ -190,15 +171,15 @@ Content-Length: 1010</pre>
       &quot;discounts_and_credits&quot;: [
 
       ],
-      &quot;balance_at_checkout&quot;: 0,
-      &quot;tender_options_cover&quot;: true,
+      &quot;balance_at_checkout&quot;: 4999,
+      &quot;tender_options_cover&quot;: false,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;651f751f7587eb0e0f37b530&quot;
+          &quot;id&quot;: &quot;651f736a7587eb0e0f362e04&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -214,13 +195,16 @@ Content-Length: 1010</pre>
       },
       &quot;order_lines&quot;: {
         &quot;data&quot;: [
-
+          {
+            &quot;type&quot;: &quot;order-lines&quot;,
+            &quot;id&quot;: &quot;651f736c7587eb0e0f362f4a&quot;
+          }
         ]
       },
       &quot;tender_options&quot;: {
-        &quot;data&quot;: [
-
-        ]
+        &quot;meta&quot;: {
+          &quot;included&quot;: false
+        }
       },
       &quot;tenders&quot;: {
         &quot;data&quot;: [
@@ -231,9 +215,8 @@ Content-Length: 1010</pre>
         &quot;data&quot;: null
       },
       &quot;gift_information&quot;: {
-        &quot;data&quot;: {
-          &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;651f75217587eb0e0f37b65e&quot;
+        &quot;meta&quot;: {
+          &quot;included&quot;: false
         }
       },
       &quot;courier_quote&quot;: {
@@ -243,14 +226,61 @@ Content-Length: 1010</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;651f75217587eb0e0f37b65e&quot;,
-      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;id&quot;: &quot;651f736c7587eb0e0f362f4a&quot;,
+      &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
-        &quot;gift&quot;: false,
-        &quot;note&quot;: null,
-        &quot;recipient_name&quot;: null,
-        &quot;recipient_email_address&quot;: null,
-        &quot;recipient_phone_number&quot;: null
+        &quot;charge&quot;: false,
+        &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
+        &quot;product_id&quot;: &quot;651f736b7587eb0e0f362f1d&quot;,
+        &quot;description&quot;: null,
+        &quot;brand_name&quot;: null,
+        &quot;size&quot;: null,
+        &quot;tobacco&quot;: false,
+        &quot;alcohol_by_volume_basis_points&quot;: null,
+        &quot;sell_price_cents&quot;: 4999,
+        &quot;normal_price_cents&quot;: 4999,
+        &quot;quantity&quot;: 1.0,
+        &quot;subtotal&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;adjustments&quot;: {
+          &quot;cents_inc_tax&quot;: 0,
+          &quot;cents_ex_tax&quot;: 0,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;total&quot;: {
+          &quot;cents_inc_tax&quot;: 4999,
+          &quot;cents_ex_tax&quot;: 4999,
+          &quot;cents_tax&quot;: 0,
+          &quot;iso_currency_code&quot;: null
+        },
+        &quot;place_of_origin&quot;: null
+      },
+      &quot;relationships&quot;: {
+        &quot;line&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;lines&quot;,
+            &quot;id&quot;: &quot;651f736b7587eb0e0f362f1f&quot;
+          }
+        },
+        &quot;order&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;orders&quot;,
+            &quot;id&quot;: &quot;651f736c7587eb0e0f362f46&quot;
+          }
+        },
+        &quot;tags&quot;: {
+          &quot;data&quot;: [
+
+          ]
+        }
+      },
+      &quot;links&quot;: {
+        &quot;image&quot;: null
       }
     }
   ],
