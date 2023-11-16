@@ -161,6 +161,22 @@ table th, table td {
                   <span class="description">String (Phone Number of the recipient, e.g., 0400000000)</span>
                 </td>
               </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[gift_email_date]</span>
+                </td>
+                <td>
+                  <span class="description">String (The date on which the recipient should receive their gift card. Has to be in future or today. Use the format &quot;YYYY-MM-DD&quot;.)</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_address]</span>
+                </td>
+                <td>
+                  <span class="description">String (Recipient address)</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -169,17 +185,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;880741419f0621094468&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;fcf20af0c4414e27dbe5&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/651f75167587eb0e0f37ab0e/orders/current/gift_information</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/6555574df18dfb0f1e091ab2/orders/current/gift_information</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"recipient_name":"Kung Lao","recipient_email_address":"kung_lao@email.com","recipient_phone_number":"0400123456"}}</pre>
+            <pre class="request body">{"order":{"recipient_name":"Kung Lao","recipient_email_address":"kung_lao@email.com","recipient_phone_number":"0400123456","gift_email_date":"2023-11-16","gift_address":"71 Murray St, Hobart"}}</pre>
 
 
             <h3>Response</h3>
@@ -191,17 +207,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;7e71eff07f8589deda5fcf72e2d8cc66&quot;
+ETag: W/&quot;8871aa4b8b2ddae8ba28b64681223287&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e585872e-3870-4005-85e2-3051df53240e
-X-Runtime: 0.051654
-Content-Length: 1039</pre>
+X-Request-Id: 21eb3911-fe87-43d8-898d-ea0d84f1008b
+X-Runtime: 0.051195
+Content-Length: 1108</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;651f75177587eb0e0f37ac2a&quot;,
+    &quot;id&quot;: &quot;6555574ef18dfb0f1e091bce&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -230,7 +246,7 @@ Content-Length: 1039</pre>
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;651f75167587eb0e0f37ab0e&quot;
+          &quot;id&quot;: &quot;6555574df18dfb0f1e091ab2&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -265,7 +281,7 @@ Content-Length: 1039</pre>
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;651f75177587eb0e0f37ac29&quot;
+          &quot;id&quot;: &quot;6555574ef18dfb0f1e091bcd&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -275,14 +291,16 @@ Content-Length: 1039</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;651f75177587eb0e0f37ac29&quot;,
+      &quot;id&quot;: &quot;6555574ef18dfb0f1e091bcd&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: true,
         &quot;note&quot;: null,
         &quot;recipient_name&quot;: &quot;Kung Lao&quot;,
         &quot;recipient_email_address&quot;: &quot;kung_lao@email.com&quot;,
-        &quot;recipient_phone_number&quot;: &quot;0400123456&quot;
+        &quot;recipient_phone_number&quot;: &quot;0400123456&quot;,
+        &quot;gift_email_date&quot;: &quot;2023-11-16&quot;,
+        &quot;gift_address&quot;: &quot;71 Murray St, Hobart&quot;
       }
     }
   ],

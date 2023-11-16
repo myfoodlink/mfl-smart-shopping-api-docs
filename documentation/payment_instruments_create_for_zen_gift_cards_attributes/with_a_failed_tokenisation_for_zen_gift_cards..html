@@ -163,7 +163,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;6886e1c1872806ab7a6f&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjY4ODZlMWMxODcyODA2YWI3YTZmIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTFmNzM5OTc1ODdlYjBlMGYzNjU5MzEifSwiZXhwIjoxNDk3MjQ4MzQwfQ.uWwWqBLFRcTHkhNffmgVJ7F7cPXGmhzAOp7SR2yclSk&quot;
+Authorization: MYFOODLINK app_id=&quot;c6dda9ed10e86f501b9e&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImM2ZGRhOWVkMTBlODZmNTAxYjllIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTU1NTViY2YxOGRmYjBmMWUwN2NhOTUifSwiZXhwIjoxNDk3MjQ4MzQwfQ.1Yr04gD2c9_3VHpA2DNhl-vgWVTIJl3lPJCVUqbOnbg&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -173,7 +173,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"service_id":"651f73997587eb0e0f365848","order_id":"651f73997587eb0e0f36592c","zen_gift_card":{"gift_card_number":"1234123412341234","gift_card_pin":"1234"}}</pre>
+            <pre class="request body">{"service_id":"655555bbf18dfb0f1e07c9ac","order_id":"655555bcf18dfb0f1e07ca90","zen_gift_card":{"gift_card_number":"1234123412341234","gift_card_pin":"1234"}}</pre>
 
 
             <h3>Response</h3>
@@ -186,15 +186,21 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 01bf5fe1-575c-4bd0-b29a-ae1ab4c6c4a5
-X-Runtime: 0.045706
-Content-Length: 41</pre>
+X-Request-Id: 95a1f116-927b-402f-aad0-31348fc65ae7
+X-Runtime: 0.062881
+Content-Length: 124</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;errors&quot;: [
-
+    {
+      &quot;code&quot;: &quot;invalid&quot;,
+      &quot;detail&quot;: &quot;card details are invalid&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/base&quot;
+      }
+    }
   ],
   &quot;jsonapi&quot;: {
     &quot;version&quot;: &quot;1.0&quot;

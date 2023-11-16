@@ -161,6 +161,22 @@ table th, table td {
                   <span class="description">String (Phone Number of the recipient, e.g., 0400000000)</span>
                 </td>
               </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">order[gift_email_date]</span>
+                </td>
+                <td>
+                  <span class="description">String (The date on which the recipient should receive their gift card. Has to be in future or today. Use the format &quot;YYYY-MM-DD&quot;.)</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">order[gift_address]</span>
+                </td>
+                <td>
+                  <span class="description">String (Recipient address)</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -169,13 +185,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;37057b53e1207c226683&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;cdd9272e40f6f335b652&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/651f75187587eb0e0f37ad73/orders/current/gift_information</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/65555750f18dfb0f1e091d17/orders/current/gift_information</pre>
 
 
             <h4>Body</h4>
@@ -192,9 +208,9 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
 Cache-Control: no-cache
-X-Request-Id: 5e0a1deb-1924-44a5-800e-e9326e0ceaa1
-X-Runtime: 0.047545
-Content-Length: 141</pre>
+X-Request-Id: 11ad27de-a4d6-4034-9e33-e49bac5396bb
+X-Runtime: 0.058174
+Content-Length: 234</pre>
             <h4>Status</h4>
             <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
@@ -205,6 +221,13 @@ Content-Length: 141</pre>
       &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
       &quot;source&quot;: {
         &quot;pointer&quot;: &quot;/recipient_email_address&quot;
+      }
+    },
+    {
+      &quot;code&quot;: &quot;must_be_present&quot;,
+      &quot;detail&quot;: &quot;can&#39;t be blank&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/gift_email_date&quot;
       }
     }
   ],
