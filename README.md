@@ -17,6 +17,8 @@ That means they cover all edge cases we have tests for. 👍
 
 Each time we introduce notable changes to the API, we'll make a release and list them below:
 
+* [2023-12-05](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-12-05)
+* [2023-11-16](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-11-16)
 * [2023-10-06](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-10-06)
 * [2023-09-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-09-14)
 * [2023-08-14](https://github.com/myfoodlink/mfl-smart-shopping-api-docs/releases/tag/2023-08-14)
