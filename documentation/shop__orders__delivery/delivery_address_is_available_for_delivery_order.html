@@ -193,17 +193,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;455b74e9bb9cbb613ff0&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;4f67bba796591beae391&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/65555749f18dfb0f1e091713/orders/current/delivery</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/656e57fd34aa720c55a2c734/orders/current/delivery</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"time_slot_id":"6555574af18dfb0f1e0917fe#2022-01-20","delivery_address":{"unit":"Area 51","lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
+            <pre class="request body">{"order":{"time_slot_id":"656e57fe34aa720c55a2c81f#2022-01-20","delivery_address":{"unit":"Area 51","lines":["My Company","1 Foo St"],"locality":"WEST HOBART","postal_code":"7000","administrative_area":"TAS","country_code":"AU"}}}</pre>
 
 
             <h3>Response</h3>
@@ -215,172 +215,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;3ad9e3faa06414694916dbed1c0b3655&quot;
-Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5fcbc3ea-c9cb-4460-bcbb-0e77c8d15e15
-X-Runtime: 0.077533
-Content-Length: 2079</pre>
+Cache-Control: no-cache
+X-Request-Id: 8956996f-ef9b-4e27-83bd-c45d226c8b77
+X-Runtime: 0.050795
+Content-Length: 243</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
+            <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;data&quot;: {
-    &quot;id&quot;: &quot;6555574af18dfb0f1e09182d&quot;,
-    &quot;type&quot;: &quot;orders&quot;,
-    &quot;attributes&quot;: {
-      &quot;order_number&quot;: null,
-      &quot;total&quot;: {
-        &quot;cents_inc_tax&quot;: 0,
-        &quot;cents_ex_tax&quot;: 0,
-        &quot;cents_tax&quot;: 0,
-        &quot;iso_currency_code&quot;: null
-      },
-      &quot;balance&quot;: null,
-      &quot;note&quot;: null,
-      &quot;checkout&quot;: null,
-      &quot;cancelled&quot;: false,
-      &quot;coupon_code&quot;: null,
-      &quot;adjustments&quot;: [
-
-      ],
-      &quot;discounts_and_credits&quot;: [
-
-      ],
-      &quot;balance_at_checkout&quot;: 0,
-      &quot;tender_options_cover&quot;: true,
-      &quot;customer_interaction_data&quot;: null
-    },
-    &quot;relationships&quot;: {
-      &quot;shop&quot;: {
-        &quot;data&quot;: {
-          &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;65555749f18dfb0f1e091713&quot;
-        }
-      },
-      &quot;delivery_address&quot;: {
-        &quot;data&quot;: {
-          &quot;type&quot;: &quot;addresses&quot;,
-          &quot;id&quot;: &quot;6555574af18dfb0f1e091830&quot;
-        }
-      },
-      &quot;billing_address&quot;: {
-        &quot;data&quot;: null
-      },
-      &quot;discount_matches&quot;: {
-        &quot;data&quot;: [
-
-        ]
-      },
-      &quot;order_lines&quot;: {
-        &quot;data&quot;: [
-
-        ]
-      },
-      &quot;tender_options&quot;: {
-        &quot;data&quot;: [
-
-        ]
-      },
-      &quot;tenders&quot;: {
-        &quot;data&quot;: [
-
-        ]
-      },
-      &quot;time_slot&quot;: {
-        &quot;data&quot;: {
-          &quot;type&quot;: &quot;time-slots&quot;,
-          &quot;id&quot;: &quot;6555574af18dfb0f1e0917fe#2022-01-20&quot;
-        }
-      },
-      &quot;gift_information&quot;: {
-        &quot;data&quot;: {
-          &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;6555574af18dfb0f1e091831&quot;
-        }
-      },
-      &quot;courier_quote&quot;: {
-        &quot;data&quot;: null
-      }
-    }
-  },
-  &quot;included&quot;: [
+  &quot;errors&quot;: [
     {
-      &quot;id&quot;: &quot;6555574af18dfb0f1e091830&quot;,
-      &quot;type&quot;: &quot;addresses&quot;,
-      &quot;attributes&quot;: {
-        &quot;custom1&quot;: null,
-        &quot;custom2&quot;: null,
-        &quot;unit&quot;: &quot;Area 51&quot;,
-        &quot;locality&quot;: &quot;BATTERY POINT&quot;,
-        &quot;administrative_area&quot;: &quot;TAS&quot;,
-        &quot;country_code&quot;: &quot;AU&quot;,
-        &quot;postal_code&quot;: &quot;7004&quot;,
-        &quot;lines&quot;: [
-          &quot;My Company&quot;,
-          &quot;1 Foo St&quot;
-        ],
-        &quot;instructions&quot;: null
+      &quot;code&quot;: &quot;invalid&quot;,
+      &quot;detail&quot;: &quot;not available&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/order/delivery_address/locality&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;6555574af18dfb0f1e0917fe#2022-01-20&quot;,
-      &quot;type&quot;: &quot;time-slots&quot;,
-      &quot;attributes&quot;: {
-        &quot;date&quot;: &quot;2022-01-20&quot;,
-        &quot;drop_off_window&quot;: [
-          &quot;2022-01-20T16:00:00.000+11:00&quot;,
-          &quot;2022-01-20T16:30:00.000+11:00&quot;
-        ],
-        &quot;checkout_window&quot;: [
-          &quot;2022-01-19T16:00:00.000+11:00&quot;,
-          &quot;2022-01-20T16:00:00.000+11:00&quot;
-        ]
-      },
-      &quot;relationships&quot;: {
-        &quot;shop&quot;: {
-          &quot;data&quot;: {
-            &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;65555749f18dfb0f1e091713&quot;
-          }
-        },
-        &quot;delivery_zone&quot;: {
-          &quot;data&quot;: {
-            &quot;type&quot;: &quot;delivery-zones&quot;,
-            &quot;id&quot;: &quot;6555574af18dfb0f1e09177a&quot;
-          }
-        }
-      }
-    },
-    {
-      &quot;id&quot;: &quot;6555574af18dfb0f1e091831&quot;,
-      &quot;type&quot;: &quot;gift-information&quot;,
-      &quot;attributes&quot;: {
-        &quot;gift&quot;: false,
-        &quot;note&quot;: null,
-        &quot;recipient_name&quot;: null,
-        &quot;recipient_email_address&quot;: null,
-        &quot;recipient_phone_number&quot;: null,
-        &quot;gift_email_date&quot;: null,
-        &quot;gift_address&quot;: null
-      }
-    },
-    {
-      &quot;id&quot;: &quot;6555574af18dfb0f1e09177a&quot;,
-      &quot;type&quot;: &quot;delivery-zones&quot;,
-      &quot;attributes&quot;: {
-        &quot;name&quot;: &quot;Zone&quot;,
-        &quot;type&quot;: &quot;delivery&quot;
-      },
-      &quot;relationships&quot;: {
-        &quot;pickup_address&quot;: {
-          &quot;data&quot;: null
-        },
-        &quot;shop&quot;: {
-          &quot;data&quot;: {
-            &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;65555749f18dfb0f1e091713&quot;
-          }
-        }
+      &quot;code&quot;: &quot;invalid&quot;,
+      &quot;detail&quot;: &quot;not available&quot;,
+      &quot;source&quot;: {
+        &quot;pointer&quot;: &quot;/order/delivery_address/postal_code&quot;
       }
     }
   ],

@@ -137,17 +137,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;dbfca27c0f3535242590&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImRiZmNhMjdjMGYzNTM1MjQyNTkwIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTU1NTYyZGYxOGRmYjBmMWUwODJkY2QifSwiZXhwIjoxNzAwMDkyNjM3fQ.d_p0sycIUjwynqEa9ph-LCjWFxZRKbqiXum4a4iVaC0&quot;
+Authorization: MYFOODLINK app_id=&quot;b37a925117c6a65800e1&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImIzN2E5MjUxMTdjNmE2NTgwMGUxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTZlNTZjYjM0YWE3MjBjNTVhMWRjYjkifSwiZXhwIjoxNzAxNzMxMTk1fQ.lPjfNTRuZVmxpOZU_bDPmvfKjs63nI2HYCxDivI8fCg&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shopping_lists/6555562df18dfb0f1e082dc9/entries</pre>
+          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shopping_lists/656e56cb34aa720c55a1dcb5/entries</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"shopping_list_entry":{"product_id":"6555562df18dfb0f1e082daf"}}</pre>
+            <pre class="request body">{"shopping_list_entry":{"product_id":"656e56cb34aa720c55a1dc9b"}}</pre>
 
 
             <h3>Response</h3>
@@ -159,34 +159,34 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;658cc8e8bf381ef60bc9ac507c916fe2&quot;
+ETag: W/&quot;c2fe53b8a1829c958b85648ff8b03852&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: aadffcd3-77d6-4c3d-a8a2-b95eb423789f
-X-Runtime: 0.027726
+X-Request-Id: cf17d5ff-6938-483d-988d-0e88c3d32ff2
+X-Runtime: 0.034580
 Content-Length: 448</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6555562df18dfb0f1e082dce&quot;,
+    &quot;id&quot;: &quot;656e56cb34aa720c55a1dcba&quot;,
     &quot;type&quot;: &quot;shopping-list-entries&quot;,
     &quot;attributes&quot;: {
       &quot;product_code&quot;: &quot;00000093302043&quot;,
-      &quot;product_id&quot;: &quot;6555562df18dfb0f1e082daf&quot;
+      &quot;product_id&quot;: &quot;656e56cb34aa720c55a1dc9b&quot;
     },
     &quot;relationships&quot;: {
       &quot;shopping_list&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shopping-lists&quot;,
-          &quot;id&quot;: &quot;6555562df18dfb0f1e082dc9&quot;
+          &quot;id&quot;: &quot;656e56cb34aa720c55a1dcb5&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6555562df18dfb0f1e082dc9&quot;,
+      &quot;id&quot;: &quot;656e56cb34aa720c55a1dcb5&quot;,
       &quot;type&quot;: &quot;shopping-lists&quot;,
       &quot;attributes&quot;: {
         &quot;name&quot;: &quot;My List&quot;

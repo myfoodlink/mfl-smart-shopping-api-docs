@@ -140,13 +140,13 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;316df708429f3cfbf441&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjMxNmRmNzA4NDI5ZjNjZmJmNDQxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTU1NTczYWYxOGRmYjBmMWUwOTA5NDMifSwiZXhwIjoxNzAwMDkyOTA2fQ.SZ2k-t-ULOM9Z5Sddusc0nH9uYyQBzxHgghKjjoPmU0&quot;
+Authorization: MYFOODLINK app_id=&quot;8f3649b28c1653bf242b&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjhmMzY0OWIyOGMxNjUzYmYyNDJiIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTZlNTdlYzM0YWE3MjBjNTVhMmI4MmYifSwiZXhwIjoxNzAxNzMxNDg0fQ.h-DJk0mjbg-Uge5KapXVj8NkBAzeTfpx4tHBaObsTzg&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/65555738f18dfb0f1e09080d/orders/current/coupon</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/656e57eb34aa720c55a2b6f9/orders/current/coupon</pre>
 
 
             <h4>Body</h4>
@@ -162,17 +162,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;53cf56d32908faf515c872701ccc3f5f&quot;
+ETag: W/&quot;57476d07a369675b3ad58fc7bf471848&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 69979e03-d981-49d8-bc49-151a561700d1
-X-Runtime: 0.084940
+X-Request-Id: 1eb9f3a8-9ce4-4232-b29b-7af532b8ece5
+X-Runtime: 0.093958
 Content-Length: 1289</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;6555573af18dfb0f1e090948&quot;,
+    &quot;id&quot;: &quot;656e57ec34aa720c55a2b834&quot;,
     &quot;type&quot;: &quot;coupon-validations&quot;,
     &quot;attributes&quot;: {
       &quot;coupon_code&quot;: &quot;COUPON1&quot;,
@@ -183,14 +183,14 @@ Content-Length: 1289</pre>
       &quot;order&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;orders&quot;,
-          &quot;id&quot;: &quot;6555573af18dfb0f1e090944&quot;
+          &quot;id&quot;: &quot;656e57ec34aa720c55a2b830&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;6555573af18dfb0f1e090944&quot;,
+      &quot;id&quot;: &quot;656e57ec34aa720c55a2b830&quot;,
       &quot;type&quot;: &quot;orders&quot;,
       &quot;attributes&quot;: {
         &quot;order_number&quot;: null,
@@ -219,7 +219,7 @@ Content-Length: 1289</pre>
         &quot;shop&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;shops&quot;,
-            &quot;id&quot;: &quot;65555738f18dfb0f1e09080d&quot;
+            &quot;id&quot;: &quot;656e57eb34aa720c55a2b6f9&quot;
           }
         },
         &quot;delivery_address&quot;: {
@@ -254,7 +254,7 @@ Content-Length: 1289</pre>
         &quot;gift_information&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;gift-information&quot;,
-            &quot;id&quot;: &quot;6555573af18dfb0f1e090947&quot;
+            &quot;id&quot;: &quot;656e57ec34aa720c55a2b833&quot;
           }
         },
         &quot;courier_quote&quot;: {
@@ -263,7 +263,7 @@ Content-Length: 1289</pre>
       }
     },
     {
-      &quot;id&quot;: &quot;6555573af18dfb0f1e090947&quot;,
+      &quot;id&quot;: &quot;656e57ec34aa720c55a2b833&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,

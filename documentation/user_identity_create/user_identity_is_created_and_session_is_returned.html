@@ -225,7 +225,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;6e30dba9cb3f4606c3f0&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;6aed84ec8db5a83e23a6&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
@@ -235,7 +235,7 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"user_identity":{"first_name":"John","last_name":"Smith","email_address":"example@myfoodlink.test","password":"some_password","birth_date":"1998-11-16","phone_number":"0438 123 456","billing_address":{"lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
+            <pre class="request body">{"user_identity":{"first_name":"John","last_name":"Smith","email_address":"example@myfoodlink.test","password":"some_password","birth_date":"1998-12-05","phone_number":"0438 123 456","billing_address":{"lines":["My Company","1 Foo St"],"locality":"BATTERY POINT","postal_code":"7004","administrative_area":"TAS","country_code":"AU"}}}</pre>
 
 
             <h3>Response</h3>
@@ -247,20 +247,20 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;dab395209d311925d7d4e1d54b8b1ad7&quot;
+ETag: W/&quot;5e136dd08ed210d1d8eb0c549a913c6a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a957a90b-1441-40b1-9577-9d23335174c4
-X-Runtime: 0.089219
+X-Request-Id: 73bb3c93-b33f-42f4-bb80-8ae1bc81f98e
+X-Runtime: 0.057674
 Content-Length: 1079</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;655557e3f18dfb0f1e099b43&quot;,
+    &quot;id&quot;: &quot;656e58a434aa720c55a34b5f&quot;,
     &quot;type&quot;: &quot;user-identities&quot;,
     &quot;attributes&quot;: {
-      &quot;birth_date&quot;: &quot;1998-11-16&quot;,
+      &quot;birth_date&quot;: &quot;1998-12-05&quot;,
       &quot;first_name&quot;: &quot;John&quot;,
       &quot;last_name&quot;: &quot;Smith&quot;,
       &quot;phone_number&quot;: &quot;0438 123 456&quot;,
@@ -270,28 +270,28 @@ Content-Length: 1079</pre>
       &quot;session&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;sessions&quot;,
-          &quot;id&quot;: &quot;655557e3f18dfb0f1e099b45&quot;
+          &quot;id&quot;: &quot;656e58a434aa720c55a34b61&quot;
         }
       },
       &quot;billing_address&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;addresses&quot;,
-          &quot;id&quot;: &quot;655557e3f18dfb0f1e099b44&quot;
+          &quot;id&quot;: &quot;656e58a434aa720c55a34b60&quot;
         }
       }
     }
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;655557e3f18dfb0f1e099b45&quot;,
+      &quot;id&quot;: &quot;656e58a434aa720c55a34b61&quot;,
       &quot;type&quot;: &quot;sessions&quot;,
       &quot;attributes&quot;: {
-        &quot;session_secret&quot;: &quot;feb2fe6ffaed63d53bdf2bed3e1b5536&quot;,
-        &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjZlMzBkYmE5Y2IzZjQ2MDZjM2YwIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTU1NTdlM2YxOGRmYjBmMWUwOTliNDUifSwiZXhwIjoxNzAwMDkzMDc1fQ.IZNjk3mdMWIt5Zgg3Cmp7mBhZIriQA5acQVyqQDGcEY&quot;
+        &quot;session_secret&quot;: &quot;30f2ba9774fece4895e968f2d3b34461&quot;,
+        &quot;session_token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6IjZhZWQ4NGVjOGRiNWE4M2UyM2E2IiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTZlNThhNDM0YWE3MjBjNTVhMzRiNjEifSwiZXhwIjoxNzAxNzMxNjY4fQ.jKZ6ofSu_x4y7U860ubVtq14sMdfnv9m_-mHsGSQosA&quot;
       }
     },
     {
-      &quot;id&quot;: &quot;655557e3f18dfb0f1e099b44&quot;,
+      &quot;id&quot;: &quot;656e58a434aa720c55a34b60&quot;,
       &quot;type&quot;: &quot;addresses&quot;,
       &quot;attributes&quot;: {
         &quot;custom1&quot;: null,

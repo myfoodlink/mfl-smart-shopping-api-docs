@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shop / Orders / Lines API</title>
+    <title>Orders Get API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,51 +106,29 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Shop / Orders / Lines API</h1>
+      <h1>Orders Get API</h1>
+
+        <p class="explanation">Retrieve a particular order by id</p>
 
       <div class="article">
-        <h2>Discounts due to account credit will be included</h2>
-        <h3>POST https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/:order_id/lines</h3>
-          <p class="explanation">
-            A discount for account credit will be included. This also reduces the balance_at_checkout attribute
-          </p>
+        <h2>When order contains tender options</h2>
+        <h3>GET https://api.myfoodlink.com/smart_shopping/v2/orders/:order_id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">order[order_lines]</span>
-                </td>
-                <td>
-                  <span class="description">Products and quantities requested by customer. Each one is a hash with product_id and quantity. Use quantity 0 to remove lines.</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;cf85f79c4b97aa75fbe1&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImNmODVmNzljNGI5N2FhNzVmYmUxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTZlNTg0NTM0YWE3MjBjNTVhMmZmOTQifSwiZXhwIjoxNDk3MjQ3ODAwfQ.SZq1O-KHdrQHE8ToAyaq0fxcReZuOZLKKqzl7XY_li8&quot;
+Authorization: MYFOODLINK app_id=&quot;d42a3bf80e495aaf0c31&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;,session_token=&quot;eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImFwcF9pZCI6ImQ0MmEzYmY4MGU0OTVhYWYwYzMxIiwiZGV2aWNlX2lkIjoiMDY0MkRGODAtMEI2RS00ODNBLTlFQTktNTZBMzU3QjA2QjM0IiwiYXBwX3Nlc3Npb25faWQiOiI2NTZlNTYxNDM0YWE3MjBjNTVhMTRmNjEifSwiZXhwIjoxNDk3MjQ4MzQwfQ.QicUCzbTTvi0LFg1AFkqabb7G2UEjo8HWoMnROiUGg0&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST https://api.myfoodlink.com/smart_shopping/v2/shops/656e584334aa720c55a2fe41/orders/current/lines</pre>
+          <pre class="request route highlight">GET https://api.myfoodlink.com/smart_shopping/v2/orders/656e561434aa720c55a14f62</pre>
 
 
-            <h4>Body</h4>
-            <pre class="request body">{"order":{"order_lines":[{"product_id":"656e584434aa720c55a2ff5b","quantity":1}]}}</pre>
 
 
             <h3>Response</h3>
@@ -162,17 +140,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-ETag: W/&quot;3036d609e6a5f461b71800c22c840a4a&quot;
+ETag: W/&quot;ac42f5e8c58337bb63e7867a52c191a0&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e6d1c3b1-c104-45c7-9783-c3e0082a14de
-X-Runtime: 0.109901
-Content-Length: 2049</pre>
+X-Request-Id: 240c5600-497e-4380-b906-e884e5ccce07
+X-Runtime: 0.181278
+Content-Length: 2570</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;data&quot;: {
-    &quot;id&quot;: &quot;656e584534aa720c55a2ff96&quot;,
+    &quot;id&quot;: &quot;656e561434aa720c55a14f62&quot;,
     &quot;type&quot;: &quot;orders&quot;,
     &quot;attributes&quot;: {
       &quot;order_number&quot;: null,
@@ -191,21 +169,17 @@ Content-Length: 2049</pre>
 
       ],
       &quot;discounts_and_credits&quot;: [
-        {
-          &quot;type&quot;: &quot;credit&quot;,
-          &quot;narrative&quot;: &quot;Account credit&quot;,
-          &quot;amount&quot;: 100
-        }
+
       ],
-      &quot;balance_at_checkout&quot;: 4899,
-      &quot;tender_options_cover&quot;: false,
+      &quot;balance_at_checkout&quot;: 4999,
+      &quot;tender_options_cover&quot;: true,
       &quot;customer_interaction_data&quot;: null
     },
     &quot;relationships&quot;: {
       &quot;shop&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;shops&quot;,
-          &quot;id&quot;: &quot;656e584334aa720c55a2fe41&quot;
+          &quot;id&quot;: &quot;656e561234aa720c55a14e20&quot;
         }
       },
       &quot;delivery_address&quot;: {
@@ -223,13 +197,20 @@ Content-Length: 2049</pre>
         &quot;data&quot;: [
           {
             &quot;type&quot;: &quot;order-lines&quot;,
-            &quot;id&quot;: &quot;656e584534aa720c55a2ff95&quot;
+            &quot;id&quot;: &quot;656e561434aa720c55a14f66&quot;
           }
         ]
       },
       &quot;tender_options&quot;: {
         &quot;data&quot;: [
-
+          {
+            &quot;type&quot;: &quot;tender-options&quot;,
+            &quot;id&quot;: &quot;656e561434aa720c55a14f67&quot;
+          },
+          {
+            &quot;type&quot;: &quot;tender-options&quot;,
+            &quot;id&quot;: &quot;656e561434aa720c55a14f69&quot;
+          }
         ]
       },
       &quot;tenders&quot;: {
@@ -243,7 +224,7 @@ Content-Length: 2049</pre>
       &quot;gift_information&quot;: {
         &quot;data&quot;: {
           &quot;type&quot;: &quot;gift-information&quot;,
-          &quot;id&quot;: &quot;656e584534aa720c55a2ff99&quot;
+          &quot;id&quot;: &quot;656e561434aa720c55a14f65&quot;
         }
       },
       &quot;courier_quote&quot;: {
@@ -253,12 +234,12 @@ Content-Length: 2049</pre>
   },
   &quot;included&quot;: [
     {
-      &quot;id&quot;: &quot;656e584534aa720c55a2ff95&quot;,
+      &quot;id&quot;: &quot;656e561434aa720c55a14f66&quot;,
       &quot;type&quot;: &quot;order-lines&quot;,
       &quot;attributes&quot;: {
         &quot;charge&quot;: false,
         &quot;name&quot;: &quot;St Hallets Old Block Shiraz 2014&quot;,
-        &quot;product_id&quot;: &quot;656e584434aa720c55a2ff5b&quot;,
+        &quot;product_id&quot;: &quot;656e561334aa720c55a14f39&quot;,
         &quot;description&quot;: null,
         &quot;brand_name&quot;: null,
         &quot;size&quot;: null,
@@ -291,13 +272,13 @@ Content-Length: 2049</pre>
         &quot;line&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;lines&quot;,
-            &quot;id&quot;: &quot;656e584434aa720c55a2ff5e&quot;
+            &quot;id&quot;: &quot;656e561334aa720c55a14f3b&quot;
           }
         },
         &quot;order&quot;: {
           &quot;data&quot;: {
             &quot;type&quot;: &quot;orders&quot;,
-            &quot;id&quot;: &quot;656e584534aa720c55a2ff96&quot;
+            &quot;id&quot;: &quot;656e561434aa720c55a14f62&quot;
           }
         },
         &quot;tags&quot;: {
@@ -307,11 +288,52 @@ Content-Length: 2049</pre>
         }
       },
       &quot;links&quot;: {
-        &quot;image&quot;: &quot;http://localhost:8081/files/656e584434aa720c55a2ff5a&quot;
+        &quot;image&quot;: null
       }
     },
     {
-      &quot;id&quot;: &quot;656e584534aa720c55a2ff99&quot;,
+      &quot;id&quot;: &quot;656e561434aa720c55a14f67&quot;,
+      &quot;type&quot;: &quot;tender-options&quot;,
+      &quot;attributes&quot;: {
+        &quot;amount_to_charge&quot;: {
+          &quot;type&quot;: &quot;up_to&quot;,
+          &quot;amount&quot;: 2000
+        }
+      },
+      &quot;relationships&quot;: {
+        &quot;payment_instrument&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;payment_service&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;payment-services&quot;,
+            &quot;id&quot;: &quot;656e561334aa720c55a14e74&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;656e561434aa720c55a14f69&quot;,
+      &quot;type&quot;: &quot;tender-options&quot;,
+      &quot;attributes&quot;: {
+        &quot;amount_to_charge&quot;: {
+          &quot;type&quot;: &quot;remainder&quot;
+        }
+      },
+      &quot;relationships&quot;: {
+        &quot;payment_instrument&quot;: {
+          &quot;data&quot;: null
+        },
+        &quot;payment_service&quot;: {
+          &quot;data&quot;: {
+            &quot;type&quot;: &quot;payment-services&quot;,
+            &quot;id&quot;: &quot;656e561334aa720c55a14e74&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;656e561434aa720c55a14f65&quot;,
       &quot;type&quot;: &quot;gift-information&quot;,
       &quot;attributes&quot;: {
         &quot;gift&quot;: false,
