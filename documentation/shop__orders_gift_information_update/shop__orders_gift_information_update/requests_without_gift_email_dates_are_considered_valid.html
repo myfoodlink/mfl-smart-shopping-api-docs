@@ -109,7 +109,7 @@ table th, table td {
       <h1>Shop / Orders gift information update API</h1>
 
       <div class="article">
-        <h2>validates gift email date - gift_email_date not valid</h2>
+        <h2>Requests without gift_email_dates are considered valid</h2>
         <h3>PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/:shop_id/orders/current/gift_information</h3>
 
           <h3>Parameters</h3>
@@ -162,7 +162,7 @@ table th, table td {
                 </td>
               </tr>
               <tr>
-                <td class="required">
+                <td>
                     <span class="name">order[gift_email_date]</span>
                 </td>
                 <td>
@@ -185,17 +185,17 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: MYFOODLINK app_id=&quot;52dc39cbc957044d8be3&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
+Authorization: MYFOODLINK app_id=&quot;2c98f60dd1e2415d43b9&quot;,device_id=&quot;0642DF80-0B6E-483A-9EA9-56A357B06B34&quot;
 Content-Type: application/json
 Host: api.myfoodlink.com
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/656e580b34aa720c55a2d323/orders/current/gift_information</pre>
+          <pre class="request route highlight">PATCH https://api.myfoodlink.com/smart_shopping/v2/shops/659fbb700e38d665dafd0ca6/orders/current/gift_information</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"order":{"gift":true,"note":"Happy Birthday!","recipient_name":"Kung Lao","recipient_email_address":"kung@gmail.com","recipient_phone_number":"0400123456","gift_email_date":"2030-13-13"}}</pre>
+            <pre class="request body">{"order":{"gift":true,"note":"Happy Birthday!","recipient_name":"Kung Lao","recipient_email_address":"kung@gmail.com","recipient_phone_number":"0400123456","gift_email_date":null}}</pre>
 
 
             <h3>Response</h3>
@@ -207,20 +207,100 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/vnd.api+json
-Cache-Control: no-cache
-X-Request-Id: 9bdf99b1-0c5b-4c19-84ad-4af367b105bf
-X-Runtime: 0.057215
-Content-Length: 141</pre>
+ETag: W/&quot;4885dbc68ee988e9a940cd118d8fd77e&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: a717f454-fa12-4c59-bcbd-f470c1933ab0
+X-Runtime: 0.031664
+Content-Length: 1091</pre>
             <h4>Status</h4>
-            <pre class="response status">422 Unprocessable Entity</pre>
+            <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;errors&quot;: [
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;659fbb700e38d665dafd0dc2&quot;,
+    &quot;type&quot;: &quot;orders&quot;,
+    &quot;attributes&quot;: {
+      &quot;order_number&quot;: null,
+      &quot;total&quot;: {
+        &quot;cents_inc_tax&quot;: 0,
+        &quot;cents_ex_tax&quot;: 0,
+        &quot;cents_tax&quot;: 0,
+        &quot;iso_currency_code&quot;: null
+      },
+      &quot;balance&quot;: null,
+      &quot;note&quot;: null,
+      &quot;checkout&quot;: null,
+      &quot;cancelled&quot;: false,
+      &quot;coupon_code&quot;: null,
+      &quot;adjustments&quot;: [
+
+      ],
+      &quot;discounts_and_credits&quot;: [
+
+      ],
+      &quot;balance_at_checkout&quot;: 0,
+      &quot;tender_options_cover&quot;: true,
+      &quot;customer_interaction_data&quot;: null
+    },
+    &quot;relationships&quot;: {
+      &quot;shop&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;shops&quot;,
+          &quot;id&quot;: &quot;659fbb700e38d665dafd0ca6&quot;
+        }
+      },
+      &quot;delivery_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;billing_address&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;discount_matches&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;order_lines&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tender_options&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;tenders&quot;: {
+        &quot;data&quot;: [
+
+        ]
+      },
+      &quot;time_slot&quot;: {
+        &quot;data&quot;: null
+      },
+      &quot;gift_information&quot;: {
+        &quot;data&quot;: {
+          &quot;type&quot;: &quot;gift-information&quot;,
+          &quot;id&quot;: &quot;659fbb700e38d665dafd0dc1&quot;
+        }
+      },
+      &quot;courier_quote&quot;: {
+        &quot;data&quot;: null
+      }
+    }
+  },
+  &quot;included&quot;: [
     {
-      &quot;code&quot;: &quot;invalid&quot;,
-      &quot;detail&quot;: &quot;must be a valid gift card date&quot;,
-      &quot;source&quot;: {
-        &quot;pointer&quot;: &quot;/gift_email_date&quot;
+      &quot;id&quot;: &quot;659fbb700e38d665dafd0dc1&quot;,
+      &quot;type&quot;: &quot;gift-information&quot;,
+      &quot;attributes&quot;: {
+        &quot;gift&quot;: true,
+        &quot;note&quot;: &quot;Happy Birthday!&quot;,
+        &quot;recipient_name&quot;: &quot;Kung Lao&quot;,
+        &quot;recipient_email_address&quot;: &quot;kung@gmail.com&quot;,
+        &quot;recipient_phone_number&quot;: &quot;0400123456&quot;,
+        &quot;gift_email_date&quot;: null,
+        &quot;gift_address&quot;: null
       }
     }
   ],
